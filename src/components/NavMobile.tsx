@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NavHamburger from "./ui/NavHamburger/NavHamburger";
+import "./scss/_navMobile.scss";
 
 const NavMobile = () => {
   const [isNavActive, setIsNavActive] = useState(false);
@@ -8,12 +9,12 @@ const NavMobile = () => {
     setIsNavActive(!isNavActive);
   };
   return (
-    <div className="nav-container">
-      <div className="nav-head-container">
+    <div className="nav-container" >
+      
         <div className="toggle-nav-container" onClick={toggleNav}>
           <NavHamburger />
         </div>
-      </div>
+      
       {isNavActive && (
         <div className="nav-active-container">
           <p>HEM</p>
