@@ -1,0 +1,21 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+@import "../../../styles/global";
+
+.sma-btn-container{
+    @include flex(row, center, center);
+    width: 100svw;
+    height: 4svh;
+    button{
+        @include flex(row, center, center);
+        height: 4svh;
+        padding: 4px;
+        width: 40svw;
+        border-radius: 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: $dark-b;
+        background: $white;
+        @include border(5px, $light-b);
+    }
+}

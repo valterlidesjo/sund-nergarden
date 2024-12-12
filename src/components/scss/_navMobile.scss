@@ -1,0 +1,27 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+.nav-container {
+    height: 100vh;
+    width: 100%;
+    @include m.flex(column, center, center);
+    
+    
+  .toggle-nav-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    @include m.flex(row, flex-end, center);
+  }
+  .nav-active-container{
+    text-align: center;
+    background: v.$secondary-col;
+    p{
+        margin: 4rem;
+        font-size: 2rem;
+    }
+  }
+}

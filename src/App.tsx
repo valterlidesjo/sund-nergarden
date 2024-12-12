@@ -1,14 +1,11 @@
-import HorizontalScroll from "./components/HorizontalScroll";
-import BackArrow from "./components/ui/BackArrow/BackArrow";
-import BigBtn from "./components/ui/BigBtn/BigBtn";
+import NavMobile from "./components/NavMobile";
 import NavHamburger from "./components/ui/NavHamburger/NavHamburger";
+import SmaBtn from "./components/ui/SmaBtn/SmaBtn";
 
 function App() {
   return (
     <>
-      <NavHamburger />
-      <BackArrow size="3.5rem" />
-      <BigBtn text="Boka nu" />
+      <NavMobile />
     </>
   );
 }

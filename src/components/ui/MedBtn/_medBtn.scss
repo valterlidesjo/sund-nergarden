@@ -1,0 +1,21 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+@import "../../../styles/global";
+
+.med-btn-container{
+    @include flex(row, center, center);
+    width: 100svw;
+    height: 5.5svh;
+    button{
+        width: 65vw;
+        height: 5.5svh;
+        border-radius: 15px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: $dark-b;
+        background: $white;
+        @include border(5px, $light-b);
+        @include flex(row, space-evenly, center);
+    }
+}
+
