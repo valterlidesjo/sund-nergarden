@@ -1,0 +1,16 @@
+@import "../../styles/global";
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.nav-container{
+    .nav-head-container{
+        width: 100%;
+        height: auto;
+        @include flex(row, flex-start, center);
+        
+    }
+    .nav-active-container{
+    
+    }
+
+}

@@ -2,15 +2,17 @@
 @import "../../../styles/variables";
 @import "../../../styles/global";
 
-.big-btn-container{
+.sma-btn-container{
     @include flex(row, center, center);
     width: 100svw;
-    height: 7svh;
+    height: 4svh;
     button{
-        width: 65svw;
-        height: 8svh;
+        @include flex(row, center, center);
+        height: 4svh;
+        padding: 4px;
+        width: 40svw;
         border-radius: 20px;
-        font-size: 2.2rem;
+        font-size: 1rem;
         font-weight: bold;
         color: $dark-b;
         background: $white;

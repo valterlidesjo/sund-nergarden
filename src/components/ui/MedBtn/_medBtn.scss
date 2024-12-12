@@ -2,18 +2,20 @@
 @import "../../../styles/variables";
 @import "../../../styles/global";
 
-.big-btn-container{
+.med-btn-container{
     @include flex(row, center, center);
     width: 100svw;
-    height: 7svh;
+    height: 5.5svh;
     button{
-        width: 65svw;
-        height: 8svh;
-        border-radius: 20px;
-        font-size: 2.2rem;
+        width: 65vw;
+        height: 5.5svh;
+        border-radius: 15px;
+        font-size: 1.3rem;
         font-weight: bold;
         color: $dark-b;
         background: $white;
         @include border(5px, $light-b);
+        @include flex(row, space-evenly, center);
     }
 }
+
