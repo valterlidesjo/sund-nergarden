@@ -14,14 +14,19 @@
 }
 
 .nav-container {
-  height: 100vh;
+    position: fixed; /* Gör att navigationen ligger fast på toppen */
+  top: 0;
+  left: 0;
+  height: 0;
   width: 100%;
+  overflow: hidden;
   @include m.flex(column, center, center);
-  transition: background-color 0.5s ease;
+  transition: height 0.5s ease, background-color 0.5s ease;
   
 
   &.nav-active {
     background-color: v.$secondary-col;
+    height: 100svh;
   }
 
   .toggle-nav-container {
