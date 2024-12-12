@@ -1,9 +1,8 @@
 import React from "react";
 import "./_bigBtn.scss";
 
-interface BigBtnProps extends HTMLButtonElement {
+interface BigBtnProps {
   text: string;
-
 }
 
 const BigBtn: React.FC<BigBtnProps> = ({ text }) => {

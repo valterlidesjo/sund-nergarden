@@ -9,14 +9,14 @@ const NavMobile = () => {
     setIsNavActive(!isNavActive);
   };
   return (
-    <div className="nav-container" >
+    <div className={`nav-container ${isNavActive ? "nav-active" : ""}`} >
       
         <div className="toggle-nav-container" onClick={toggleNav}>
           <NavHamburger />
         </div>
       
       {isNavActive && (
-        <div className="nav-active-container">
+        <div className={`nav-active-container ${isNavActive ? "visible" : ""}`}>
           <p>HEM</p>
           <p>MAT & DRYCK</p>
           <p>RUM & GLAMPING</p>
