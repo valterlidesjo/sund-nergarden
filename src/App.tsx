@@ -9,7 +9,6 @@ function App() {
       <NavHamburger />
       <BackArrow size="3.5rem" />
       <BigBtn text="Boka nu" />
-      <HorizontalScroll />
     </>
   );
 }
