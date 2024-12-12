@@ -1,16 +1,14 @@
-
-import NavMobile from './components/NavMobile'
+import BackArrow from './components/ui/BackArrow/BackArrow'
+import BigBtn from './components/ui/BigBtn/BigBtn'
 import NavHamburger from './components/ui/NavHamburger/NavHamburger'
-import SmaBtn from './components/ui/SmaBtn/SmaBtn'
 
 function App() {
-
   return (
     <>
       
       <NavMobile/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
