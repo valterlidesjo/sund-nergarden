@@ -1,7 +1,8 @@
 import React from "react";
+import "./scss/_horizontalScroll.scss";
 
 type HorizontalScrollProps = {
-  images: { id: string; src: string; alt: string }[];
+  images: { id: string; src: string; alt: string; text: string }[];
   onImageClick?: (id: string) => void;
 };
 
@@ -13,10 +14,10 @@ const HorizontalScroll = ({ images, onImageClick }: HorizontalScrollProps) => {
           <img
             src={image.src}
             alt={image.alt}
-            // style={{ cursor: "pointer", width: "100px", height: "100px", objectFit: "cover" }}
             className="horizontal-img"
             onClick={() => onImageClick?.(image.id)}
           />
+          <p className="overlay-text">{image.text}</p>
         </div>
       ))}
     </div>

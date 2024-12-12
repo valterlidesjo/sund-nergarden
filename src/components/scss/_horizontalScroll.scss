@@ -1,0 +1,30 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+
+.scroll-container {
+    @include m.horScroll;
+  
+    div {
+      position: relative; // Viktigt för att positionera overlay-text relativt till containern
+  
+      img {
+        object-fit: cover;
+        height: 20rem;
+        width: 12.5rem;
+        border-radius: 16px;
+      }
+  
+      .overlay-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); 
+        z-index: 100;
+        color: white; // Gör texten synlig ovanpå bilden
+        font-size: 2rem;
+      }
+    }
+  }
+  
