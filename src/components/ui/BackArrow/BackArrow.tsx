@@ -1,9 +1,13 @@
-import React from 'react'
+import "./_BackArrow.scss";
 
-const BackArrow = () => {
+type BackArrowProps = {
+    size?: string; 
+  };
+
+const BackArrow: React.FC<BackArrowProps> = ({size =  "3rem"}) => {
   return (
     <>
-    
+    <i className="fa-solid fa-arrow-left" style={{fontSize: size}}></i>
     </>
   )
 }
