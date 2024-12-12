@@ -1,7 +1,7 @@
-@import "../../../styles/mixins";
-@import "../../../styles/variables";
-@import "../../../styles/global";
+@use "../../../styles/mixins" as m;
+@use "../../../styles/variables" as v;
+@use "../../../styles/global" as g;
 
 i{
-    color: $black;
+    color: v.$black;
 }
