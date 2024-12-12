@@ -5,13 +5,12 @@ import NavHamburger from './components/ui/NavHamburger/NavHamburger'
 import SmaBtn from './components/ui/SmaBtn/SmaBtn'
 
 function App() {
-
   return (
     <>
       <NavMobile/>
       <BigBtn text='Boka Nu'/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
