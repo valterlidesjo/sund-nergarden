@@ -7,10 +7,15 @@ import SmaBtn from "../components/ui/SmaBtn/SmaBtn";
 import { images } from "./extra/HomepageImages";
 
 
+
 const HomePage = () => {
   const handleImageClick = (id: string) => {
     alert(`Image clicked: ${id}`);
   };
+  const goToBooking = () => {
+    window.location.href = "https://online.bookvisit.com/package?channelId=918cee3d-0141-4e51-b886-ac9fcf09653c";
+};
+
 
   return (
     <>
@@ -48,13 +53,13 @@ const HomePage = () => {
           <p>Allt detta ingår när du bokar rum eller glamping med oss!</p>
         </div>
       </div>
-      <HorizontalScroll images={images} onImageClick={handleImageClick}/>
+      <HorizontalScroll images={images} />
       <div className="homepage-container">
       <div className="homepage-book-container">
         <p>För lediga rum samt aktuella priser se vår </p>
           <div className="homepage-book-text-container">
           <p>bokningskalender</p>
-          <SmaBtn text="Bokningskalender"/>
+          <SmaBtn text="Bokningskalender" click={goToBooking}/>
           </div>
       </div>
       <div className="homepage-text-container-3">

@@ -1,0 +1,87 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+.mat-container {
+  background: v.$primary-col;
+  @include m.flex(column, center, center);
+  width: 100%;
+  .mat-image-container {
+    position: relative;
+
+    img {
+      height: 45svh;
+      width: 100svw;
+      object-fit: cover;
+      object-position: right center;
+      border-bottom: 2px solid v.$white;
+    }
+    .mat-image-text-container {
+      position: absolute;
+      top: 73%;
+      left: 40%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 100%;
+      background: transparent;
+
+      p {
+        font-size: 2.5rem;
+        color: v.$white;
+      }
+    }
+  }
+  .mat-text-container {
+    width: 100%;
+    height: 30svh;
+    @include m.flex(row, center, center);
+    text-align: left;
+    margin: 20px 0;
+    p {
+      color: v.$white;
+      margin: 0 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 100;
+      line-height: 1.6;
+    }
+  }
+}
+.spacing-container {
+  height: 2svh;
+}
+.mat-container {
+    margin-bottom: 1rem;
+    .mat-age-limit-container {
+      width: 100%;
+      height: 7svh;
+      @include m.flex(row, center, center);
+      text-align: center;
+      margin-top: 3svh;
+    p {
+      color: v.$white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 0 10px;
+      line-height: 1.6;
+    }
+  }
+  .dryck-container{
+    @include m.flex(column, center, center);
+    margin-bottom: 2rem;
+    .dryck-header-container{
+        font-size: 2rem;
+        color: v.$white;
+        
+        margin: 1rem 0;
+    }
+    .dryck-text-container{
+        p {
+            color: v.$white;
+            margin: 0 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 100;
+            line-height: 1.6;
+          }
+    }
+  }
+}

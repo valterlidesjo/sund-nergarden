@@ -2,8 +2,8 @@ import React from "react";
 import "./scss/_horizontalScroll.scss";
 
 type HorizontalScrollProps = {
-  images: { id: string; src: string; alt: string; text: string }[];
-  onImageClick?: (id: string) => void;
+  images: { id: number; src: string; alt: string; text: string }[];
+  onImageClick?: (id: number) => void;
 };
 
 const HorizontalScroll = ({ images, onImageClick }: HorizontalScrollProps) => {
