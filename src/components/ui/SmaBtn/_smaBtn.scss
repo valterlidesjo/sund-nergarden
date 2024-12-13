@@ -4,7 +4,7 @@
 
 .sma-btn-container{
     @include flex(row, center, center);
-    width: 100svw;
+    width: 40svw;
     height: 4svh;
     button{
         @include flex(row, center, center);

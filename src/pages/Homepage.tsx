@@ -51,8 +51,11 @@ const HomePage = () => {
       <HorizontalScroll images={images} onImageClick={handleImageClick}/>
       <div className="homepage-container">
       <div className="homepage-book-container">
-        <p>För lediga rum samt aktuella priser se vår bokningskalender</p>
-        <SmaBtn text="Bokningskalender"/>
+        <p>För lediga rum samt aktuella priser se vår </p>
+          <div className="homepage-book-text-container">
+          <p>bokningskalender</p>
+          <SmaBtn text="Bokningskalender"/>
+          </div>
       </div>
       <div className="homepage-text-container-3">
         <p className="homepage-text-container-3">

@@ -10,7 +10,9 @@ const NavMobile = () => {
   };
   return (
     <div className={`nav-container ${isNavActive ? "nav-active" : ""}`} >
-      
+      <div className="nav-logo-container">
+        
+      </div>
       <div className="toggle-nav-header">
         <div className="toggle-nav-container" onClick={toggleNav}>
           <NavHamburger />

@@ -101,14 +101,22 @@
 
 .homepage-book-container{
     text-align: left;
-    // @include m.flex(row, center, center);
+    width: 100%;
+    margin-top: 5svh;
+    @include m.flex(column, center, center);
+    .homepage-book-text-container{
+        @include m.flex(row, center, center);
+
+    }
     p{
+        
         color: v.$white;
         margin: 0 10px;
         font-size: 1rem;
         font-weight: 100;
         line-height: 2;
     }
+    
 }
 .homepage-text-container-3{
     width: 100%;
