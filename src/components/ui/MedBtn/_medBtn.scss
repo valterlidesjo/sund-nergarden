@@ -1,9 +1,9 @@
-@import "../../../styles/mixins";
-@import "../../../styles/variables";
-@import "../../../styles/global";
+@use "../../../styles/mixins" as m;
+@use "../../../styles/variables" as v; 
+@use "../../../styles/global" as g;
 
 .med-btn-container{
-    @include flex(row, center, center);
+    @include m.flex(row, center, center);
     width: 100svw;
     height: 5.5svh;
     button{
@@ -12,10 +12,10 @@
         border-radius: 15px;
         font-size: 1.3rem;
         font-weight: bold;
-        color: $dark-b;
-        background: $white;
-        @include border(5px, $light-b);
-        @include flex(row, space-evenly, center);
+        color: v.$dark-b;
+        background: v.$white;
+        @include m.border(5px, v.$light-b);
+        @include m.flex(row, space-evenly, center);
     }
 }
 

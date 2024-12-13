@@ -5,17 +5,17 @@ import sundVinImage from "../assets/sund-vin.jpeg";
 import "./scss/_homepage.scss";
 import SmaBtn from "../components/ui/SmaBtn/SmaBtn";
 import { images } from "./extra/HomepageImages";
-
-
+import RoomPageComponent from "../components/RoomPageComponent";
+import Test from "./Test";
 
 const HomePage = () => {
   const handleImageClick = (id: string) => {
     alert(`Image clicked: ${id}`);
   };
   const goToBooking = () => {
-    window.location.href = "https://online.bookvisit.com/package?channelId=918cee3d-0141-4e51-b886-ac9fcf09653c";
-};
-
+    window.location.href =
+      "https://online.bookvisit.com/package?channelId=918cee3d-0141-4e51-b886-ac9fcf09653c";
+  };
 
   return (
     <>
@@ -55,19 +55,19 @@ const HomePage = () => {
       </div>
       <HorizontalScroll images={images} />
       <div className="homepage-container">
-      <div className="homepage-book-container">
-        <p>För lediga rum samt aktuella priser se vår </p>
+        <div className="homepage-book-container">
+          <p>För lediga rum samt aktuella priser se vår </p>
           <div className="homepage-book-text-container">
-          <p>bokningskalender</p>
-          <SmaBtn text="Bokningskalender" click={goToBooking}/>
+            <p>bokningskalender</p>
+            <SmaBtn text="Bokningskalender" click={goToBooking} />
           </div>
-      </div>
-      <div className="homepage-text-container-3">
-        <p className="homepage-text-container-3">
-        Vi älskar mat & dryck som serveras i en vacker och trevlig miljö, så varmt välkommen till oss!
-        </p>
-        
-      </div>
+        </div>
+        <div className="homepage-text-container-3">
+          <p className="homepage-text-container-3">
+            Vi älskar mat & dryck som serveras i en vacker och trevlig miljö, så
+            varmt välkommen till oss!
+          </p>
+        </div>
       </div>
     </>
   );
