@@ -1,0 +1,20 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+
+.container {
+    background-color: v.$primary-col;
+    .upper {
+        .description-container {
+            padding: 2rem;
+            .description-text {
+                color: v.$secondary-col;
+            }
+        }
+    }
+
+    .lower {
+
+    }
+}
