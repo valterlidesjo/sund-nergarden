@@ -22,6 +22,7 @@
   overflow: hidden;
   @include m.flex(column, center, center);
   transition: height 0.5s ease, background-color 0.5s ease;
+  z-index: 99;
   
 
   &.nav-active {
