@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import NavHamburger from "./ui/NavHamburger/NavHamburger";
 import "./scss/_navMobile.scss";
+import IconBox from "./ui/IconBox/IconBox";
+import {FaShower} from "react-icons/fa6";
 
 const NavMobile = () => {
   const [isNavActive, setIsNavActive] = useState(false);
@@ -11,7 +13,6 @@ const NavMobile = () => {
   return (
     <div className={`nav-container ${isNavActive ? "nav-active" : ""}`} >
       <div className="nav-logo-container">
-        
       </div>
       <div className="toggle-nav-header">
         <div className="toggle-nav-container" onClick={toggleNav}>
