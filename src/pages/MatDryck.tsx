@@ -4,6 +4,8 @@ import "./scss/_matDryck.scss";
 import MedBtn from "../components/ui/MedBtn/MedBtn";
 import sundVinImage from "../assets/sund-vin.jpeg";
 
+const wineLink = "https://starwinelist.com/storage/wine_lists/371/sund-nergarden.pdf?1624028874";
+
 const MatDryck = () => {
   return (
     <>
@@ -45,7 +47,7 @@ const MatDryck = () => {
             </p>
           </div>
         </div>
-        <MedBtn goToRoute="/" text="Våra dryckespaket" />
+        <MedBtn goToRoute={wineLink} text="Våra dryckespaket" />
       </div>
     </>
   );
