@@ -1,40 +1,63 @@
 import React from "react";
 import SlideShow from "./SlideShow";
-import sundCharkImage from "../assets/sund-chark.jpeg";
-import sundDrink from "../assets/sund-drink.jpg";
 import "./scss/_roomPageComponent.scss";
-import IconBox from "./ui/IconBox/IconBox";
-import { FaShower } from "react-icons/fa6";
+import { FaShower, FaBed } from "react-icons/fa6";
+import { PiWaves } from "react-icons/pi";
+import BigBtn from "./ui/BigBtn/BigBtn";
+import IconContainer from "./IconContainer";
 
-const RoomPageComponent = () => {
-  const images = [
-    { id: "1", src: sundCharkImage, alt: "Image 1" },
-    { id: "2", src: sundDrink, alt: "Image 2" },
-  ];
+interface Image {
+  id: string;
+  src: string;
+  alt: string;
+}
 
-  const description = [
-    {
-      id: "1",
-      desc: "Med 19,6 m2, en queen size säng och en otrolig sjöutsikt har du Glamping - Övre.  En egen uteplats med varmdusch och toaletter 50m bort. Rök och husdjursfritt.",
-    },
+interface Description {
+  id: string;
+  desc: string;
+  kvm: string;
+}
+
+interface RoomPageProps {
+  images: Image[];
+  text: string;
+  description: Description[];
+  kvm: string;
+  interval?: number; // Valfritt
+  btnText?: string; // Valfritt
+}
+
+const RoomPageComponent = ({
+  images,
+  description,
+  kvm,
+  interval,
+  btnText,
+  text,
+}: RoomPageProps) => {
+  const iconItems = [
+    { icon: <FaBed className="i" /> },
+    { icon: <PiWaves className="i" /> },
+    { icon: <FaShower className="i" /> },
+    { icon: <p className="kvm-text">{description[0].kvm}</p> },
   ];
 
   return (
     <div className="container">
-      <div className="upper">
-        <SlideShow images={images} interval={3000} text={"Mat"} />
+      <div className="slideshow">
+        <SlideShow images={images} interval={interval} text={text} />
+      </div>
+
+      <div className="content">
         <div className="description-container">
-          {description.map((item) => (
-            <p className="description-text">{item.desc}</p>
+          {description.map((item, index) => (
+            <p key={index} className="description-text">
+              {item.desc}
+            </p>
           ))}
         </div>
-      </div>
-      <div className="lower">
-        <div className="icon-container">
-          <IconBox>
-            <FaShower />
-          </IconBox>
-        </div>
+        <IconContainer items={iconItems} />
+        <BigBtn text={btnText || "Boka Nu"} />
       </div>
     </div>
   );

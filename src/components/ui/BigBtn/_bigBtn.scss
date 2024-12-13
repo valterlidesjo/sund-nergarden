@@ -2,18 +2,19 @@
 @use "../../../styles/variables" as v;
 @use "../../../styles/global" as g;
 
-.btn-container{
+.big-btn-container{
     @include m.flex(row, center, center);
-    width: 100svw;
+    width: 100%;
     height: 7svh;
     button{
-        width: 65svw;
-        height: 8svh;
-        border-radius: 20px;
+        width: 100%;
+        height: 3.75rem;
+        border-radius: 16px;
         font-size: 2.2rem;
         font-weight: bold;
         color: v.$dark-b;
         background: v.$white;
-        @include m.border(5px, v.$light-b);
+        @include m.border(4px, v.$light-b);
+        @include m.flex(row, center, center);
     }
 }

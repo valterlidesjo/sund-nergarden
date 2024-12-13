@@ -36,11 +36,11 @@ const SlideShow = ({ images, interval = 3000, text }: SlideshowProps) => {
           alt={images[currentIndex].alt}
           className="slideshow-image"
         />
-        <p className="page-text">{text}</p>
       </div>
 
       {/* Indikatorer */}
       <div className="dots">
+        <p className="page-text">{text}</p>
         {images.map((_, index) => (
           <span
             key={index}
