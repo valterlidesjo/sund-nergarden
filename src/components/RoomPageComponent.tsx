@@ -3,6 +3,8 @@ import SlideShow from "./SlideShow";
 import sundCharkImage from "../assets/sund-chark.jpeg";
 import sundDrink from "../assets/sund-drink.jpg";
 import "./scss/_roomPageComponent.scss";
+import IconBox from "./ui/IconBox/IconBox";
+import { FaShower } from "react-icons/fa6";
 
 const RoomPageComponent = () => {
   const images = [
@@ -28,7 +30,11 @@ const RoomPageComponent = () => {
         </div>
       </div>
       <div className="lower">
-        <div className="icon-container"></div>
+        <div className="icon-container">
+          <IconBox>
+            <FaShower />
+          </IconBox>
+        </div>
       </div>
     </div>
   );
