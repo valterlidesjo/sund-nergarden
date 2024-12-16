@@ -9,8 +9,6 @@ import RoomPageComponent from "../components/RoomPageComponent";
 import Test from "./Test";
 import TextSection from "../components/TextSection";
 
-
-
 const HomePage = () => {
   const handleImageClick = (id: string) => {
     alert(`Image clicked: ${id}`);
@@ -30,14 +28,14 @@ const HomePage = () => {
         </div>
       </div>
       <div className="homepage-container">
-      <TextSection 
-      text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
+        <TextSection
+          text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
             Våra elva rum fördelat på sju dubbelrum och fyra juniorsviter har
             varierande utsikt och planlösning men är inredda med samma
             faciliteter och med en gemensam känsla. Under sommarmånaderna
             erbjuder vi också tre populära Glamping."
-      textAlign="center"
-       />
+          textAlign="center"
+        />
         <div className="homepage-wine-container">
           <img src={sundVinImage} alt="Vinflaskor" />
         </div>
@@ -47,15 +45,20 @@ const HomePage = () => {
           fontWeight="bold"
         />
         <TextSection
-        text="Tre rätters meny och annat trevligt ingår alltid, Barnfritt hotell,
+          text="Tre rätters meny och annat trevligt ingår alltid, Barnfritt hotell,
             Bastu och bad beroende på säsong, Laddning finns för elbil, Hunden
             får följa med."
-        textAlign="center"
+          textAlign="center"
         />
-        <TextSection text="Rum, Mat & Mera" fontSize="2rem" textAlign="center"/>
-        <TextSection text="Allt detta ingår när du bokar rum eller glamping med oss!" textAlign="center" />
-
-        
+        <TextSection
+          text="Rum, Mat & Mera"
+          fontSize="2rem"
+          textAlign="center"
+        />
+        <TextSection
+          text="Allt detta ingår när du bokar rum eller glamping med oss!"
+          textAlign="center"
+        />
       </div>
       <HorizontalScroll images={images} />
       <div className="homepage-container">
@@ -65,8 +68,12 @@ const HomePage = () => {
             <p>bokningskalender</p>
             <SmaBtn text="Bokningskalender" click={goToBooking} />
           </div>
-      </div>
-      <TextSection text=" Vi älskar mat & dryck som serveras i en vacker och trevlig miljö, så varmt välkommen till oss!" textAlign="center" fontSize="1.6rem"/> 
+        </div>
+        <TextSection
+          text=" Vi älskar mat & dryck som serveras i en vacker och trevlig miljö, så varmt välkommen till oss!"
+          textAlign="center"
+          fontSize="1.6rem"
+        />
       </div>
     </>
   );
