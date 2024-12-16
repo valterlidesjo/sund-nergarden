@@ -1,12 +1,13 @@
 import { useState } from "react";
 import "./_NavHamburger.scss";
 
-const NavHamburger = () => {
-  const [isOpen, setIsOpen] = useState(false);
+interface NavHamburgerProps {
+  isOpen: boolean;
+  toggleMenu: () => void;
+}
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+const NavHamburger: React.FC<NavHamburgerProps> = ({isOpen, toggleMenu}) => {
+  
   return (
     <nav className={`hamburger-nav ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
         <span></span>

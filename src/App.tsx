@@ -12,13 +12,11 @@ function App() {
     <>
       <BrowserRouter>
         <NavMobile />
-        <div>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/rummen" element={<Rummen />} />
-            <Route path="/matdryck" element={<MatDryck />} />
+            <Route path="/mat-dryck" element={<MatDryck />} />
           </Routes>
-        </div>
       </BrowserRouter>
     </>
   );

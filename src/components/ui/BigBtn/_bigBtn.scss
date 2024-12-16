@@ -2,7 +2,7 @@
 @use "../../../styles/variables" as v;
 @use "../../../styles/global" as g;
 
-.btn-container{
+.big-btn-container{
     @include m.flex(row, center, center);
     width: 100svw;
     height: 7svh;

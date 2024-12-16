@@ -1,10 +1,11 @@
-import React from "react";
 import sundMatImage from "../assets/sund-mat.jpeg";
 import "./scss/_matDryck.scss";
 import MedBtn from "../components/ui/MedBtn/MedBtn";
-import sundVinImage from "../assets/sund-vin.jpeg";
+import BigBtn from "../components/ui/BigBtn/BigBtn";
+import TextSection from "../components/TextSection";
 
-const wineLink = "https://starwinelist.com/storage/wine_lists/371/sund-nergarden.pdf?1624028874";
+const wineLink =
+  "https://starwinelist.com/storage/wine_lists/371/sund-nergarden.pdf?1624028874";
 
 const MatDryck = () => {
   return (
@@ -16,36 +17,40 @@ const MatDryck = () => {
             <p>Mat & Dryck</p>
           </div>
         </div>
-        <div className="mat-text-container">
-          <p>
-            Vi serverar en trerättersmeny gjord i största möjliga mån på svenska
+        <TextSection
+          text="Vi serverar en trerättersmeny gjord i största möjliga mån på svenska
             råvaror och från Sörmländska gårdar som följer de vackra årstiderna.
             Önskar ni utöka till en femrättersmeny ordnar vi gärna det, låt oss
             veta senast dagen innan. Det går även bra att äta lunch hos oss, men
             tänk då på att förboka. Restaurangen har öppet för lunch och middag
-            de dagar som hotellet är öppet.
-          </p>
-        </div>
+            de dagar som hotellet är öppet."
+          fontSize="1.2rem"
+        />
       </div>
       <MedBtn goToRoute="/" text="Vår trerättersmeny" />
       <div className="spacing-container"></div>
       <MedBtn goToRoute="/" text="Vår femrättersmeny" />
       <div className="mat-container">
-        <div className="mat-age-limit-container">
-          <p>Hotellet och restaurangen har en åldersgräns på 18år.</p>
-        </div>
+        <TextSection
+          text="Hotellet och restaurangen har en åldersgräns på 18år."
+          textAlign="center"
+          fontWeight="bold"
+        />
         <div className="dryck-container">
-          <div className="dryck-header-container">Till middagen</div>
-          <div className="dryck-text-container">
-            <p>
-            Har ni möjlighet att välja något utav de dryckespaket som vår
-            sommelier Johan Asknergård noggrant valt ut, eller så väljer ni
-            fritt från vår dryckesmeny. Vår vinlista består huvudsakligen av
-            småskaliga familjeägda producenter som arbetar enligt ett ekologiskt
-            och biodynamiskt tänk. Vi har ca 100 olika viner varav de flesta
-            serveras på glas.
-            </p>
-          </div>
+          <TextSection
+            text="Till middagen"
+            textAlign="center"
+            fontSize="2rem"
+            margin="0 1.5rem"
+          />
+          <TextSection
+          text="Har ni möjlighet att välja något utav de dryckespaket som vår
+              sommelier Johan Asknergård noggrant valt ut, eller så väljer ni
+              fritt från vår dryckesmeny. Vår vinlista består huvudsakligen av
+              småskaliga familjeägda producenter som arbetar enligt ett
+              ekologiskt och biodynamiskt tänk. Vi har ca 100 olika viner varav
+              de flesta serveras på glas."
+        />
         </div>
         <MedBtn goToRoute={wineLink} text="Våra dryckespaket" />
       </div>
