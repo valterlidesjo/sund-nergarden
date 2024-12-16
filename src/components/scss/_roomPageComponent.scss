@@ -5,16 +5,30 @@
 
 .container {
     background-color: v.$primary-col;
-    .upper {
+
+    .content {
+        @include m.flex(column,space-between,center);
+        padding: 2rem;
+
         .description-container {
-            padding: 2rem;
             .description-text {
                 color: v.$secondary-col;
+                font-size: 1.25rem;
             }
         }
-    }
 
-    .lower {
+        .icon-container {
+            @include m.flex(row,space-between,center);
+            width: 100%;
+            margin: 2rem 0 2rem 0;
 
+            .i {
+                font-size: 1.5rem;
+            }
+
+            .kvm-text {
+                text-align: center;
+            }
+        }
     }
 }

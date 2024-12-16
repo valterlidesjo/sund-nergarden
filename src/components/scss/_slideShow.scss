@@ -12,42 +12,37 @@
             height: 20rem;
         }
 
-        .page-text {
-            margin-top: -6rem;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%); 
-            z-index: 100;
-
-            font-size: 2rem;
-            color: white;
-        }
     }
 
     .dots {
         text-align: center;
-        margin-top: -30px;
+        margin-top: 80px;
         position: absolute;
-        top: 50%;
+        top: 25%;
         left: 50%;
-        transform: translate(-50%, -50%); 
+        transform: translate(-50%, -50%);
         z-index: 100;
       
+        .page-text {
+          margin-bottom: 1.75rem; /* Skapa avstånd mellan texten och punkterna */
+          font-size: 2.5rem;
+          color: white;
+        }
+      
         .dot {
-            display: inline-block;
-            width: 0.75rem;
-            height: 0.75rem;
-            margin: 0 5px;
-            background-color: lightgray;
-            border-radius: 50%;
-            cursor: pointer;
-          }
-          
-          .dot.active {
-            background-color: white;
-            width: 0.8rem;
-            height: 0.8rem;
-          }
-    }  
+          display: inline-block;
+          width: 0.75rem;
+          height: 0.75rem;
+          margin: 0 5px;
+          background-color: lightgray;
+          border-radius: 50%;
+          cursor: pointer;
+        }
+      
+        .dot.active {
+          background-color: white;
+          width: 0.8rem;
+          height: 0.8rem;
+        }
+      }
 }

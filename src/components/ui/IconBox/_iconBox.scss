@@ -4,15 +4,15 @@
 
 .icon-box{
     @include m.flex(row, center, center);
-    @include m.border(1px, v.$black);
+    @include m.border(1px, v.$secondary-col);
     width: 60px;
     height: 60px;
     border-radius: 10px;
-    // color: v.$white;
+    color: v.$white;
 
     i{
         font-size: 2.5rem;
-        // color: v.$white;
+        color: v.$white;
     }
 };
 
