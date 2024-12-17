@@ -1,0 +1,50 @@
+$img: "../../assets/sund-desert4-modified.jpg";
+@use "../../styles/global" as g; 
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+
+.container {
+    background-image: url(#{$img});
+    background-size: cover; /* Gör att bilden täcker hela ytan */
+    background-position: center; /* Centrerar bilden */
+    background-repeat: no-repeat; /* Förhindrar upprepning */
+    height: 100vh;
+    padding: 2rem;
+
+    .content-container {
+        background-color: v.$primary-col;
+        opacity: 0.8;
+        height: 90%; /* Behållarens höjd */
+        width: 100%;
+        overflow: auto; /* Gör innehållet scrollbart */
+        margin-top: 3rem;
+
+        p {
+            color: white;
+            text-align: center;
+        }
+
+        .sticky-header {
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 10; /* För att headern ligger ovanpå */
+            background-color: v.$primary-col; /* Matchar bakgrundsfärgen */
+            opacity: 1; /* För att förstärka "försvinnandet" */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* För en subtil effekt */
+            .text-header {
+                text-align: center;
+                opacity: 1;
+                font-size: 1.5rem;
+                color: v.$white;
+            }
+
+            .due-date {
+                text-align: center;
+                font-size: 0.725rem;
+                opacity: 0.75;
+                color: v.$white;
+            }
+        }
+    }
+}

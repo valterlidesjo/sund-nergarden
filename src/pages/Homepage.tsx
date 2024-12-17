@@ -30,6 +30,7 @@ const HomePage = () => {
       </div>
       <div className="homepage-container">
         <TextSection
+          
           text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
             Våra elva rum fördelat på sju dubbelrum och fyra juniorsviter har
             varierande utsikt och planlösning men är inredda med samma
@@ -76,6 +77,11 @@ const HomePage = () => {
             <SmaBtn text="Bokningskalender" click={goToBooking} />
           </div>
         </div>
+        <TextSection
+          text=" Vi älskar mat & dryck som serveras i en vacker och trevlig miljö, så varmt välkommen till oss!"
+          textAlign="center"
+          fontSize="1.6rem"
+        />
         <TextSection
           text=" Vi älskar mat & dryck som serveras i en vacker och trevlig miljö, så varmt välkommen till oss!"
           textAlign="center"
