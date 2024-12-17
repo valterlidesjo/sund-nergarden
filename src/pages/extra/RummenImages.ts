@@ -4,7 +4,7 @@ import sundRumImage3 from "../../assets/sund-rum3.jpeg";
 
 
 export const roomImages = [
-    { id: 1, src: sundRumImage1, alt: "Image 1", text: "SJÖLUNDA" },
-    { id: 2, src: sundRumImage2, alt: "Image 2", text: "HÄST HAGEN" },
-    { id: 3, src: sundRumImage3, alt: "Image 3", text: "BLOM BACKA" },
+    { id: 1, src: sundRumImage1, alt: "sjolunda", text: "SJÖLUNDA" },
+    { id: 2, src: sundRumImage2, alt: "hasthagen", text: "HÄST HAGEN" },
+    { id: 3, src: sundRumImage3, alt: "blombacka", text: "BLOM BACKA" },
   ];

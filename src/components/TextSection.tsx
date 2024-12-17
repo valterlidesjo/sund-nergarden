@@ -7,6 +7,7 @@ interface TextSectionProps {
   fontSize?: string; // Storlek för text
   fontWeight?: string;
   margin?:string;
+  padding?:string;
 }
 
 const TextSection: React.FC<TextSectionProps> = ({
@@ -14,16 +15,20 @@ const TextSection: React.FC<TextSectionProps> = ({
   textAlign = "left",
   fontSize = "1.2rem",
   fontWeight = "100",
-  margin = "1rem 0",
+  margin = "1rem",
+  padding = "0 1rem",
 }) => {
+  const containerStyle: React.CSSProperties = {
+    margin,
+    padding,
+  };
   const textStyle: React.CSSProperties = {
     textAlign,
     fontSize,
     fontWeight,
-    margin,
   };
   return (
-    <div className="text-section-container" style={textStyle}>
+    <div className="text-section-container" style={containerStyle}>
       <p style={textStyle}>{text}</p>
     </div>
   );

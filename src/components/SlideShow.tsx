@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./scss/_slideShow.scss";
 
 type SlideshowProps = {
-  images: { id: string; src: string; alt: string }[];
+  images: { id: number; src: string; alt: string }[];
   interval?: number; // Tid i millisekunder mellan bilder
   text: string;
 };

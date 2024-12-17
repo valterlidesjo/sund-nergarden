@@ -6,8 +6,9 @@
 .slideshow-container {
 
     .image-wrapper {
-
+        
         .slideshow-image {
+          border-bottom: 2px solid v.$white;
             width: 100%;
             height: 20rem;
         }
@@ -16,7 +17,6 @@
 
     .dots {
         text-align: center;
-        margin-top: 80px;
         position: absolute;
         top: 25%;
         left: 50%;

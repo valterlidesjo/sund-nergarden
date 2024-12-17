@@ -8,8 +8,7 @@ import { images } from "./extra/HomepageImages";
 import RoomPageComponent from "../components/RoomPageComponent";
 import Test from "./Test";
 import TextSection from "../components/TextSection";
-
-
+import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 
 const HomePage = () => {
   const handleImageClick = (id: string) => {
@@ -30,32 +29,43 @@ const HomePage = () => {
         </div>
       </div>
       <div className="homepage-container">
-      <TextSection 
-      text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
+        <TextSection
+          text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
             Våra elva rum fördelat på sju dubbelrum och fyra juniorsviter har
             varierande utsikt och planlösning men är inredda med samma
             faciliteter och med en gemensam känsla. Under sommarmånaderna
             erbjuder vi också tre populära Glamping."
-      textAlign="center"
-       />
-        <div className="homepage-wine-container">
-          <img src={sundVinImage} alt="Vinflaskor" />
-        </div>
+          textAlign="center"
+          margin="2rem 1rem"
+        />
+        <ParallaxBanner
+          layers={[{ image: sundVinImage, speed: -15 }]}
+          className="homepage-wine-container"
+        />
         <TextSection
           text="Hotellet och restaurangen har en åldersgräns på 18år."
           textAlign="center"
           fontWeight="bold"
+          margin="2rem 1rem"
         />
         <TextSection
-        text="Tre rätters meny och annat trevligt ingår alltid, Barnfritt hotell,
+          text="Tre rätters meny och annat trevligt ingår alltid, Barnfritt hotell,
             Bastu och bad beroende på säsong, Laddning finns för elbil, Hunden
             får följa med."
-        textAlign="center"
+          textAlign="center"
+          margin="0"
         />
-        <TextSection text="Rum, Mat & Mera" fontSize="2rem" textAlign="center"/>
-        <TextSection text="Allt detta ingår när du bokar rum eller glamping med oss!" textAlign="center" />
-
-        
+        <TextSection
+          text="Rum, Mat & Mera"
+          fontSize="2rem"
+          textAlign="center"
+          margin="2rem 0 0 0"
+        />
+        <TextSection
+          text="Allt detta ingår när du bokar rum eller glamping med oss!"
+          textAlign="center"
+          margin="0 0 0.5rem 0"
+        />
       </div>
       <HorizontalScroll images={images} />
       <div className="homepage-container">
@@ -65,8 +75,12 @@ const HomePage = () => {
             <p>bokningskalender</p>
             <SmaBtn text="Bokningskalender" click={goToBooking} />
           </div>
-      </div>
-      <TextSection text=" Vi älskar mat & dryck som serveras i en vacker och trevlig miljö, så varmt välkommen till oss!" textAlign="center" fontSize="1.6rem"/> 
+        </div>
+        <TextSection
+          text=" Vi älskar mat & dryck som serveras i en vacker och trevlig miljö, så varmt välkommen till oss!"
+          textAlign="center"
+          fontSize="1.6rem"
+        />
       </div>
     </>
   );

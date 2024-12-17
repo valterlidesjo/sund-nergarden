@@ -3,7 +3,7 @@ import "./scss/_horizontalScroll.scss";
 
 type HorizontalScrollProps = {
   images: { id: number; src: string; alt: string; text: string }[];
-  onImageClick?: (id: number) => void;
+  onImageClick?: (image: { id: number; src: string; alt: string; text: string }) => void;
 };
 
 const HorizontalScroll = ({ images, onImageClick }: HorizontalScrollProps) => {
@@ -15,9 +15,9 @@ const HorizontalScroll = ({ images, onImageClick }: HorizontalScrollProps) => {
             src={image.src}
             alt={image.alt}
             className="horizontal-img"
-            onClick={() => onImageClick?.(image.id)}
+            onClick={() => onImageClick?.(image)}
           />
-          <p className="overlay-text">{image.text}</p>
+          <p className="overlay-text" onClick={() => onImageClick?.(image)}>{image.text}</p>
         </div>
       ))}
     </div>

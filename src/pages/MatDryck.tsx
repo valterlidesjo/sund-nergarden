@@ -25,6 +25,7 @@ const MatDryck = () => {
             tänk då på att förboka. Restaurangen har öppet för lunch och middag
             de dagar som hotellet är öppet."
           fontSize="1.2rem"
+        
         />
       </div>
       <MedBtn goToRoute="/" text="Vår trerättersmeny" />
@@ -35,13 +36,14 @@ const MatDryck = () => {
           text="Hotellet och restaurangen har en åldersgräns på 18år."
           textAlign="center"
           fontWeight="bold"
+          margin="2rem 1rem"
         />
         <div className="dryck-container">
           <TextSection
             text="Till middagen"
             textAlign="center"
             fontSize="2rem"
-            margin="0 1.5rem"
+            margin="0 0 1rem 0"
           />
           <TextSection
           text="Har ni möjlighet att välja något utav de dryckespaket som vår
@@ -50,6 +52,8 @@ const MatDryck = () => {
               småskaliga familjeägda producenter som arbetar enligt ett
               ekologiskt och biodynamiskt tänk. Vi har ca 100 olika viner varav
               de flesta serveras på glas."
+              margin="0 0 2rem 0"
+              
         />
         </div>
         <MedBtn goToRoute={wineLink} text="Våra dryckespaket" />

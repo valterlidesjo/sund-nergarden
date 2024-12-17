@@ -7,13 +7,13 @@ import BigBtn from "./ui/BigBtn/BigBtn";
 import IconContainer from "./IconContainer";
 
 interface Image {
-  id: string;
+  id: number;
   src: string;
   alt: string;
 }
 
 interface Description {
-  id: string;
+  id: number;
   desc: string;
   kvm: string;
 }
@@ -56,7 +56,7 @@ const RoomPageComponent = ({
             </p>
           ))}
         </div>
-        <IconContainer items={iconItems} />
+          <IconContainer items={iconItems} />
         <BigBtn text={btnText || "Boka Nu"} />
       </div>
     </div>
