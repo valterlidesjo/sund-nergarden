@@ -3,12 +3,13 @@ import "./_bigBtn.scss";
 
 interface BigBtnProps {
   text: string;
+  onClick: () => void;
 }
 
-const BigBtn: React.FC<BigBtnProps> = ({ text }) => {
+const BigBtn: React.FC<BigBtnProps> = ({ text, onClick }) => {
   return (
     <div className="big-btn-container">
-      <button>{text}</button>
+      <button onClick={onClick}>{text}</button>
     </div>
   );
 };

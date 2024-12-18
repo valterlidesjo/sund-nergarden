@@ -1,4 +1,3 @@
-import React from "react";
 import SlideShow from "./SlideShow";
 import "./scss/_roomPageComponent.scss";
 import { FaShower, FaBed } from "react-icons/fa6";
@@ -42,6 +41,11 @@ const RoomPageComponent = ({
     { icon: <p className="kvm-text">{description[0].kvm}</p> },
   ];
 
+  const goToBooking = () => {
+    window.location.href =
+      "https://online.bookvisit.com/package?channelId=918cee3d-0141-4e51-b886-ac9fcf09653c";
+  };
+
   return (
     <div className="container">
       <div className="slideshow">
@@ -56,8 +60,8 @@ const RoomPageComponent = ({
             </p>
           ))}
         </div>
-          <IconContainer items={iconItems} />
-        <BigBtn text={btnText || "Boka Nu"} />
+        <IconContainer items={iconItems} />
+        <BigBtn text={btnText || "Boka Nu"} onClick={goToBooking} />
       </div>
     </div>
   );

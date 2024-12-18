@@ -56,6 +56,9 @@ const Rummen = () => {
       <HorizontalScroll images={glampingImages} onImageClick={(image) => goToRoom(image.alt)}/>
       <div className="rummen-container">
         <TextSection text="Max 2 personer - Glampingsäsong: 1/6 -24 t.o.m 31/8 -24." fontSize="1rem" padding="0 2rem"/>
+        <TextSection text="Tips! Eventuella avbokningar läggs även ut på vår Instagram Story @Sundnergarden, så följ oss gärna där."  padding="0 2rem" textAlign="center"/>
+        <TextSection text="Vill du boka din vistelse med ett presentkort, kontakta oss så hjälper vi er!" fontSize="1rem" padding="0 2rem" textAlign="center"/>
+
       </div>
     </>
   );

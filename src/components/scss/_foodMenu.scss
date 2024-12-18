@@ -10,6 +10,20 @@ $img: "../../assets/sund-desert4-modified.jpg";
     background-repeat: no-repeat; /* Förhindrar upprepning */
     height: 100vh;
     padding: 2rem;
+    position: relative;
+    
+    .blur{
+        height: 80px;
+        width: 80px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.1); /* Vit färg med 80% opacitet */
+      backdrop-filter: blur(10px); /* Sudda bakgrunden */
+      -webkit-backdrop-filter: blur(10px); /* För Safari */
+      transition: background 0.3s ease, backdrop-filter 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
 
     .food-content-container {
         background-color: v.$primary-col;

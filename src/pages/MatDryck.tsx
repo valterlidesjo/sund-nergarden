@@ -1,9 +1,10 @@
 import sundMatImage from "../assets/sund-mat.jpeg";
 import "./scss/_matDryck.scss";
 import MedBtn from "../components/ui/MedBtn/MedBtn";
-import BigBtn from "../components/ui/BigBtn/BigBtn";
 import TextSection from "../components/TextSection";
-
+import HorizontalScroll from "../components/HorizontalScroll";
+import { MatDryckImages } from "./extra/MatDryckImages";
+ 
 const wineLink =
   "https://starwinelist.com/storage/wine_lists/371/sund-nergarden.pdf?1624028874";
 
@@ -12,7 +13,7 @@ const MatDryck = () => {
     <>
       <div className="mat-container">
         <div className="mat-image-container">
-          <img src={sundMatImage} alt="Mat bild" />
+          <img className="mat-image" src={sundMatImage} alt="Mat bild" />
           <div className="mat-image-text-container">
             <p>Mat & Dryck</p>
           </div>
@@ -58,6 +59,7 @@ const MatDryck = () => {
         </div>
         <MedBtn goToRoute={wineLink} text="Våra dryckespaket" />
       </div>
+        <HorizontalScroll images={MatDryckImages} imageWidth="17.5rem" imageHeight="20rem"/>
     </>
   );
 };

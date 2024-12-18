@@ -1,8 +1,5 @@
 import { ParallaxProvider } from "react-scroll-parallax";
 import NavMobile from "./components/NavMobile";
-import RoomPageComponent from "./components/RoomPageComponent";
-import NavHamburger from "./components/ui/NavHamburger/NavHamburger";
-import SmaBtn from "./components/ui/SmaBtn/SmaBtn";
 import HomePage from "./pages/Homepage";
 import MatDryck from "./pages/MatDryck";
 import GlampBerget from "./pages/rooms/GlampBerget";
