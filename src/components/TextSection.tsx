@@ -19,11 +19,11 @@ const TextSection: React.FC<TextSectionProps> = ({
   padding = "0 1rem",
 }) => {
   const containerStyle: React.CSSProperties = {
+    textAlign,
     margin,
     padding,
   };
   const textStyle: React.CSSProperties = {
-    textAlign,
     fontSize,
     fontWeight,
   };

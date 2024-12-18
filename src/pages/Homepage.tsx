@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HorizontalScroll from "../components/HorizontalScroll";
 import sundStartImage from "../assets/sund-hus1.jpeg";
 import sundVinImage from "../assets/sund-vin.jpeg";
@@ -9,8 +9,12 @@ import RoomPageComponent from "../components/RoomPageComponent";
 import Test from "./Test";
 import TextSection from "../components/TextSection";
 import { Parallax, ParallaxBanner } from "react-scroll-parallax";
+import FoodMenu from "../components/FoodMenu";
+import Contact from "../components/Contact";
+import { useLocation } from "react-router-dom";
 
 const HomePage = () => {
+  const location = useLocation();
   const handleImageClick = (id: string) => {
     alert(`Image clicked: ${id}`);
   };
@@ -18,6 +22,22 @@ const HomePage = () => {
     window.location.href =
       "https://online.bookvisit.com/package?channelId=918cee3d-0141-4e51-b886-ac9fcf09653c";
   };
+
+  useEffect(() => {
+    if (location.state?.targetId) {
+      const targetElement = document.getElementById(location.state.targetId);
+      if (targetElement) {
+        const offset = -80; // Justera scrollpositionen
+        const elementPosition = targetElement.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY + offset;
+  
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, [location.state]);
 
   return (
     <>
@@ -82,12 +102,20 @@ const HomePage = () => {
           textAlign="center"
           fontSize="1.6rem"
         />
+         
         <TextSection
           text=" Vi älskar mat & dryck som serveras i en vacker och trevlig miljö, så varmt välkommen till oss!"
           textAlign="center"
           fontSize="1.6rem"
         />
       </div>
+      <Contact header="KONTAKT" facebook="Sund Nergården" instagram="@sundnergarden" youtube="@sundnergarden9875">
+        <TextSection text="015 670 00 70" margin="0 0 1.5rem 0" padding="2rem 0 0 0"/>
+        <TextSection text="info@sundnergarden.se" margin="1.5rem 0"/>
+        <TextSection text="Sund Nergården" margin="1.5rem 0"/>
+        <TextSection text="619 94 Vagnhärad" margin="1.5rem 0"/>
+        <TextSection text="Sverige" margin="1.5rem 0"/>
+      </Contact>
     </>
   );
 };

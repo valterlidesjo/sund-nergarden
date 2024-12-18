@@ -28,9 +28,9 @@ const MatDryck = () => {
         
         />
       </div>
-      <MedBtn goToRoute="/" text="Vår trerättersmeny" />
+      <MedBtn goToRoute="/mat-dryck/tre" text="Vår trerättersmeny" />
       <div className="spacing-container"></div>
-      <MedBtn goToRoute="/" text="Vår femrättersmeny" />
+      <MedBtn goToRoute="/mat-dryck/fem" text="Vår femrättersmeny" />
       <div className="mat-container">
         <TextSection
           text="Hotellet och restaurangen har en åldersgräns på 18år."

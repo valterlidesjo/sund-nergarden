@@ -3,7 +3,7 @@ $img: "../../assets/sund-desert4-modified.jpg";
 @use "../../styles/mixins" as m;
 @use "../../styles/variables" as v;
 
-.container {
+.food-container {
     background-image: url(#{$img});
     background-size: cover; /* Gör att bilden täcker hela ytan */
     background-position: center; /* Centrerar bilden */
@@ -11,9 +11,9 @@ $img: "../../assets/sund-desert4-modified.jpg";
     height: 100vh;
     padding: 2rem;
 
-    .content-container {
+    .food-content-container {
         background-color: v.$primary-col;
-        opacity: 0.8;
+        opacity: 0.9;
         height: 90%; /* Behållarens höjd */
         width: 100%;
         overflow: auto; /* Gör innehållet scrollbart */
@@ -35,7 +35,8 @@ $img: "../../assets/sund-desert4-modified.jpg";
             .text-header {
                 text-align: center;
                 opacity: 1;
-                font-size: 1.5rem;
+                font-size: 2rem;
+                
                 color: v.$white;
             }
 

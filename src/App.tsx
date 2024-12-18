@@ -13,6 +13,9 @@ import RoomHasthagen from "./pages/rooms/RoomHasthagen";
 import RoomSjolunda from "./pages/rooms/RoomSjolunda";
 import Rummen from "./pages/Rummen";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ThreeCourseMenu from "./pages/ThreeCourseMenu";
+import FiveCourseMenu from "./pages/FiveCourseMenu";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -30,7 +33,10 @@ function App() {
             <Route path="/rummen/ovre" element={<GlampOvre/>} /> 
             <Route path="/rummen/nedre" element={<GlampNedre/>} /> 
             <Route path="/rummen/berget" element={<GlampBerget/>} /> 
+            <Route path="/mat-dryck/tre" element={<ThreeCourseMenu/>}/>
+            <Route path="/mat-dryck/fem" element={<FiveCourseMenu/>}/>
           </Routes>
+          <Footer/>
       </BrowserRouter>
       </ParallaxProvider>
     </>

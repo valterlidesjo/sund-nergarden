@@ -9,8 +9,8 @@ interface FoodMenuProps {
 
 const FoodMenu: React.FC<FoodMenuProps> = ({ header, expires, children }) => {
   return (
-    <div className="container">
-      <div className="content-container">
+    <div className="food-container">
+      <div className="food-content-container">
         <div className="sticky-header">
           <p className="text-header">{header}</p>
           <p className="due-date">{expires}</p>

@@ -2,10 +2,10 @@
 @use "../../styles/variables" as v;
 @use "../../styles/global" as g;
 
-.text-section-container{
+.text-section-separated-container{
     width: 100%;
     height: auto;
-    @include m.flex(row, center, center);
+    @include m.flex(center, space-between);
     p{
         color: v.$white;
         line-height: 1.6;
