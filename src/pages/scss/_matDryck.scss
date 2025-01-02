@@ -2,38 +2,66 @@
 @use "../../styles/variables" as v;
 @use "../../styles/global" as g;
 
-.mat-container {
-  background: v.$primary-col;
-  @include m.flex(column, center, center);
+.matdryck-image-container {
   width: 100%;
-  margin-bottom: 1rem;
-  .mat-image-container {
-    position: relative;
-
-    .mat-image {
-      height: 45svh;
-      width: 100svw;
-      object-fit: cover;
-      object-position: right center;
-      border-bottom: 2px solid v.$white;
-    }
-    .mat-image-text-container {
-      position: absolute;
-      top: 73%;
-      left: 40%;
+  height: 100svh;
+  overflow: hidden;
+  @include m.flex(row, center, center);
+  z-index: 1;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.8); 
+  }
+  .matdryck-start-text-container {
+    position: absolute;
+      top: 30%;
+      left: 50%;
       transform: translateX(-50%);
       text-align: center;
-      width: 100%;
-      background: transparent;
+      p{
+          font-size: 4rem;
+          font-family: "Satisfy", serif;
+          color: white;
 
-      p {
-        font-size: 2.5rem;
-        color: v.$white;
       }
-    }
   }
 }
-.spacing-container {
-  height: 2svh;
+
+.mat-light-container{
+  background: v.$secondary-col;
+  @include m.flex(column);
+  .mat-wine-container{
+    width: 100%;
+    height: 30svh;
+    overflow: hidden;
+    margin: 3rem 0;
+    
+    img {
+        height: 30svh;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .sommelier-image-container{
+      height: auto;
+      width: 100%;
+      @include m.flex(row);
+      background-color: v.$secondary-col;
+      .sommelier-image{
+        margin: 1rem 0 3rem 0;
+        width: 330px;
+        height: 440px;
+      }
+    }
+}
+
+.mat-container {
+  background: v.$primary-col;
+  @include m.flex(column);
+  width: 100%;
+  margin-bottom: 1rem;
+  
 }
 

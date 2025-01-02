@@ -76,7 +76,7 @@ const NavMobile = () => {
       <div className="nav-logo-container"></div>
       <div className={`toggle-nav-header ${isScrolled ? "scrolled" : ""}`}>
         <div className="toggle-nav-container" onClick={toggleNav}>
-          <NavHamburger isOpen={isNavActive} toggleMenu={toggleNav} />
+          <NavHamburger isOpen={isNavActive} toggleMenu={toggleNav}/>
         </div>
       </div>
 

@@ -17,6 +17,11 @@
     transition: all 0.3s ease-in-out;
     position: absolute;
   }
+  &.scrolled {
+    span {
+      background-color: white; // Färg när scrolled är aktiv
+    }
+  }
   &.open span:nth-child(1) {
     transform: rotate(45deg) translateY(10px) translateX(15px);
   }

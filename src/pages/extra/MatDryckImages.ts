@@ -16,19 +16,19 @@ import sundVin1 from "../../assets/sund-vin.jpeg";
 
 
 export const MatDryckImages = [
-    { id: 8, src: sundMat2, alt: "Image 8", text: ""},
-    { id: 7, src: sundVin3, alt: "Image 7", text: ""},
-    { id: 4, src: sundOlives, alt: "Image 4", text: ""},
-    { id: 1, src: sundDesert1, alt: "Image 1", text: ""},
-    { id: 2, src: sundVinMat, alt: "Image 2", text: ""},
-    { id: 3, src: sundDesert2, alt: "Image 3", text: ""},
-    { id: 5, src: sundVegetables, alt: "Image 5", text: ""},
-    { id: 6, src: sundDesert3, alt: "Image 6", text: ""},
-    { id: 9, src: sundDesert4, alt: "Image 9", text: ""},
-    { id: 10, src: sundVin1, alt: "Image 10", text: ""},
-    { id: 11, src: sundMat1, alt: "Image 11", text: ""},
-    { id: 13, src: sundVin2, alt: "Image 13", text: ""},
-    { id: 12, src: sundDesert5, alt: "Image 12", text: ""},
-    { id: 14, src: sundVin4, alt: "Image 14", text: ""},
+    { id: 8, src: sundMat2, alt: "Image 8", text: "", roomText: ""},
+    { id: 7, src: sundVin3, alt: "Image 7", text: "", roomText: ""},
+    { id: 4, src: sundOlives, alt: "Image 4", text: "", roomText: ""},
+    { id: 1, src: sundDesert1, alt: "Image 1", text: "", roomText: ""},
+    { id: 2, src: sundVinMat, alt: "Image 2", text: "", roomText: ""},
+    { id: 3, src: sundDesert2, alt: "Image 3", text: "", roomText: ""},
+    { id: 5, src: sundVegetables, alt: "Image 5", text: "", roomText: ""},
+    { id: 6, src: sundDesert3, alt: "Image 6", text: "", roomText: ""},
+    { id: 9, src: sundDesert4, alt: "Image 9", text: "", roomText: ""},
+    { id: 10, src: sundVin1, alt: "Image 10", text: "", roomText: ""},
+    { id: 11, src: sundMat1, alt: "Image 11", text: "", roomText: ""},
+    { id: 13, src: sundVin2, alt: "Image 13", text: "", roomText: ""},
+    { id: 12, src: sundDesert5, alt: "Image 12", text: "", roomText: ""},
+    { id: 14, src: sundVin4, alt: "Image 14", text: "", roomText: ""},
 
 ];

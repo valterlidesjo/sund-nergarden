@@ -3,15 +3,24 @@ import "./_medBtn.scss";
 
 interface MedBtnProps {
   text: string;
-  goToRoute: string;
+  goToRoute: () => void;
+  height?: string;
+  width?: string;
+  fontSize?: string;
+  margin?: string;
 }
 
-const MedBtn: React.FC<MedBtnProps> = ({ text, goToRoute }) => {
+const MedBtn: React.FC<MedBtnProps> = ({ text, goToRoute, height = "4.5rem", width = "19rem", fontSize = "1.2rem", margin = "1rem", }) => {
+  const buttonStyle: React.CSSProperties = {
+      height, 
+      width, 
+      margin,
+      fontSize,
+    };
   return (
     <div className="med-btn-container">
-      <button>
+      <button onClick={goToRoute} style={buttonStyle}>
         {text}
-        <LinkArrow goToRoute={goToRoute}/>
         </button>
     </div>
   );

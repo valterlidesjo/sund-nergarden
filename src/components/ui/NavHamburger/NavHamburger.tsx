@@ -6,7 +6,7 @@ interface NavHamburgerProps {
   toggleMenu: () => void;
 }
 
-const NavHamburger: React.FC<NavHamburgerProps> = ({isOpen, toggleMenu}) => {
+const NavHamburger: React.FC<NavHamburgerProps> = ({isOpen, toggleMenu, }) => {
   
   return (
     <nav className={`hamburger-nav ${isOpen ? "open" : ""}`} onClick={toggleMenu}>

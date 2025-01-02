@@ -5,16 +5,13 @@
 .med-btn-container{
     @include m.flex(row, center, center);
     width: 100svw;
-    height: 5.5svh;
+    height: auto;
     button{
-        width: 65vw;
-        height: 5.5svh;
         border-radius: 15px;
-        font-size: 1.3rem;
         font-weight: bold;
-        color: v.$dark-b;
-        background: v.$white;
-        @include m.border(5px, v.$light-b);
+        color: v.$primary-col;
+        background: v.$secondary-col;
+        @include m.border(5px, v.$primary-col);
         @include m.flex(row, space-evenly, center);
     }
 }

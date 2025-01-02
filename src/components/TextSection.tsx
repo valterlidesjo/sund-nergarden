@@ -8,6 +8,7 @@ interface TextSectionProps {
   fontWeight?: string;
   margin?:string;
   padding?:string;
+  color?:string;
 }
 
 const TextSection: React.FC<TextSectionProps> = ({
@@ -17,6 +18,7 @@ const TextSection: React.FC<TextSectionProps> = ({
   fontWeight = "100",
   margin = "1rem",
   padding = "0 1rem",
+  color = "white",
 }) => {
   const containerStyle: React.CSSProperties = {
     textAlign,
@@ -26,6 +28,8 @@ const TextSection: React.FC<TextSectionProps> = ({
   const textStyle: React.CSSProperties = {
     fontSize,
     fontWeight,
+    color,
+    whiteSpace: 'pre-line'
   };
   return (
     <div className="text-section-container" style={containerStyle}>

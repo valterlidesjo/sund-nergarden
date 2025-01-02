@@ -7,7 +7,6 @@
     height: auto;
     @include m.flex(row, center, center);
     p{
-        color: v.$white;
         line-height: 1.6;
     }
 }

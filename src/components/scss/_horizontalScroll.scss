@@ -2,33 +2,54 @@
 @use "../../styles/variables" as v;
 @use "../../styles/global" as g;
 
-
 .scroll-container {
-    @include m.horScroll;
+  @include m.horScroll;
+  background-color: v.$primary-col;
+
+  .image-container {
+    position: relative;
     background-color: v.$primary-col;
-  
-    div {
-      position: relative; // Viktigt för att positionera overlay-text relativt till containern
-      background-color: v.$primary-col;
-  
-      img {
-        object-fit: cover;
-        height: 25rem;
-        width: 12.5rem;
-        border-radius: 2rem;
-        margin-right: 7px;
+    &.hover-enabled {
+
+      &:hover .horizontal-img {
+        filter: brightness(0.6); 
       }
-  
-      .overlay-text {
-        text-align: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); 
-        z-index: 80;
-        color: white; // Gör texten synlig ovanpå bilden
-        font-size: 2rem;
+      
+      &:hover .overlay-text {
+        opacity: 0; 
+      }
+      
+      &:hover .room-text {
+        opacity: 1;
       }
     }
+
+    .horizontal-img {
+      object-fit: cover;
+      height: 25rem;
+      width: 12.5rem;
+      border-radius: 2rem;
+      margin-right: 7px;
+    }
+    .overlay-text,
+    .room-text {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      transition: opacity 0.3s ease;
+    }
+
+    .overlay-text {
+      opacity: 1;
+      font-size: 2rem;
+    }
+
+    .room-text {
+      opacity: 0; 
+      font-size: 1rem;
+    }
   }
-  
+}
