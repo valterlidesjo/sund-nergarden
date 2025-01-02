@@ -9,6 +9,7 @@ interface TextSectionProps {
   margin?:string;
   padding?:string;
   color?:string;
+  fontFamily?: string;
 }
 
 const TextSection: React.FC<TextSectionProps> = ({
@@ -19,6 +20,7 @@ const TextSection: React.FC<TextSectionProps> = ({
   margin = "1rem",
   padding = "0 1rem",
   color = "white",
+  fontFamily = '"Kaisei Decol"',
 }) => {
   const containerStyle: React.CSSProperties = {
     textAlign,
@@ -29,7 +31,8 @@ const TextSection: React.FC<TextSectionProps> = ({
     fontSize,
     fontWeight,
     color,
-    whiteSpace: 'pre-line'
+    fontFamily,
+    whiteSpace: 'pre-line',
   };
   return (
     <div className="text-section-container" style={containerStyle}>

@@ -20,6 +20,12 @@ const GlampNedre = () => {
   return (
     <>
       <RoomPageComponent
+      roomHeader="Nedre - En Lyxig Naturupplevelse"
+      roomText="Nedre är inte bara ett tält - det är en upplevelse där naturens lugn möter exklusiv komfort. Med en golvyta på 19,6 m² och en noggrant utvald Queen size-säng, bjuder detta glampingtält in till en vistelse fylld av avkoppling och ro. 
+      Vakna upp till en spektakulär utsikt över trädgården och den glittrande sjön och låt dagen börja med en varm dusch på den privata uteplatsen under bar himmel. Här finns utrymme att andas, tänka och bara vara. Toaletter finns endast ett stenkast bort, cirka 50 meter från tältet, och varje detalj är noggrant planerad för att säkerställa både funktion och komfort. 
+      Nedre är en rökfri miljö, och vi välkomnar inte husdjur, för att bevara lugnet och renheten i denna natursköna tillflyktsort. Här möts äventyr och elegans i en perfekt symbios, och varje ögonblick är en påminnelse om att de bästa stunderna ofta finns där naturen får tala sitt eget språk."
+      imageText="NEDRE"
+      startImage={imagesNedre[0].src}
         images={imagesNedre}
         text="Nedre"
         description={descriptionNedre}

@@ -17,6 +17,7 @@ const Rummen = () => {
 
     const goToRoom = (alt: string) => {
       navigate(`/rummen/${alt}`);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
     
   return (
@@ -32,13 +33,9 @@ const Rummen = () => {
     </div>
       <div className="rummen-container">
         <TextSection text="Våra elva rum" textAlign="center" fontSize="2rem" margin="3rem 0 2rem 0"/>
-        <TextSection text="Med olika planlösning och personligt inredda. Sängarna kommer från
-            Carpe Diem och är bäddade med fluffiga täcken, kuddar och sänglinne
-            av ekologisk bomullssatin. Badrummen är utrustade med toalett och
-            dusch och produkter från Björk and Berries. I minibaren ingår kaffe,
-            te, alkoholfri dryck och snacks. Sommartid är samtliga rum utrustade
-            med AC. Tillhörande uteplats/balkong är rökfria. Önskar du att ta
-            med din hund vänligen kontakta oss innan du genomför din bokning." fontSize="1rem" padding="0 2rem" textAlign="center" margin="0 0 3rem 0"/>
+        <TextSection text="Med olika planlösning och personligt inredda. Sängarna kommer från Carpe Diem och är bäddade med fluffiga täcken, kuddar och sänglinne av ekologisk bomullssatin. Badrummen är utrustade med toalett och dusch och produkter från Björk and Berries. 
+        I minibaren ingår kaffe, te, alkoholfri dryck och snacks. Sommartid är samtliga rum utrustade med AC. Tillhörande uteplats/balkong är rökfria. 
+        Önskar du att ta med din hund vänligen kontakta oss innan du genomför din bokning." fontSize="1rem" padding="0 2rem" textAlign="center" margin="0 0 3rem 0"/>
       </div>
       <div className="rummen-light-container">
             <TextSection text="MALTES BOKNINGS COMPONENT" margin="4rem 0" color="black" />
@@ -54,16 +51,9 @@ const Rummen = () => {
           </div>
         </div> */}
         <TextSection text="Våra tre Glamping tält" fontSize="2rem" margin="3rem 0 2rem 0"/>
-        <TextSection text="Möblerade med riktiga sängar som är bäddade med fluffiga täcken och
-            kuddar med sänglinne av ekologisk bomullssatin. Inredningen är så
-            att du får känslan av att du bor i ett hotellrum fast du är mitt i
-            naturen. På den tillhörande terrassen finner du en sittgrupp samt en
-            varm & kall utomhusdusch med produkter från Björk and Berries.
-            Toaletter hittar du ca 50m bort från Glampingen. Tälten är av 100%
-            bomullscanvas som gör att tältens duk andas naturligt och är
-            vädertåliga mot regn och blåst och håller fukten borta. Det finns
-            ett elektriskt oljeelement för eventuellt kyliga nätter. Alla våra
-            glamping är rökfria och husdjur är ej tillåtna." fontSize="1rem" padding="0 2rem" textAlign="center" margin="0 0 3rem 0" />
+        <TextSection text="Möblerade med riktiga sängar som är bäddade med fluffiga täcken och kuddar med sänglinne av ekologisk bomullssatin. 
+        Inredningen är så att du får känslan av att du bor i ett hotellrum fast du är mitt i naturen. På den tillhörande terrassen finner du en sittgrupp samt en varm & kall utomhusdusch med produkter från Björk and Berries. Toaletter hittar du ca 50m bort från Glampingen. Tälten är av 100% bomullscanvas som gör att tältens duk andas naturligt och är vädertåliga mot regn och blåst och håller fukten borta. Det finns ett elektriskt oljeelement för eventuellt kyliga nätter. 
+        Alla våra glamping är rökfria och husdjur är ej tillåtna." fontSize="1rem" padding="0 1.5rem" textAlign="center" margin="0 0 3rem 0" />
         <TextSection text="Tälten" fontSize="2.5rem" margin="0" />
       </div>
       <HorizontalScroll images={glampingImages} onImageClick={(image) => goToRoom(image.alt)}/>

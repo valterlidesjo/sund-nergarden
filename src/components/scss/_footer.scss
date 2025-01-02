@@ -6,7 +6,7 @@
   height: 25%;
   width: 100%;
   background: v.$primary-col;
-  margin-top: 3rem;
+  padding: 3rem 0 0 0;
   .footer-text-container {
     @include m.flex(row, space-evenly, center);
     .left-text {

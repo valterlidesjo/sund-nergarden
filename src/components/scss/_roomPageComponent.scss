@@ -2,6 +2,35 @@
 @use "../../styles/variables" as v;
 @use "../../styles/global" as g;
 
+.room-image-container {
+    width: 100%;
+    height: 100svh;
+    overflow: hidden;
+    @include m.flex(row, center, center);
+    z-index: 1;
+    background-color: v.$secondary-col;
+    .room-start-image {
+      height: 85%;
+      width: 85%;
+      object-fit: cover;
+    }
+    .room-start-text-container {
+      position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+        p{
+            font-size: 4rem;
+            color: v.$white;
+  
+        }
+    }
+  }
+.room-page-light-container{
+    background-color: v.$secondary-col;
+    @include m.flex(column);
+}
 
 .container {
     background-color: v.$primary-col;
