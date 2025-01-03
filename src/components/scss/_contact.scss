@@ -1,0 +1,41 @@
+@use "../../styles/global" as g;
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+$img: "../../assets/sund-hus2.jpeg";
+
+.contact-container {
+  background-image: url(#{$img});
+  background-size: cover; /* Gör att bilden täcker hela ytan */
+  background-position: center; /* Centrerar bilden */
+  background-repeat: no-repeat; /* Förhindrar upprepning */
+  height: 90vh;
+  padding: 2rem;
+  .header-container {
+
+    .header {
+      text-align: center;
+      opacity: 1;
+      font-size: 2rem;
+      color: v.$white;
+    }
+  }
+  .content-container {
+    background-color: v.$primary-col;
+    opacity: 0.75;
+    height: 90%; /* Behållarens höjd */
+    width: 100%;
+    margin-top: 3rem;
+    @include m.flex(column, flex-start, center);
+    .facebook, .instagram, .youtube{
+        @include m.flex(row, space-evenly, center);
+        color: v.$white;
+        width: 80%;
+        font-size: 1.2rem;
+        margin: 1.5rem 0;
+        svg {
+            font-size: 2rem;
+            color: v.$white;
+        }
+    }
+  }
+}

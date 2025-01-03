@@ -1,0 +1,68 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-container {
+  position: fixed; /* Gör att navigationen ligger fast på toppen */
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  @include m.flex(column, center, center);
+  transition: height 0.5s ease, background-color 0.5s ease;
+  z-index: 99;
+
+  &.nav-active {
+    background-color: v.$secondary-col;
+    height: 100svh;
+  }
+
+  .toggle-nav-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    @include m.flex(row, flex-end, center);
+    z-index: 100;
+    &.scrolled {
+      background: rgba(255, 255, 255, 0.1); /* Vit färg med 80% opacitet */
+      backdrop-filter: blur(10px); /* Sudda bakgrunden */
+      -webkit-backdrop-filter: blur(10px); /* För Safari */
+      transition: background 0.3s ease, backdrop-filter 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      
+    }
+  }
+  .nav-active-container {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateY(0);
+    transition: transform 0.5s ease-in-out;
+    &.visible {
+      transform: translateY(0);
+    }
+    p {
+      margin: 4rem;
+      font-size: 2rem;
+      font-weight: bold;
+      opacity: 1;
+      animation: fadeIn 0.7s ease forwards;
+    }
+  }
+}

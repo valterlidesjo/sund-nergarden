@@ -1,0 +1,65 @@
+$img: "../../assets/sund-desert4-modified.jpg";
+@use "../../styles/global" as g; 
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+
+.food-container {
+    background-image: url(#{$img});
+    background-size: cover; /* Gör att bilden täcker hela ytan */
+    background-position: center; /* Centrerar bilden */
+    background-repeat: no-repeat; /* Förhindrar upprepning */
+    height: 100vh;
+    padding: 2rem;
+    position: relative;
+    
+    .blur{
+        height: 80px;
+        width: 80px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.1); /* Vit färg med 80% opacitet */
+      backdrop-filter: blur(10px); /* Sudda bakgrunden */
+      -webkit-backdrop-filter: blur(10px); /* För Safari */
+      transition: background 0.3s ease, backdrop-filter 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .food-content-container {
+        background-color: v.$primary-col;
+        opacity: 0.9;
+        height: 90%; /* Behållarens höjd */
+        width: 100%;
+        overflow: auto; /* Gör innehållet scrollbart */
+        margin-top: 3rem;
+
+        p {
+            color: white;
+            text-align: center;
+        }
+
+        .sticky-header {
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 10; /* För att headern ligger ovanpå */
+            background-color: v.$primary-col; /* Matchar bakgrundsfärgen */
+            opacity: 1; /* För att förstärka "försvinnandet" */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* För en subtil effekt */
+            .text-header {
+                text-align: center;
+                opacity: 1;
+                font-size: 2rem;
+                
+                color: v.$white;
+            }
+
+            .due-date {
+                text-align: center;
+                font-size: 0.725rem;
+                opacity: 0.75;
+                color: v.$white;
+            }
+        }
+    }
+}

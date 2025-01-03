@@ -1,0 +1,67 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+.matdryck-image-container {
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  @include m.flex(row, center, center);
+  z-index: 1;
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.8); 
+  }
+  .matdryck-start-text-container {
+    position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      p{
+          font-size: 4rem;
+          font-family: "Satisfy", serif;
+          color: white;
+
+      }
+  }
+}
+
+.mat-light-container{
+  background: v.$secondary-col;
+  @include m.flex(column);
+  .mat-wine-container{
+    width: 100%;
+    height: 30svh;
+    overflow: hidden;
+    margin: 3rem 0;
+    
+    img {
+        height: 30svh;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    .sommelier-image-container{
+      height: auto;
+      width: 100%;
+      @include m.flex(row);
+      background-color: v.$secondary-col;
+      .sommelier-image{
+        margin: 1rem 0 3rem 0;
+        width: 330px;
+        height: 440px;
+      }
+    }
+}
+
+.mat-container {
+  background: v.$primary-col;
+  @include m.flex(column);
+  width: 100%;
+  margin-bottom: 1rem;
+  
+}
+

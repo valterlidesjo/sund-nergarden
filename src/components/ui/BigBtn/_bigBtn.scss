@@ -1,0 +1,17 @@
+@use "../../../styles/mixins" as m;
+@use "../../../styles/variables" as v;
+@use "../../../styles/global" as g;
+
+.big-btn-container{
+    @include m.flex(row);
+    width: 100%;
+    height: auto;
+    button{
+        border-radius: 16px;
+        
+        color: v.$white;
+        background: v.$primary-col;
+        border: none;
+        @include m.flex(row);
+    }
+}

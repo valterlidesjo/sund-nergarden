@@ -1,0 +1,12 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+.text-section-container{
+    width: 100%;
+    height: auto;
+    @include m.flex(row, center, center);
+    p{
+        line-height: 1.6;
+    }
+}

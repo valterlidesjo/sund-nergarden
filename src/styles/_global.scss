@@ -1,0 +1,13 @@
+@use "./variables" as v;
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Kaisei Decol", serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+}
+body{
+    background: v.$primary-col;
+}
+

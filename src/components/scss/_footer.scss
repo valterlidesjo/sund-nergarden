@@ -1,0 +1,30 @@
+@use "../../styles/global" as g;
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+
+.footer-container {
+  height: 25%;
+  width: 100%;
+  background: v.$primary-col;
+  padding: 3rem 0 0 0;
+  .footer-text-container {
+    @include m.flex(row, space-evenly, center);
+    .left-text {
+      @include m.flex(column, center, flex-start);
+      text-align: left;
+    }
+    .right-text {
+      @include m.flex(column, center, flex-end);
+      text-align: right;
+    }
+    .contact-container {
+        display: none;
+    }
+    .picture-container {
+        display: none;
+      .recommend-pictures {
+        
+      }
+    }
+  }
+}

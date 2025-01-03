@@ -1,0 +1,13 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+.text-section-separated-container{
+    width: 100%;
+    height: auto;
+    @include m.flex(center, space-between);
+    p{
+        color: v.$white;
+        line-height: 1.6;
+    }
+}
