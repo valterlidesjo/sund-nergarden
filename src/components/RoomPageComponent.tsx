@@ -5,6 +5,7 @@ import { PiWaves } from "react-icons/pi";
 import BigBtn from "./ui/BigBtn/BigBtn";
 import IconContainer from "./IconContainer";
 import TextSection from "./TextSection";
+import SearchBooking from "./SearchBooking";
 
 interface Image {
   id: number;
@@ -67,25 +68,14 @@ const RoomPageComponent = ({
 
     <TextSection text={roomHeader} textAlign="center" fontSize="1.5rem" padding="0" margin="4rem 0 1.5rem 0" fontFamily="Satisfy" color="black"/>
     <TextSection text={roomText} textAlign="center" fontSize="1rem" padding="0 2rem" margin="0 0 2rem 0" color="black" />
-    </div>
+    
 
-    <div className="container">
-      {/* <div className="slideshow">
-        <SlideShow images={images} interval={interval} text={text} />
-      </div> */}
 
-      <div className="content">
-        <div className="description-container">
-          {description.map((item, index) => (
-            <p key={index} className="description-text">
-              {item.desc}
-            </p>
-          ))}
-        </div>
-        <IconContainer items={iconItems} />
-        <BigBtn text={btnText || "Boka Nu"} onClick={goToBooking} />
       </div>
-    </div>
+      <div className="slideshow">
+        <SlideShow images={images} interval={interval} text={text} />
+      </div>
+      <SearchBooking />
     </>
   );
 };

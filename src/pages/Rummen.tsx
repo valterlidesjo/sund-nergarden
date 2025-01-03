@@ -39,7 +39,7 @@ const Rummen = () => {
         Önskar du att ta med din hund vänligen kontakta oss innan du genomför din bokning." fontSize="1rem" padding="0 2rem" textAlign="center" margin="0 0 3rem 0"/>
       </div>
       <div className="rummen-light-container">
-            <TextSection text="MALTES BOKNINGS COMPONENT" margin="4rem 0" color="black" />
+      <SearchBooking />
             <TextSection text="Rummen" fontSize="2.5rem" margin="1rem 0 0 0" color="black" />
       </div>
       <HorizontalScroll images={roomImages} onImageClick={(image) => goToRoom(image.alt)} backgroundCol="#D3E2D5"/>
@@ -51,13 +51,13 @@ const Rummen = () => {
         <TextSection text="Tälten" fontSize="2.5rem" margin="0" />
       </div>
       <HorizontalScroll images={glampingImages} onImageClick={(image) => goToRoom(image.alt)}/>
-      <SearchBooking />
       <div className="rummen-container">
         <TextSection text="Max 2 personer - Glampingsäsong: 1/6 -24 t.o.m 31/8 -24." fontSize="1rem" padding="0 1rem" textAlign="center"/>
         <TextSection text="Tips! Eventuella avbokningar läggs även ut på vår Instagram Story @Sundnergarden, så följ oss gärna där."  padding="0 2rem" textAlign="center"/>
         <TextSection text="Vill du boka din vistelse med ett presentkort, kontakta oss så hjälper vi er!" fontSize="1rem" padding="0 2rem" textAlign="center"/>
 
       </div>
+      <SearchBooking />
     </>
   );
 };

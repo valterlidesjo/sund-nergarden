@@ -4,56 +4,116 @@
 
 .booking-container {
   @include m.flex(column);
-  height: 20svh;
+  height: 30svh;
   width: 100%;
   background-color: v.$secondary-col;
-  .booking-top-container {
-    @include m.flex(row);
-    height: auto;
-    width: 100%;
-    .start-date-container, .end-date-container {
-        @include m.flex(row);
-        position: relative;
-        input {
-            position: relative;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 1;
-            cursor: pointer;
-          }
-          p{
-            font-size: 1.5rem;
-          }
-          .calendar-icon{
-            font-size: 1.5rem;
-          }
+  
+  .booking-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem; 
+
+    grid-template-areas:
+      "start-date end-date"
+      "persons rooms";
+    .check-line {
+      height: 1px;
+      width: 9rem;
+      margin: 0 10px;
+      background: v.$primary-col;
+    }
+    .react-datepicker__month-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* För att centrera kalendern */
+      z-index: 1000; /* Se till att kalendern ligger över andra element */
+      background-color: white; /* Lägg till en bakgrundsfärg */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Skugga för att ge djup */
+      padding: 1rem;
+      border-radius: 10px; /* För att ge rundade hörn */
+    }
+    .start-date-container {
+      @include m.flex(column);
+      grid-area: start-date;
+      .check-in-text {
+        @include m.flex(row, space-between, center);
+        p {
+          font-size: 1.5rem;
+          margin-right: 10px;
+          color: v.$primary-col;
+        }
+        .calendar-icon {
+          font-size: 1.5rem;
+          margin-right: 1rem;
+          color: v.$primary-col;
+        }
+      }
+    }
+    .end-date-container {
+      @include m.flex(column);
+      grid-area: end-date;
+      .check-out-text {
+        @include m.flex(row, space-between, center);
+        p {
+          font-size: 1.5rem;
+          margin-right: 10px;
+
+          color: v.$primary-col;
+        }
+
+        .calendar-icon {
+          font-size: 1.5rem;
+          margin-right: 1rem;
+          color: v.$primary-col;
+        }
+      }
     }
 
-  }
-  .booking-bottom-container {
-    @include m.flex(row);
-    height: auto;
-    width: 100%;
     .persons-container {
+      @include m.flex(column);
+      grid-area: persons;
+      margin-top: 0.5rem;
+      input {
+        font-size: 1.5rem;
+        color: v.$primary-col;
+        width: 9rem;
+        background: v.$secondary-col;
+        border: none;
+      }
+      input::placeholder {
+        color: v.$primary-col;
+        opacity: 1; /* Firefox */
+      }
     }
-
     .rooms-container {
+      @include m.flex(column);
+      grid-area: rooms;
+      margin-top: 0.5rem;
+      input {
+        font-size: 1.5rem;
+        color: v.$primary-col;
+        width: 9rem;
+        background: v.$secondary-col;
+        border: none;
+    }
+    input::placeholder {
+        color: v.$primary-col;
+        opacity: 1; /* Firefox */
+      }
     }
   }
 
   .search-booking-button-container {
     @include m.flex(row);
-    margin-top: 1rem;
+    margin-top: 2rem;
     .search-booking-button {
-        height: 4rem;
-        width: 12rem;
-        @include m.border(1.5px);
-        // font-weight: bold;
-        font-size: 1.4rem;
-        background: v.$secondary-col;
-
+      height: 4rem;
+      width: 12rem;
+      @include m.border(1.5px);
+      font-size: 1.4rem;
+      background: v.$secondary-col;
     }
   }
 }
