@@ -1,0 +1,59 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+.booking-container {
+  @include m.flex(column);
+  height: 20svh;
+  width: 100%;
+  background-color: v.$secondary-col;
+  .booking-top-container {
+    @include m.flex(row);
+    height: auto;
+    width: 100%;
+    .start-date-container, .end-date-container {
+        @include m.flex(row);
+        position: relative;
+        input {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            cursor: pointer;
+          }
+          p{
+            font-size: 1.5rem;
+          }
+          .calendar-icon{
+            font-size: 1.5rem;
+          }
+    }
+
+  }
+  .booking-bottom-container {
+    @include m.flex(row);
+    height: auto;
+    width: 100%;
+    .persons-container {
+    }
+
+    .rooms-container {
+    }
+  }
+
+  .search-booking-button-container {
+    @include m.flex(row);
+    margin-top: 1rem;
+    .search-booking-button {
+        height: 4rem;
+        width: 12rem;
+        @include m.border(1.5px);
+        // font-weight: bold;
+        font-size: 1.4rem;
+        background: v.$secondary-col;
+
+    }
+  }
+}
