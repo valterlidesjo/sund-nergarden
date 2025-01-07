@@ -12,6 +12,8 @@ import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 import FoodMenu from "../components/FoodMenu";
 import Contact from "../components/Contact";
 import { useLocation } from "react-router-dom";
+import Snurr from "../components/ui/Snurr/Snurr";
+import { SnurrV2 } from "../components/ui/SurrV2/SnurrV2";
 
 const HomePage = () => {
   const location = useLocation();
@@ -30,7 +32,7 @@ const HomePage = () => {
         const offset = -80; // Justera scrollpositionen
         const elementPosition = targetElement.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY + offset;
-  
+
         window.scrollTo({
           top: offsetPosition,
           behavior: "smooth",
@@ -49,8 +51,9 @@ const HomePage = () => {
         </div>
       </div>
       <div className="homepage-container">
+        <Snurr />
+        <SnurrV2 />
         <TextSection
-          
           text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
             Våra elva rum fördelat på sju dubbelrum och fyra juniorsviter har
             varierande utsikt och planlösning men är inredda med samma
@@ -102,19 +105,28 @@ const HomePage = () => {
           textAlign="center"
           fontSize="1.6rem"
         />
-         
+
         <TextSection
           text=" Vi älskar mat & dryck som serveras i en vacker och trevlig miljö, så varmt välkommen till oss!"
           textAlign="center"
           fontSize="1.6rem"
         />
       </div>
-      <Contact header="KONTAKT" facebook="Sund Nergården" instagram="@sundnergarden" youtube="@sundnergarden9875">
-        <TextSection text="015 670 00 70" margin="0 0 1.5rem 0" padding="2rem 0 0 0"/>
-        <TextSection text="info@sundnergarden.se" margin="1.5rem 0"/>
-        <TextSection text="Sund Nergården" margin="1.5rem 0"/>
-        <TextSection text="619 94 Vagnhärad" margin="1.5rem 0"/>
-        <TextSection text="Sverige" margin="1.5rem 0"/>
+      <Contact
+        header="KONTAKT"
+        facebook="Sund Nergården"
+        instagram="@sundnergarden"
+        youtube="@sundnergarden9875"
+      >
+        <TextSection
+          text="015 670 00 70"
+          margin="0 0 1.5rem 0"
+          padding="2rem 0 0 0"
+        />
+        <TextSection text="info@sundnergarden.se" margin="1.5rem 0" />
+        <TextSection text="Sund Nergården" margin="1.5rem 0" />
+        <TextSection text="619 94 Vagnhärad" margin="1.5rem 0" />
+        <TextSection text="Sverige" margin="1.5rem 0" />
       </Contact>
     </>
   );

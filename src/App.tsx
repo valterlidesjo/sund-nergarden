@@ -17,24 +17,24 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-    <ParallaxProvider>
-      <BrowserRouter>
-        <NavMobile />
+      <ParallaxProvider>
+        <BrowserRouter>
+          <NavMobile />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/rummen" element={<Rummen />} />
             <Route path="/mat-dryck" element={<MatDryck />} />
-            <Route path="/rummen/sjolunda" element={<RoomSjolunda/>} /> 
-            <Route path="/rummen/hasthagen" element={<RoomHasthagen/>} /> 
-            <Route path="/rummen/blombacka" element={<RoomBlombacka/>} /> 
-            <Route path="/rummen/ovre" element={<GlampOvre/>} /> 
-            <Route path="/rummen/nedre" element={<GlampNedre/>} /> 
-            <Route path="/rummen/berget" element={<GlampBerget/>} /> 
-            <Route path="/mat-dryck/tre" element={<ThreeCourseMenu/>}/>
-            <Route path="/mat-dryck/fem" element={<FiveCourseMenu/>}/>
+            <Route path="/rummen/sjolunda" element={<RoomSjolunda />} />
+            <Route path="/rummen/hasthagen" element={<RoomHasthagen />} />
+            <Route path="/rummen/blombacka" element={<RoomBlombacka />} />
+            <Route path="/rummen/ovre" element={<GlampOvre />} />
+            <Route path="/rummen/nedre" element={<GlampNedre />} />
+            <Route path="/rummen/berget" element={<GlampBerget />} />
+            <Route path="/mat-dryck/tre" element={<ThreeCourseMenu />} />
+            <Route path="/mat-dryck/fem" element={<FiveCourseMenu />} />
           </Routes>
-          <Footer/>
-      </BrowserRouter>
+          <Footer />
+        </BrowserRouter>
       </ParallaxProvider>
     </>
   );
