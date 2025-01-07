@@ -27,12 +27,11 @@ const NavMobile = () => {
     if (link.startsWith("http")) {
       window.location.href = link;
     }  else if (link.startsWith("#")) {
-      const targetId = link.substring(1); // Ta bort '#' från länken
+      const targetId = link.substring(1);
       if (location.pathname === "/") {
-        // Scrolla direkt om användaren redan är på startsidan
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-          const offset = -80; // Justera scrollpositionen
+          const offset = -80;
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.scrollY + offset;
   
@@ -41,27 +40,25 @@ const NavMobile = () => {
             behavior: "smooth",
           });
         }
-        setIsNavActive(false); // Stäng navigationsmenyn
+        setIsNavActive(false);
       } else {
-        // Navigera till startsidan och överför målelementets id
         navigate("/", { state: { targetId } });
       }
     } else {
-      // Hantera andra typer av länkar
       navigate(link);
     }
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY; // Hämta antal pixlar användaren scrollat
+      const scrollTop = window.scrollY;
       const threshold = location.pathname === "/" ? screenHeight - 80 : 0;
       setIsScrolled(scrollTop > threshold);
     };
 
-    window.addEventListener("scroll", handleScroll); // Lägg till scroll-listener
+    window.addEventListener("scroll", handleScroll); 
     return () => {
-      window.removeEventListener("scroll", handleScroll); // Ta bort listener vid unmount
+      window.removeEventListener("scroll", handleScroll); 
     };
   }, [location.pathname]);
 

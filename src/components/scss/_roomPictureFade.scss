@@ -1,0 +1,51 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+.room-picture-fade-container {
+  position: relative; // Behövs för absolut positionering av text
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+//   display: inline-block;
+
+  &:hover .room-image {
+    filter: brightness(0.4);
+  }
+
+  &:hover .room-image-header {
+    opacity: 0;
+  }
+
+  &:hover .room-image-text {
+    opacity: 1;
+  }
+}
+
+.room-image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: filter 0.3s ease;
+}
+.room-image-header,
+.room-image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 2; // Säkerställer att texten är över bilden
+  pointer-events: none; // Undviker att texten fångar klick
+  transition: opacity 0.3s ease;
+}
+.room-image-header {
+  opacity: 1;
+  font-size: 2rem;
+}
+.room-image-text {
+  opacity: 0;
+  font-size: 1rem;
+}

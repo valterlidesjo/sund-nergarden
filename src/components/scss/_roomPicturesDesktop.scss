@@ -1,0 +1,48 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+.room-pictures-container {
+    background-color: v.$white;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 13rem);
+  gap: 1rem; // Avstånd mellan rutorna
+  width: 100%;
+  height: auto;
+  padding: 1rem 0;
+  .room-1 {
+    
+  }
+  .room-2{
+grid-row: span 2;
+  }
+  .room-3 {
+   
+  }
+  .room-4 {
+    
+  }
+  .room-5 {
+    grid-row: span 2;
+  }
+  .room-6 {
+    grid-column: span 2;
+  }
+  .room-7{
+
+  }
+  .room-8{
+    grid-row: span 2;
+  }
+  .room-9{
+
+  }
+  .room-10{
+
+  }
+  .room-11{
+
+  }
+
+}

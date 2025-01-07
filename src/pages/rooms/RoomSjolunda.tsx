@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import RoomPageComponent from "../../components/RoomPageComponent";
 import sundSjolundaImage1 from "../../assets/sund-rum1.jpeg";
 import sundSjolundaImage2 from "../../assets/sund-rum2.jpeg";
@@ -17,6 +17,18 @@ const RoomSjolunda = () => {
       kvm: "39 m2",
     },
   ];
+
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <RoomPageComponent

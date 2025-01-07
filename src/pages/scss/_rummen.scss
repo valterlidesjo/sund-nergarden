@@ -19,6 +19,9 @@
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
+        @include m.desk{
+          top: 40%;
+        }
         p{
             font-size: 4rem;
             font-family: "Satisfy", serif;

@@ -14,5 +14,4 @@ export const roomImages = [
     { id: 9, src: sundRumImage1, alt: "sillen", text: "SILLEN", roomText: "Ett av våra dubbelrum med utsikt över både sjö och natur, 23m2 golvyta." },
     { id: 10, src: sundRumImage2, alt: "sund", text: "SUND", roomText: "Utsikt över naturen i våra välskötta trädgård. 24m2 och en otrolig dubbelsäng från Carpe Diem." },
     { id: 11, src: sundRumImage1, alt: "lovsta", text: "LÖVSTA", roomText: "Vår största Juniorsvit på 39m2 med soffa och vedkamin för maximal lyxig mys. Utsikt över vår fina trädgård och hästhagen." },
-    
   ];

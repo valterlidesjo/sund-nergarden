@@ -14,7 +14,7 @@
 }
 
 .nav-container {
-  position: fixed; /* Gör att navigationen ligger fast på toppen */
+  position: fixed;
   top: 0;
   left: 0;
   height: 0;
@@ -38,9 +38,9 @@
     @include m.flex(row, flex-end, center);
     z-index: 100;
     &.scrolled {
-      background: rgba(255, 255, 255, 0.1); /* Vit färg med 80% opacitet */
-      backdrop-filter: blur(10px); /* Sudda bakgrunden */
-      -webkit-backdrop-filter: blur(10px); /* För Safari */
+      background: rgba(255, 255, 255, 0.1); 
+      backdrop-filter: blur(10px); 
+      -webkit-backdrop-filter: blur(10px); 
       transition: background 0.3s ease, backdrop-filter 0.3s ease;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       

@@ -16,4 +16,12 @@
     padding: 1rem; // Undvik att scrollbaren överlappar innehållet
     scroll-snap-type: x mandatory; // Valfritt: Snap-effekt för scroll
     scrollbar-color: lightgray transparent;
-}
+}; 
+
+@mixin desk {
+    @media (min-width: 600px) {
+      @content;
+    }
+  }
+  
+

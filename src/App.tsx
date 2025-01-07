@@ -13,13 +13,28 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ThreeCourseMenu from "./pages/ThreeCourseMenu";
 import FiveCourseMenu from "./pages/FiveCourseMenu";
 import Footer from "./components/Footer";
+import { useEffect, useState } from "react";
+import NavDesktop from "./components/DesktopOnly/NavDesktop";
 
 function App() {
+
+  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 600);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
     <ParallaxProvider>
       <BrowserRouter>
-        <NavMobile />
+        {isDesktop ? <NavDesktop /> : <NavMobile />}
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/rummen" element={<Rummen />} />

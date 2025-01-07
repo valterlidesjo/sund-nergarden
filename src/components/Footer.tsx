@@ -21,7 +21,7 @@ const Footer: React.FC<FooterProps> = ({
     if (location.pathname === "/") {
       return { backgroundColor: "#1C3620", color: "white" }; // Startsidan
     } else if (location.pathname === "/rummen") {
-      return { backgroundColor: "#D3E2D5", color: "black" }; // Rummen
+      return { backgroundColor: "#1C3620", color: "white" }; // Rummen
     } else if (location.pathname === "/mat-dryck") {
       return { backgroundColor: "#D3E2D5", color: "black" }; // Mat & Dryck
     } else if (matchPath("/rummen/*", location.pathname)) {
