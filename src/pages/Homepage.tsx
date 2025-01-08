@@ -60,17 +60,14 @@ const HomePage = () => {
       </div>
       <div className="homepage-container">
         <TextSection
-          
           text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
             Våra elva rum fördelat på sju dubbelrum och fyra juniorsviter har
             varierande utsikt och planlösning men är inredda med samma
             faciliteter och med en gemensam känsla. Under sommarmånaderna
             erbjuder vi också tre populära Glamping."
-              textAlign="center"
-              margin="2rem 1rem"
-            />
-          </>
-        )}
+          textAlign="center"
+          margin="2rem 1rem"
+        />
         <div className="homepage-light-container">
           <SearchBooking buttonText="Sök Lediga Rum" />
           {isDesktop ? (
@@ -129,7 +126,7 @@ const HomePage = () => {
           textAlign="center"
           fontSize="1.6rem"
         />
-         
+
         <TextSection
           text="015 670 00 70"
           margin="0 0 1.5rem 0"
@@ -138,12 +135,21 @@ const HomePage = () => {
           fontSize="1.2rem"
         />
       </div>
-      <Contact header="KONTAKT" facebook="Sund Nergården" instagram="@sundnergarden" youtube="@sundnergarden9875">
-        <TextSection text="015 670 00 70" margin="0 0 1.5rem 0" padding="2rem 0 0 0"/>
-        <TextSection text="info@sundnergarden.se" margin="1.5rem 0"/>
-        <TextSection text="Sund Nergården" margin="1.5rem 0"/>
-        <TextSection text="619 94 Vagnhärad" margin="1.5rem 0"/>
-        <TextSection text="Sverige" margin="1.5rem 0"/>
+      <Contact
+        header="KONTAKT"
+        facebook="Sund Nergården"
+        instagram="@sundnergarden"
+        youtube="@sundnergarden9875"
+      >
+        <TextSection
+          text="015 670 00 70"
+          margin="0 0 1.5rem 0"
+          padding="2rem 0 0 0"
+        />
+        <TextSection text="info@sundnergarden.se" margin="1.5rem 0" />
+        <TextSection text="Sund Nergården" margin="1.5rem 0" />
+        <TextSection text="619 94 Vagnhärad" margin="1.5rem 0" />
+        <TextSection text="Sverige" margin="1.5rem 0" />
       </Contact>
     </>
   );
