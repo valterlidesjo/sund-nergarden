@@ -13,11 +13,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ThreeCourseMenu from "./pages/ThreeCourseMenu";
 import FiveCourseMenu from "./pages/FiveCourseMenu";
 import Footer from "./components/Footer";
+import { SnurrV2 } from "./components/ui/SurrV2/SnurrV2";
 import { useEffect, useState } from "react";
 import NavDesktop from "./components/DesktopOnly/NavDesktop";
 
 function App() {
-
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
 
   useEffect(() => {
@@ -32,24 +32,25 @@ function App() {
 
   return (
     <>
-    <ParallaxProvider>
-      <BrowserRouter>
-        {isDesktop ? <NavDesktop /> : <NavMobile />}
+      <ParallaxProvider>
+        <BrowserRouter>
+          {isDesktop ? <NavDesktop /> : <NavMobile />}
+          <SnurrV2></SnurrV2>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/rummen" element={<Rummen />} />
             <Route path="/mat-dryck" element={<MatDryck />} />
-            <Route path="/rummen/sjolunda" element={<RoomSjolunda/>} /> 
-            <Route path="/rummen/hasthagen" element={<RoomHasthagen/>} /> 
-            <Route path="/rummen/blombacka" element={<RoomBlombacka/>} /> 
-            <Route path="/rummen/ovre" element={<GlampOvre/>} /> 
-            <Route path="/rummen/nedre" element={<GlampNedre/>} /> 
-            <Route path="/rummen/berget" element={<GlampBerget/>} /> 
-            <Route path="/mat-dryck/tre" element={<ThreeCourseMenu/>}/>
-            <Route path="/mat-dryck/fem" element={<FiveCourseMenu/>}/>
+            <Route path="/rummen/sjolunda" element={<RoomSjolunda />} />
+            <Route path="/rummen/hasthagen" element={<RoomHasthagen />} />
+            <Route path="/rummen/blombacka" element={<RoomBlombacka />} />
+            <Route path="/rummen/ovre" element={<GlampOvre />} />
+            <Route path="/rummen/nedre" element={<GlampNedre />} />
+            <Route path="/rummen/berget" element={<GlampBerget />} />
+            <Route path="/mat-dryck/tre" element={<ThreeCourseMenu />} />
+            <Route path="/mat-dryck/fem" element={<FiveCourseMenu />} />
           </Routes>
-          <Footer/>
-      </BrowserRouter>
+          <Footer />
+        </BrowserRouter>
       </ParallaxProvider>
     </>
   );

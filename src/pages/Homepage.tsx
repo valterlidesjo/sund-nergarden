@@ -8,6 +8,7 @@ import { images } from "./extra/HomepageImages";
 import TextSection from "../components/TextSection";
 import Contact from "../components/Contact";
 import { useLocation } from "react-router-dom";
+import { SnurrV2 } from "../components/ui/SurrV2/SnurrV2";
 import SearchBooking from "../components/SearchBooking";
 import HomePicturesDesktop from "../components/DesktopOnly/HomePicturesDesktop,";
 
@@ -58,34 +59,9 @@ const HomePage = () => {
         </div>
       </div>
       <div className="homepage-container">
-        {isDesktop ? (
-          <>
-            <TextSection
-              text="Sund Nergården - Hideaway för vuxna"
-              textAlign="center"
-              margin="5rem 1rem 0 1rem"
-              fontSize="2.5rem"
-            />
-            <TextSection
-              text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
-            Våra elva rum fördelat på sju dubbelrum och fyra juniorsviter har
-            varierande utsikt och planlösning men är inredda med samma
-            faciliteter och med en gemensam känsla. Under sommarmånaderna
-            erbjuder vi också tre populära Glamping."
-              textAlign="center"
-              margin="2rem 0 6rem 0"
-            />
-          </>
-        ) : (
-          <>
-            <TextSection
-              text="Sund Nergården - Hideaway för vuxna"
-              textAlign="center"
-              margin="5rem 1rem 2rem 1rem"
-              fontSize="2rem"
-            />
-            <TextSection
-              text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
+        <TextSection
+          
+          text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
             Våra elva rum fördelat på sju dubbelrum och fyra juniorsviter har
             varierande utsikt och planlösning men är inredda med samma
             faciliteter och med en gemensam känsla. Under sommarmånaderna
@@ -148,19 +124,12 @@ const HomePage = () => {
             color="#1C3620"
           />
         </div>
-      </div>
-      {isDesktop ? (
-      <HomePicturesDesktop />
-      ) : (
-      <HorizontalScroll images={images} backgroundCol="white"/>
-      )}
-      
-      <Contact
-        header="Kontakta oss"
-        facebook="Sund Nergården"
-        instagram="@sundnergarden"
-        youtube="@sundnergarden9875"
-      >
+        <TextSection
+          text=" Vi älskar mat & dryck som serveras i en vacker och trevlig miljö, så varmt välkommen till oss!"
+          textAlign="center"
+          fontSize="1.6rem"
+        />
+         
         <TextSection
           text="015 670 00 70"
           margin="0 0 1.5rem 0"
@@ -168,10 +137,13 @@ const HomePage = () => {
           textAlign="center"
           fontSize="1.2rem"
         />
-        <TextSection text="info@sundnergarden.se" margin="0 0 1.5rem 0" textAlign="center" fontSize="1.2rem" />
-        <TextSection text="Sund Nergården" margin="0 0 1.5rem 0" textAlign="center" fontSize="1.2rem" />
-        <TextSection text="619 94 Vagnhärad" margin="0 0 1.5rem 0" textAlign="center" fontSize="1.2rem" />
-        <TextSection text="Sverige" margin="0 0 1.5rem 0" textAlign="center" fontSize="1.2rem" />
+      </div>
+      <Contact header="KONTAKT" facebook="Sund Nergården" instagram="@sundnergarden" youtube="@sundnergarden9875">
+        <TextSection text="015 670 00 70" margin="0 0 1.5rem 0" padding="2rem 0 0 0"/>
+        <TextSection text="info@sundnergarden.se" margin="1.5rem 0"/>
+        <TextSection text="Sund Nergården" margin="1.5rem 0"/>
+        <TextSection text="619 94 Vagnhärad" margin="1.5rem 0"/>
+        <TextSection text="Sverige" margin="1.5rem 0"/>
       </Contact>
     </>
   );
