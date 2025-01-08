@@ -6,8 +6,9 @@ interface RoomPictureFadeProps {
   roomName: string;
   roomText: string;
   onClick?: () => void;
-  gridRow?: string;
-  gridColumn?: string;
+  fontSizeHeader?: string;
+  fontSizeText?: string;
+
 }
 
 const RoomPictureFade: React.FC<RoomPictureFadeProps> = ({
@@ -15,15 +16,15 @@ const RoomPictureFade: React.FC<RoomPictureFadeProps> = ({
   roomName,
   roomText,
   onClick,
-//   gridRow = "auto",
-//   gridColumn = "auto",
+  fontSizeHeader = "2rem",
+  fontSizeText = "1rem",
 }) => {
   return (
     <>
       <div className="room-picture-fade-container" onClick={onClick}>
         <img src={roomImage} className="room-image" />
-        <p className="room-image-header">{roomName}</p>
-        <p className="room-image-text">{roomText}</p>
+        <p className="room-image-header" style={{ fontSize: fontSizeHeader}}>{roomName}</p>
+        <p className="room-image-text" style={{ fontSize: fontSizeText}}>{roomText}</p>
       </div>
     </>
   );

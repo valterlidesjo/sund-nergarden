@@ -39,6 +39,8 @@ const RoomSjolunda = () => {
         Sviten är självklart helt rökfri, både inomhus och på de tillhörande uteplatserna, för att säkerställa en ren och frisk atmosfär. Här väntar en plats där lugnet från sjöutsikten smälter samman med omsorgsfull elegans - en tillflykt för den som söker något utöver det vanliga."
         startImage={imagesSjolunda[0].src}
         imageText="SJÖ- LUNDA"
+        imageTextDesk="SJÖLUNDA"
+        roomHeaderDesk="Sjölunda - En Juniorsvit med Sjöutsikt"
         images={imagesSjolunda}
         text="Sjölunda"
         description={descriptionSjolunda}

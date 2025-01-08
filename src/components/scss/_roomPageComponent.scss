@@ -26,6 +26,15 @@
   
         }
     }
+    @include m.desk{
+        .room-start-image {
+            margin-top: 3rem;
+            height: 80%;
+        }
+        .room-start-text-container {
+            top: 50%;
+        }
+    }
   }
 .room-page-light-container{
     background-color: v.$secondary-col;

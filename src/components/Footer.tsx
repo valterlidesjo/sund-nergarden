@@ -72,9 +72,9 @@ const Footer: React.FC<FooterProps> = ({
           </div>
 
           <div className="right-text">
-            <TextSection text="Facebook" color={dynamicColor} textAlign="right" padding="0 2rem 0 0" margin="1px 0 1rem 0"/>
-            <TextSection text="Instagram" color={dynamicColor} textAlign="right" padding="0 2rem 0 0"/>
-            <TextSection text="Youtube" color={dynamicColor} textAlign="right" padding="0 2rem 0 0"/>
+            <TextSection text="Facebook" color={dynamicColor}  padding="0 2rem 0 0" margin="1px 0 1rem 0"/>
+            <TextSection text="Instagram" color={dynamicColor} padding="0 2rem 0 0"/>
+            <TextSection text="Youtube" color={dynamicColor}  padding="0 2rem 0 0"/>
           <div className="picture-container">
             <div className="recommend-pictures">
               <img src={sundWineStarList} alt="Wine Star List" />

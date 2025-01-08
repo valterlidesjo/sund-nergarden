@@ -70,6 +70,7 @@ const Rummen = () => {
           <div className="rummen-container">
             <TextSection
               text="Våra tre Glamping tält"
+              textAlign="center"
               fontSize="2rem"
               margin="3rem 0 2rem 0"
             />

@@ -8,7 +8,6 @@
   width: 100%;
   background-color: v.$secondary-col;
   @include m.desk{
-    // padding: 2rem 0 5rem 0;
     height: 40svh;
   }
 
@@ -23,9 +22,17 @@
       "persons rooms";
 
     @include m.desk{
-      @include m.flex(row, space-evenly, center);
-      width: 80%;
-
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: auto;
+      grid-template-areas:
+      "start-date end-date persons rooms button";
+    }
+    @include m.tablet{
+      grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "start-date end-date persons rooms"
+      "button button button button";
     }
 
     .check-line {
@@ -121,7 +128,30 @@
         opacity: 1; /* Firefox */
       }
     }
-    
+    // @include m.tablet{
+    //   .check-line {
+    //     width: 6rem;
+    //   }
+    //   .start-date-container, .end-date-container{
+    //     .check-in-text, .check-out-text{
+    //       p{
+    //         font-size: 1rem;
+    //       }
+
+    //     }
+    //     .calendar-icon{
+    //       font-size: 1rem;
+    //     }
+    //   }
+    //   .persons-container, .rooms-container{
+    //     margin-top: 0;
+    //     input{
+    //       font-size: 1rem;
+    //       width: 6rem;
+    //     }
+    //   }
+
+    // }
   }
   .search-booking-button-container {
     @include m.flex(row);
@@ -129,6 +159,13 @@
 
     @include m.desk{
       margin-top: 0;
+    justify-self: end; // Knappen ligger till höger om det finns plats
+    align-self: center;
+    }
+    @include m.tablet{
+      justify-self: center; // Centrerar knappen när den hoppar ner
+    grid-column: span 4; // Täcker hela raden
+    margin-top: 1rem;
     }
     .search-booking-button {
       height: 4rem;

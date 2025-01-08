@@ -167,7 +167,6 @@ const SearchBooking: React.FC<SearchBookingProps> = ({ buttonText }) => {
               {buttonText}
             </button>
           </div>
-
         </div>
           </>
         ) : (

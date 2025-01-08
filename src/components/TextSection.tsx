@@ -3,8 +3,9 @@ import "./scss/_textSection.scss";
 
 interface TextSectionProps {
   text: string;
-  textAlign?: "left" | "center" | "right"; // Textjustering
-  fontSize?: string; // Storlek för text
+  textAlign?: "left" | "center" | "right";
+  flexAlign?: "flex-start" | "center" | "flex-end";
+  fontSize?: string;
   fontWeight?: string;
   margin?:string;
   padding?:string;
@@ -23,11 +24,15 @@ const TextSection: React.FC<TextSectionProps> = ({
   color = "white",
   fontFamily = '"Kaisei Decol"',
   lineHeight = "1.6",
+  flexAlign = "center",
 }) => {
   const containerStyle: React.CSSProperties = {
     textAlign,
     margin,
     padding,
+    display: flexAlign === "center" ? "block" : "flex",
+    justifyContent: flexAlign !== "center" ? flexAlign : undefined,
+    alignItems: flexAlign !== "center" ? "center" : undefined,
   };
   const textStyle: React.CSSProperties = {
     fontSize,

@@ -6,7 +6,7 @@
   position: fixed; 
   top: 0;
   left: 0;
-  height: 6rem;
+  height: 5rem;
   width: 100%;
   z-index: 99;
   @include m.flex(row, space-evenly, center);
@@ -21,7 +21,6 @@
     @include m.flex(row, space-evenly, center);
     list-style: none;
     width: 100%;
-    // margin-top: 2rem;
     .nav-desktop-item{
         a{
             font-size: 1.3rem;

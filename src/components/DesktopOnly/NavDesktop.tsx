@@ -8,15 +8,14 @@ const NavDesktop = () => {
     useEffect(() => {
         const handleScroll = () => {
           if (window.scrollY > 50) {
-            setIsScrolled(true); // Lägg till scrolled-klass om scrollen är mer än 50px
+            setIsScrolled(true); 
           } else {
-            setIsScrolled(false); // Ta bort scrolled-klass om scrollen är mindre än 50px
+            setIsScrolled(false); 
           }
         };
     
         window.addEventListener("scroll", handleScroll);
-    
-        // Rensa event listener när komponenten avmonteras
+
         return () => {
           window.removeEventListener("scroll", handleScroll);
         };

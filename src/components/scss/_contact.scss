@@ -4,38 +4,80 @@
 $img: "../../assets/sund-hus2.jpeg";
 
 .contact-container {
-  background-image: url(#{$img});
-  background-size: cover; /* Gör att bilden täcker hela ytan */
-  background-position: center; /* Centrerar bilden */
-  background-repeat: no-repeat; /* Förhindrar upprepning */
-  height: 90vh;
-  padding: 2rem;
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  @include m.flex(row);
+  .contact-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.5);
+  }
   .header-container {
-
+    position: absolute;
+    top: 10%; /* Just
+    era textens vertikala position */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
     .header {
-      text-align: center;
-      opacity: 1;
       font-size: 2rem;
       color: v.$white;
     }
   }
   .content-container {
-    background-color: v.$primary-col;
-    opacity: 0.75;
-    height: 90%; /* Behållarens höjd */
+    position: absolute;
+    top: 20%;
+    left: 50%;
     width: 100%;
-    margin-top: 3rem;
-    @include m.flex(column, flex-start, center);
-    .facebook, .instagram, .youtube{
-        @include m.flex(row, space-evenly, center);
-        color: v.$white;
-        width: 80%;
-        font-size: 1.2rem;
-        margin: 1.5rem 0;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 2;
+    @include m.flex(row);
+
+    .social-media-container {
+      @include m.flex(column);
+      color: v.$white;
+      font-size: 1.2rem;
+      .instagram,
+      .facebook,
+      .youtube {
+        @include m.flex(row, flex-start, center);
+        width: 100%;
+        margin: 0.5rem 0;
+
         svg {
-            font-size: 2rem;
-            color: v.$white;
+          font-size: 1.5rem;
+          color: v.$white;
+          margin-right: 1rem;
         }
+      }
     }
+    @include m.desk {
+      @include m.flex(row, center, flex-end);
+      
+      .content-left-container {
+        width: 100%;
+        height: 100%;
+      }
+      .content-right-container {
+        @include m.flex(column);
+        height: 100%;
+        width: 100%;
+      }
+      .social-media-container {
+        .instagram,
+        .facebook,
+        .youtube {
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
+  @include m.desk {
+    height: 90svh;
   }
 }
