@@ -17,8 +17,7 @@ $img: "../../assets/sund-hus2.jpeg";
   }
   .header-container {
     position: absolute;
-    top: 10%; /* Just
-    era textens vertikala position */
+    top: 10%;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -36,7 +35,7 @@ $img: "../../assets/sund-hus2.jpeg";
     transform: translateX(-50%);
     text-align: center;
     z-index: 2;
-    @include m.flex(row);
+    @include m.flex(column);
 
     .social-media-container {
       @include m.flex(column);

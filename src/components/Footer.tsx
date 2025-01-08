@@ -105,9 +105,9 @@ const Footer: React.FC<FooterProps> = ({
           </div>
 
           <div className="right-text">
-            <TextSection text="Facebook" color={dynamicColor}/>
-            <TextSection text="Instagram" color={dynamicColor}/>
-            <TextSection text="Youtube" color={dynamicColor}/>
+            <TextSection text="Facebook" color={dynamicColor} textAlign="right" />
+            <TextSection text="Instagram" color={dynamicColor} textAlign="right" />
+            <TextSection text="Youtube" color={dynamicColor} textAlign="right" />
           </div>
 
         </div>

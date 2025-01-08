@@ -128,30 +128,6 @@
         opacity: 1; /* Firefox */
       }
     }
-    // @include m.tablet{
-    //   .check-line {
-    //     width: 6rem;
-    //   }
-    //   .start-date-container, .end-date-container{
-    //     .check-in-text, .check-out-text{
-    //       p{
-    //         font-size: 1rem;
-    //       }
-
-    //     }
-    //     .calendar-icon{
-    //       font-size: 1rem;
-    //     }
-    //   }
-    //   .persons-container, .rooms-container{
-    //     margin-top: 0;
-    //     input{
-    //       font-size: 1rem;
-    //       width: 6rem;
-    //     }
-    //   }
-
-    // }
   }
   .search-booking-button-container {
     @include m.flex(row);
