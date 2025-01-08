@@ -1,13 +1,57 @@
+@use "../../../styles/mixins" as m;
+@use "../../../styles/variables" as v;
 
 
-.snurr {
-  width: 200px;
-  height: 200px;
-  background-image: url("../../../assets/snurr vit.svg");
-  background-size: cover ;
-  animation: anim 20s linear infinite;
+.snurr-container {
+  @include m.flex(row,center,center);
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 125px;
+  height: 125px;
+  z-index: 100;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 400ms ease-in, transform 0.3s ease-in-out;
 
+    &:hover {
+      transform: scale(1.1);
+    }
+
+  &.scrolled {
+    background-color: v.$primary-col;
+  }
+
+  .boka-rum {
+    font-size: 18px;
+    z-index: 101;
+    font-weight: 700;
+    position: absolute;
+    color: v.$white;
+  }
+  
+  .snurr {
+    width: 90%;
+    height: 90%;
+    background-image: url("../../../assets/snurr\ vit2.svg");
+    background-size: cover;
+    animation: anim 20s linear infinite;
+    position: absolute;
+  }
 }
+
+@media (min-width: 992px) {
+  .snurr-container {
+    width: 200px;
+    height: 200px;
+  
+    .boka-rum {
+      font-size: 24px;
+    }
+  }
+}
+
+
 
 @keyframes anim {
   0% {
@@ -17,3 +61,4 @@
     transform: rotate(360deg);
   }
 }
+

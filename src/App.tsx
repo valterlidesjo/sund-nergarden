@@ -13,6 +13,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ThreeCourseMenu from "./pages/ThreeCourseMenu";
 import FiveCourseMenu from "./pages/FiveCourseMenu";
 import Footer from "./components/Footer";
+import { SnurrV2 } from "./components/ui/SurrV2/SnurrV2";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <ParallaxProvider>
         <BrowserRouter>
           <NavMobile />
+          <SnurrV2></SnurrV2>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/rummen" element={<Rummen />} />

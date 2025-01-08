@@ -51,8 +51,6 @@ const HomePage = () => {
         </div>
       </div>
       <div className="homepage-container">
-        <Snurr />
-        <SnurrV2 />
         <TextSection
           text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
             Våra elva rum fördelat på sju dubbelrum och fyra juniorsviter har
