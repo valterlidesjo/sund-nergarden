@@ -12,7 +12,6 @@ import { Parallax, ParallaxBanner } from "react-scroll-parallax";
 import FoodMenu from "../components/FoodMenu";
 import Contact from "../components/Contact";
 import { useLocation } from "react-router-dom";
-import Snurr from "../components/ui/Snurr/Snurr";
 import { SnurrV2 } from "../components/ui/SurrV2/SnurrV2";
 
 const HomePage = () => {
