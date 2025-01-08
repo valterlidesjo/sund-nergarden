@@ -65,7 +65,7 @@ const Rummen = () => {
           </div>
           <RoomPicturesDesktop />
           <div className="rummen-light-container">
-            <SearchBooking />
+            <SearchBooking buttonText="Sök Lediga Rum"/>
           </div>
           <div className="rummen-container">
             <TextSection
@@ -104,7 +104,7 @@ const Rummen = () => {
             />
           </div>
           <div className="rummen-light-container">
-            <SearchBooking />
+            <SearchBooking buttonText="Sök Lediga Rum"/>
           </div>
           <HorizontalScroll
             images={roomImages}
@@ -141,7 +141,7 @@ const Rummen = () => {
           </div>
         </>
       )}
-      <SearchBooking />
+      <SearchBooking buttonText="Sök Lediga Tält"/>
 
       <div className="rummen-light-container">
         <TextSection

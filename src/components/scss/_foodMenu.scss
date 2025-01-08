@@ -12,6 +12,7 @@ $img: "../../assets/sund-desert4-modified.jpg";
     padding: 2rem;
     position: relative;
     
+    
     .blur{
         height: 80px;
         width: 80px;
@@ -23,6 +24,9 @@ $img: "../../assets/sund-desert4-modified.jpg";
       -webkit-backdrop-filter: blur(10px); /* För Safari */
       transition: background 0.3s ease, backdrop-filter 0.3s ease;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      @include m.desk{
+        width: 100%;
+      }
     }
 
     .food-content-container {

@@ -57,7 +57,7 @@ const RoomPageComponent = ({
       <div className="slideshow">
         <SlideShow images={images} interval={interval} text={text} />
       </div>
-      <SearchBooking />
+      <SearchBooking buttonText="Sök Lediga Rum"/>
     </>
   );
 };

@@ -22,6 +22,13 @@ const NavDesktop = () => {
         };
       }, []);
 
+      const getLinkColorClass = () => {
+        if (location.pathname === "/mat-dryck") return "link-white";
+        if (location.pathname === "/") return "link-white";
+        if (location.pathname === "/rummen") return "link-black";
+        return "link-default";
+      };
+
   return (
     <>
     <div className={`nav-desktop-container ${isScrolled ? "scrolled" : ""}`}>
@@ -29,11 +36,11 @@ const NavDesktop = () => {
         {NavLinks.map((navItem, index) => (
           <li key={index} className="nav-desktop-item">
             {navItem.link.startsWith("http") ? (
-              <a href={navItem.link} target="_blank" rel="noopener noreferrer" className={`${isScrolled ? "scrolled" : ""}`}>
+              <a href={navItem.link} target="_blank" rel="noopener noreferrer" className={`${isScrolled ? "scrolled" : ""} ${getLinkColorClass()}`}>
                 {navItem.text}
               </a>
             ) : (
-              <a href={navItem.link} className={`${isScrolled ? "scrolled" : ""}`}>{navItem.text}</a>
+              <a href={navItem.link} className={`${isScrolled ? "scrolled" : ""} ${getLinkColorClass()}`}>{navItem.text}</a>
             )}
           </li>
         ))}

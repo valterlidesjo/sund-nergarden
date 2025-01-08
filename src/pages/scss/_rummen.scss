@@ -19,13 +19,17 @@
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
+        p{
+          font-size: 4rem;
+          font-family: "Satisfy", serif;
+          
+        }
         @include m.desk{
           top: 40%;
-        }
-        p{
-            font-size: 4rem;
-            font-family: "Satisfy", serif;
-  
+          width: 100%;
+          p{
+            font-size: v.$start-desk;
+          }
         }
     }
   }

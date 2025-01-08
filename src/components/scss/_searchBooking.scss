@@ -7,16 +7,27 @@
   height: 30svh;
   width: 100%;
   background-color: v.$secondary-col;
-  
+  @include m.desk{
+    // padding: 2rem 0 5rem 0;
+    height: 40svh;
+  }
+
   .booking-grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    gap: 1rem; 
+    gap: 1rem;
 
     grid-template-areas:
       "start-date end-date"
       "persons rooms";
+
+    @include m.desk{
+      @include m.flex(row, space-evenly, center);
+      width: 80%;
+
+    }
+
     .check-line {
       height: 1px;
       width: 9rem;
@@ -75,6 +86,10 @@
       @include m.flex(column);
       grid-area: persons;
       margin-top: 0.5rem;
+      @include m.desk{
+        margin-top: 0;
+      }
+
       input {
         font-size: 1.5rem;
         color: v.$primary-col;
@@ -91,23 +106,30 @@
       @include m.flex(column);
       grid-area: rooms;
       margin-top: 0.5rem;
+      @include m.desk{
+        margin-top: 0;
+      }
       input {
         font-size: 1.5rem;
         color: v.$primary-col;
         width: 9rem;
         background: v.$secondary-col;
         border: none;
-    }
-    input::placeholder {
+      }
+      input::placeholder {
         color: v.$primary-col;
         opacity: 1; /* Firefox */
       }
     }
+    
   }
-
   .search-booking-button-container {
     @include m.flex(row);
     margin-top: 2rem;
+
+    @include m.desk{
+      margin-top: 0;
+    }
     .search-booking-button {
       height: 4rem;
       width: 12rem;
