@@ -1,14 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import "./scss/_rummen.scss";
-import HorizontalScroll from "../components/HorizontalScroll";
 import { roomImages } from "./extra/RummenImages";
 import { glampingImages } from "./extra/GlampingImages";
-import TextSection from "../components/TextSection";
 import { useNavigate } from "react-router-dom";
 import sundRitad from "../assets/sund-ritad.jpeg";
-import SearchBooking from "../components/SearchBooking";
-import RoomPicturesDesktop from "../components/DesktopOnly/RoomPicturesDesktop";
-import GlampingPicturesDesktop from "../components/DesktopOnly/GlampingPicturesDesktop";
+import sundRitadW from "../assets/sund-ritad.webp";
+const TextSection = React.lazy(() => import("../components/TextSection"));
+const HorizontalScroll = React.lazy(
+  () => import("../components/HorizontalScroll")
+);
+const SearchBooking = React.lazy(() => import("../components/SearchBooking"));
+const RoomPicturesDesktop = React.lazy(() => import("../components/DesktopOnly/RoomPicturesDesktop"));
+const GlampingPicturesDesktop = React.lazy(() => import("../components/DesktopOnly/GlampingPicturesDesktop"));
 
 const Rummen = () => {
   const navigate = useNavigate();
@@ -31,7 +34,10 @@ const Rummen = () => {
   return (
     <>
       <div className="rummen-image-container">
+        <picture>
+        <source srcSet={sundRitadW} type="image/webp" />
         <img src={sundRitad} alt="Sund Nergården ritad bild" />
+        </picture>
 
         <div className="rummen-start-text-container">
           {isDesktop ? (
@@ -47,6 +53,7 @@ const Rummen = () => {
 
       {isDesktop ? (
         <>
+        <Suspense fallback={<div>Loading...</div>} >
           <div className="rummen-container">
             <TextSection
               text="Våra elva rum"
@@ -85,9 +92,11 @@ const Rummen = () => {
             />
           </div>
           <GlampingPicturesDesktop />
+          </Suspense>
         </>
       ) : (
         <>
+        <Suspense fallback={<div>Loading...</div>}>
           <div className="rummen-container">
             <TextSection
               text="Våra elva rum"
@@ -111,6 +120,7 @@ const Rummen = () => {
             images={roomImages}
             onImageClick={(image) => goToRoom(image.alt)}
             backgroundCol="#D3E2D5"
+            enableHoverEffect={false}
           />
           <div className="rummen-container">
             <TextSection
@@ -132,6 +142,7 @@ const Rummen = () => {
           <HorizontalScroll
             images={glampingImages}
             onImageClick={(image) => goToRoom(image.alt)}
+            enableHoverEffect={false}
           />
           <div className="rummen-container">
             <TextSection
@@ -141,8 +152,10 @@ const Rummen = () => {
               textAlign="center"
             />
           </div>
+          </Suspense>
         </>
       )}
+      <Suspense fallback={<div>Loading...</div>}>
       <SearchBooking buttonText="Sök Lediga Tält"/>
 
       <div className="rummen-light-container">
@@ -160,6 +173,7 @@ const Rummen = () => {
           color="black"
         />
       </div>
+      </Suspense>
     </>
   );
 };

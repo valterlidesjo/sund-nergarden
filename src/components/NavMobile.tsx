@@ -4,6 +4,8 @@ import "./scss/_navMobile.scss";
 import { useLocation, useNavigate } from "react-router";
 import { NavLinks } from "../pages/extra/NavLinks";
 import userScreenHeight from "../services/userWindowHeight";
+import sundLogoWhite from "../assets/sund-logo-white.png";
+import sundLogoWhiteW from "../assets/sund-logo-white.webp";
 
 const NavMobile = () => {
   const [isNavActive, setIsNavActive] = useState(false);
@@ -26,7 +28,7 @@ const NavMobile = () => {
   const handleNavigation = (link: string) => {
     if (link.startsWith("http")) {
       window.location.href = link;
-    }  else if (link.startsWith("#")) {
+    } else if (link.startsWith("#")) {
       const targetId = link.substring(1);
       if (location.pathname === "/") {
         const targetElement = document.getElementById(targetId);
@@ -34,7 +36,7 @@ const NavMobile = () => {
           const offset = -80;
           const elementPosition = targetElement.getBoundingClientRect().top;
           const offsetPosition = elementPosition + window.scrollY + offset;
-  
+
           window.scrollTo({
             top: offsetPosition,
             behavior: "smooth",
@@ -52,13 +54,13 @@ const NavMobile = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const threshold = location.pathname === "/" ? screenHeight - 80 : 0;
+      const threshold = 0;
       setIsScrolled(scrollTop > threshold);
     };
 
-    window.addEventListener("scroll", handleScroll); 
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll); 
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [location.pathname]);
 
@@ -70,10 +72,15 @@ const NavMobile = () => {
 
   return (
     <div className={`nav-container ${isNavActive ? "nav-active" : ""}`}>
-      <div className="nav-logo-container"></div>
       <div className={`toggle-nav-header ${isScrolled ? "scrolled" : ""}`}>
+      <div className="nav-logo-container">
+        <picture>
+          <source srcSet={sundLogoWhiteW} type="image/webp" />
+          <img src={sundLogoWhite} alt="Sund Nergården ritad bild" />
+        </picture>
+      </div>
         <div className="toggle-nav-container" onClick={toggleNav}>
-          <NavHamburger isOpen={isNavActive} toggleMenu={toggleNav}/>
+          <NavHamburger isOpen={isNavActive} toggleMenu={toggleNav} />
         </div>
       </div>
 

@@ -1,10 +1,9 @@
-import SlideShow from "./SlideShow";
+import React, { Suspense, useEffect, useState } from "react";
 import "./scss/_roomPageComponent.scss";
 import TextSection from "./TextSection";
-import SearchBooking from "./SearchBooking";
-import { useEffect, useState } from "react";
-import InfiniteSlider from "./InfiniteSlider";
-import ReverseInfiniteSlider from "./ReverseInfiniteSlider";
+const SearchBooking = React.lazy(() => import("../components/SearchBooking"));
+const InfiniteSlider = React.lazy(() => import("../components/InfiniteSlider"));
+const SlideShow = React.lazy(() => import("../components/SlideShow"));
 
 interface Image {
   id: number;
@@ -24,6 +23,7 @@ interface RoomPageProps {
   description: Description[];
   kvm: string;
   startImage: string;
+  startImageWebp: string;
   imageText: string;
   imageTextDesk: string;
   roomHeaderDesk: string;
@@ -38,6 +38,7 @@ const RoomPageComponent = ({
   interval,
   text,
   startImage,
+  startImageWebp,
   imageText,
   roomHeader,
   roomHeaderDesk,
@@ -58,7 +59,11 @@ const RoomPageComponent = ({
   return (
     <>
       <div className="room-image-container">
-        <img className="room-start-image" src={startImage} alt="Bild rummet" />
+        <img
+          className="room-start-image"
+          src={startImageWebp}
+          alt="Bild rummet"
+        />
         <div className="room-start-text-container">
           {isDesktop ? <p>{imageTextDesk}</p> : <p>{imageText}</p>}
         </div>
@@ -66,60 +71,65 @@ const RoomPageComponent = ({
       <div className="room-page-light-container">
         {isDesktop ? (
           <>
-          <TextSection
-          text={roomHeaderDesk}
-          textAlign="center"
-          fontSize="1.8rem"
-          padding="0"
-          margin="4rem 0 1.5rem 0"
-          fontFamily="Satisfy"
-          color="black"
-        />
-        <TextSection
-          text={roomText}
-          textAlign="center"
-          fontSize="1rem"
-          padding="0 6rem"
-          margin="0 0 3rem 0"
-          color="black"
-          lineHeight="2"
-        />
+            <TextSection
+              text={roomHeaderDesk}
+              textAlign="center"
+              fontSize="1.8rem"
+              padding="0"
+              margin="4rem 0 1.5rem 0"
+              fontFamily="Satisfy"
+              color="black"
+            />
+            <TextSection
+              text={roomText}
+              textAlign="center"
+              fontSize="1rem"
+              padding="0 6rem"
+              margin="0 0 3rem 0"
+              color="black"
+              lineHeight="2"
+            />
           </>
         ) : (
           <>
-        <TextSection
-          text={roomHeader}
-          textAlign="center"
-          fontSize="1.5rem"
-          padding="0"
-          margin="4rem 0 1.5rem 0"
-          fontFamily="Satisfy"
-          color="black"
-        />
-        <TextSection
-          text={roomText}
-          textAlign="center"
-          fontSize="1rem"
-          padding="0 2rem"
-          margin="0 0 2rem 0"
-          color="black"
-        />
+            <TextSection
+              text={roomHeader}
+              textAlign="center"
+              fontSize="1.5rem"
+              padding="0"
+              margin="4rem 0 1.5rem 0"
+              fontFamily="Satisfy"
+              color="black"
+            />
+            <TextSection
+              text={roomText}
+              textAlign="center"
+              fontSize="1rem"
+              padding="0 2rem"
+              margin="0 0 2rem 0"
+              color="black"
+            />
           </>
         )}
       </div>
       {isDesktop ? (
         <>
-        <InfiniteSlider images={images}/>
-        {/* <ReverseInfiniteSlider images={images} /> */}
+          <Suspense fallback={<div>Loading...</div>}>
+            <InfiniteSlider images={images} />
+          </Suspense>
         </>
       ) : (
         <>
-        <div className="slideshow">
-        <SlideShow images={images} interval={interval} text={text} />
-      </div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <div className="slideshow">
+              <SlideShow images={images} interval={interval} text={text} />
+            </div>
+          </Suspense>
         </>
       )}
-      <SearchBooking buttonText="Sök Lediga Rum" />
+      <Suspense fallback={<div>Loading...</div>}>
+        <SearchBooking buttonText="Sök Lediga Rum" />
+      </Suspense>
     </>
   );
 };

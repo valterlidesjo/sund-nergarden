@@ -9,6 +9,7 @@
     @include m.flex(row, center, center);
     z-index: 1;
     background-color: v.$secondary-col;
+   
     .room-start-image {
       height: 85%;
       width: 85%;

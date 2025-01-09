@@ -3,6 +3,8 @@ import "./scss/_contact.scss";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import MenuBtn from "./ui/MenuBtn/MenuBtn";
 import sundHus2 from "../assets/sund-hus2.jpeg";
+import sundHus2W from "../assets/sund-hus2.webp";
+
 
 interface ContactProps {
   header: string;
@@ -37,11 +39,16 @@ const Contact: React.FC<ContactProps> = ({
   return (
     <>
       <div className="contact-container" id="contact-container">
+        <picture>
+        <source srcSet={sundHus2W} type="image/webp" />
         <img
           className="contact-image"
           src={sundHus2}
           alt="Sund Nergården Växthus"
+          loading="lazy"
+          decoding="async"
         />
+        </picture>
         <div className="header-container">
           <p className="header">{header}</p>
         </div>

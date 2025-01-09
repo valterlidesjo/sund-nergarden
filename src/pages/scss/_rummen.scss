@@ -8,6 +8,10 @@
     overflow: hidden;
     @include m.flex(row, center, center);
     z-index: 1;
+    picture{
+      height: 100%;
+      width: 100%;
+    }
     img {
       height: 100%;
       width: 100%;

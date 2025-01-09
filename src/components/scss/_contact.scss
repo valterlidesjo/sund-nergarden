@@ -9,6 +9,10 @@ $img: "../../assets/sund-hus2.jpeg";
   height: 100svh;
   overflow: hidden;
   @include m.flex(row);
+  picture{
+    width: 100%;
+    height: 100%;
+  }
   .contact-image {
     height: 100%;
     width: 100%;
