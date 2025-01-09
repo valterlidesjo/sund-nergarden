@@ -27,6 +27,8 @@ const RoomHasthagen = () => {
         Sviten är självklart helt rökfri, både inomhus och på de tillhörande uteplatserna, för att säkerställa en ren och frisk atmosfär. Här väntar en plats där lugnet från sjöutsikten smälter samman med omsorgsfull elegans - en tillflykt för den som söker något utöver det vanliga."
       startImage={imagesHasthagen[0].src}
       imageText="HÄST HAGEN"
+      imageTextDesk="HÄSTHAGEN"
+      roomHeaderDesk="Hästhagen - En Juniorsvit med Sjöutsikt"
         images={imagesHasthagen}
         text="Hästhagen"
         description={descriptionHasthagen}

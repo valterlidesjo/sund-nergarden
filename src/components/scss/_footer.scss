@@ -18,6 +18,7 @@
     }
     .left-text {
       @include m.flex(column, space-between, flex-start);
+      cursor: pointer;
     
       p{
         width: 100%;
@@ -29,7 +30,7 @@
     }
     .right-text {
       @include m.flex(column, space-between, center);
-      // text-align: right;
+      cursor: pointer;
       p{
         width: 100%;
       }

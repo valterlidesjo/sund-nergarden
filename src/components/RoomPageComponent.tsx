@@ -3,6 +3,8 @@ import "./scss/_roomPageComponent.scss";
 import TextSection from "./TextSection";
 import SearchBooking from "./SearchBooking";
 import { useEffect, useState } from "react";
+import InfiniteSlider from "./InfiniteSlider";
+import ReverseInfiniteSlider from "./ReverseInfiniteSlider";
 
 interface Image {
   id: number;
@@ -105,9 +107,18 @@ const RoomPageComponent = ({
           </>
         )}
       </div>
-      <div className="slideshow">
+      {isDesktop ? (
+        <>
+        <InfiniteSlider images={images}/>
+        {/* <ReverseInfiniteSlider images={images} /> */}
+        </>
+      ) : (
+        <>
+        <div className="slideshow">
         <SlideShow images={images} interval={interval} text={text} />
       </div>
+        </>
+      )}
       <SearchBooking buttonText="Sök Lediga Rum" />
     </>
   );

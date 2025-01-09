@@ -14,14 +14,21 @@ export const SnurrV2: React.FC = () => {
       }
     };
 
+    
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleClick = () => {
+    window.open("https://online.bookvisit.com/package?channelid=918cee3d-0141-4e51-b886-ac9fcf09653c&roomconfig=a2&year=2025&month=1&day=9&staylength=1", "_blank", "noopener,noreferrer");
+  };
+
   return (
-    <div className={`snurr-container ${isScrolled ? "scrolled" : ""}`}>
+    <div className={`snurr-container ${isScrolled ? "scrolled" : ""}`} onClick={handleClick}>
       <div className="snurr"></div>
       <p className="boka-rum">BOKA</p>
     </div>

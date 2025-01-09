@@ -2,17 +2,17 @@
 @use "../../styles/variables" as v;
 @use "../../styles/global" as g;
 
-@keyframes scroll-horizontal {
+@keyframes scroll-horizontal-rev {
     0%{
-        left: 100%;
+        right: 100%;
     }
     100%{
-        left: -100%;
+        right: -100%;
     }
 }
 
-.scroll-container-slider{
-    height: 40svh;
+.scroll-container-slider-rev{
+    height: 30svh;
     position: relative;
     overflow: hidden;
     background: v.$secondary-col;
@@ -22,45 +22,45 @@
     &::-webkit-scrollbar {
         display: none; // Chrome, Safari och nya Edge
     }
-    .carousel-primary, 
-    .carousel-secondary{
+    .carousel-primary-rev, 
+    .carousel-secondary-rev{
         top: 5%;
-        left: 100%;
+        right: 100%;
         width: 100%;
         overflow: hidden;
         position: absolute;
         white-space: nowrap;
     }
-    .carousel-primary img{
-        height: 38svh;
+    .carousel-primary-rev img{
+        height: 28svh;
         width: 17rem;
         margin-left: 5px;
         object-fit: cover;
     }
-    .carousel-primary{
+    .carousel-primary-rev{
         @include m.flex(row, space-around, center);
-        animation: scroll-horizontal 40s linear infinite;
+        animation: scroll-horizontal-rev 40s linear infinite;
     }
-    .carousel-secondary{
-        animation: scroll-horizontal 40s linear infinite;
+    .carousel-secondary-rev{
+        animation: scroll-horizontal-rev 40s linear infinite;
         animation-delay: 20s;
     }
 }
 
-.carousel-primary:hover,
-.carousel-primary:hover~.carousel-secondary{
+.carousel-primary-rev:hover,
+.carousel-primary-rev:hover~.carousel-secondary-rev{
     -webkit-animation-play-state: paused;
     -moz-animation-play-state: paused;
     -o-animation-play-state: paused;
     animation-play-state: paused;
 }
-.carousel-secondary:hover{
+.carousel-secondary-rev:hover{
     -webkit-animation-play-state: paused;
     -moz-animation-play-state: paused;
     -o-animation-play-state: paused;
     animation-play-state: paused;
 }
-.scroll-container-slider:hover>.carousel-primary:not(:hover){
+.scroll-container-slider-rev:hover>.carousel-primary-rev:not(:hover){
     -webkit-animation-play-state: paused;
     -moz-animation-play-state: paused;
     -o-animation-play-state: paused;

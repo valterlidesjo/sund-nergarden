@@ -12,10 +12,12 @@ interface TextSectionProps {
   color?:string;
   fontFamily?: string;
   lineHeight?: string;
+  onClick?: () => void;
 }
 
 const TextSection: React.FC<TextSectionProps> = ({
   text,
+  onClick,
   textAlign = "left",
   fontSize = "1.2rem",
   fontWeight = "100",
@@ -44,7 +46,7 @@ const TextSection: React.FC<TextSectionProps> = ({
   };
   return (
     <div className="text-section-container" style={containerStyle}>
-      <p style={textStyle}>{text}</p>
+      <p style={textStyle} onClick={onClick}>{text}</p>
     </div>
   );
 };

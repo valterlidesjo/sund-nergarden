@@ -160,6 +160,7 @@ const MatDryck = () => {
                   textAlign="left"
                   fontSize="2.6rem"
                   margin="0 0 1rem 0"
+                  padding="0 6rem"
                   color="black"
                   fontWeight="bold"
                 />

@@ -1,19 +1,19 @@
 import React from 'react'
-import "./scss/_infiniteSlider.scss";
+import "./scss/_infiniteSliderReverse.scss";
 interface Image {
     id: number;
     src: string;
     alt: string;
 }
 
-interface InfiniteSliderProps {
+interface ReverseInfiniteSliderProps {
     images: Image[];
 }
 
-const InfiniteSlider: React.FC<InfiniteSliderProps> = ({ images }) => {
+const ReverseInfiniteSlider: React.FC<ReverseInfiniteSliderProps> = ({ images }) => {
   return (
-    <div className='scroll-container-slider'>
-        <div className="carousel-primary">
+    <div className='scroll-container-slider-rev'>
+        <div className="carousel-primary-rev">
         {images.map((image) => (
           <img 
           key={image.id} 
@@ -23,7 +23,7 @@ const InfiniteSlider: React.FC<InfiniteSliderProps> = ({ images }) => {
         />
         ))}
         </div>
-        <div className="carousel-primary carousel-secondary">
+        <div className="carousel-primary-rev carousel-secondary-rev">
         {images.map((image) => (
           <img 
           key={image.id} 
@@ -38,4 +38,4 @@ const InfiniteSlider: React.FC<InfiniteSliderProps> = ({ images }) => {
   )
 }
 
-export default InfiniteSlider
+export default ReverseInfiniteSlider

@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import RoomPageComponent from "../../components/RoomPageComponent";
 import sundSjolundaImage1 from "../../assets/sund-rum1.jpeg";
 import sundSjolundaImage2 from "../../assets/sund-rum2.jpeg";
-import sundSjolundaImage3 from "../../assets/sund-rum3.jpeg";
+import sundTest1 from "../../assets/sund-bastu.jpg";
+import sundTest2 from "../../assets/sund-desert1.jpeg";
+import sundTest3 from "../../assets/sund-drink.jpg";
 
 const RoomSjolunda = () => {
   const imagesSjolunda = [
     { id: 1, src: sundSjolundaImage1, alt: "Image 1" },
     { id: 2, src: sundSjolundaImage2, alt: "Image 2" },
-    { id: 3, src: sundSjolundaImage3, alt: "Image 3" },
+    { id: 3, src: sundTest1, alt: "Image 3" },
+    { id: 4, src: sundTest2, alt: "Image 4" },
+    { id: 5, src: sundTest3, alt: "Image 5" },
   ];
   const descriptionSjolunda = [
     {
@@ -17,17 +21,6 @@ const RoomSjolunda = () => {
       kvm: "39 m2",
     },
   ];
-
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <>

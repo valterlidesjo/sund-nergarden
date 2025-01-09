@@ -5,7 +5,7 @@ import sundWineStarList from "../assets/sund-star-wine-list.jpg";
 import sundTripAdvisor from "../assets/sund-trip-advisor.png";
 import sundLogoWhite from "../assets/sund-logo-white.png";
 import sundLogoBlack from "../assets/sund-logo1.png";
-import { matchPath, useLocation } from "react-router-dom";
+import { matchPath, useLocation, useNavigate } from "react-router-dom";
 
 
 interface FooterProps{
@@ -18,6 +18,15 @@ const Footer: React.FC<FooterProps> = ({
   color = "white",
 }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const bookUrl = "https://online.bookvisit.com/package?channelId=918cee3d-0141-4e51-b886-ac9fcf09653c";
+  const youtubeUrl = "https://www.youtube.com/channel/UC8NbQ8ImK1SYKTbsEKKov1Q";
+  const facebookUrl = "https://www.facebook.com/sundnergarden";
+  const instaUrl = "https://www.instagram.com/sundnergarden/";
+  const wineUrl = "https://starwinelist.com/sv/vinstallen/sund-nergarden";
+  const tripAdvisorUrl = "https://www.tripadvisor.se/Hotel_Review-g2554479-d6882309-Reviews-Sund_Nergarden-Vagnharad_Sodermanland_County.html";
+  const giftCard = "https://online.bookvisit.com/voucher?channelId=918cee3d-0141-4e51-b886-ac9fcf09653c";
 
   // Dynamiska stilar baserat på URL
   const getFooterStyles = () => {
@@ -44,6 +53,31 @@ const Footer: React.FC<FooterProps> = ({
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
       }, []);
+
+      const handleNavigation = (link: string) => {
+        if (link.startsWith("http")) {
+          window.open(link, "_blank", "noopener,noreferrer");
+        } else if (link.startsWith("#")) {
+          const targetId = link.substring(1);
+          if (location.pathname === "/") {
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              const offset = -80; 
+              const elementPosition = targetElement.getBoundingClientRect().top;
+              const offsetPosition = elementPosition + window.scrollY + offset;
+      
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth",
+              });
+            }
+          } else {
+            navigate("/", { state: { targetId } });
+          }
+        } else {
+          navigate(link);
+        }
+      };
   
   return (
     <>
@@ -55,11 +89,11 @@ const Footer: React.FC<FooterProps> = ({
             <img src={logo} alt="Sund Nergården Logo" />
           </div>
           <div className="left-text">
-            <TextSection text="Hantera Bokning" margin="1px 0" color={dynamicColor} />
-            <TextSection text="Mat & Dryck" margin="1px 0" color={dynamicColor}/>
-            <TextSection text="Kontakt" margin="1px 0" color={dynamicColor}/>
-            <TextSection text="Villkor & Regler" margin="1px 0" color={dynamicColor}/>
-            <TextSection text="Presentkort" margin="1px 0" color={dynamicColor}/>
+            <TextSection text="Hantera Bokning" margin="1px 0" color={dynamicColor} onClick={() => handleNavigation(bookUrl)} />
+            <TextSection text="Mat & Dryck" margin="1px 0" color={dynamicColor} onClick={() => handleNavigation("/mat-dryck")}/>
+            <TextSection text="Kontakt" margin="1px 0" color={dynamicColor} onClick={() => handleNavigation("#contact-container")}/>
+            <TextSection text="Villkor & Regler" margin="1px 0" color={dynamicColor} onClick={() => handleNavigation("/villkor-regler")}/>
+            <TextSection text="Presentkort" margin="1px 0" color={dynamicColor} onClick={() => handleNavigation(giftCard)}/>
           </div>
 
 
@@ -72,13 +106,13 @@ const Footer: React.FC<FooterProps> = ({
           </div>
 
           <div className="right-text">
-            <TextSection text="Facebook" color={dynamicColor}  padding="0 2rem 0 0" margin="1px 0 1rem 0"/>
-            <TextSection text="Instagram" color={dynamicColor} padding="0 2rem 0 0"/>
-            <TextSection text="Youtube" color={dynamicColor}  padding="0 2rem 0 0"/>
+            <TextSection text="Facebook" color={dynamicColor}  padding="0 2rem 0 0" margin="1px 0 1rem 0" onClick={() => handleNavigation(facebookUrl)}/>
+            <TextSection text="Instagram" color={dynamicColor} padding="0 2rem 0 0" onClick={() => handleNavigation(instaUrl)}/>
+            <TextSection text="Youtube" color={dynamicColor}  padding="0 2rem 0 0" onClick={() => handleNavigation(youtubeUrl)}/>
           <div className="picture-container">
             <div className="recommend-pictures">
-              <img src={sundWineStarList} alt="Wine Star List" />
-              <img src={sundTripAdvisor} alt="Trip Advisor" />
+              <img src={sundWineStarList} alt="Wine Star List" onClick={() => handleNavigation(wineUrl)} />
+              <img src={sundTripAdvisor} alt="Trip Advisor" onClick={() => handleNavigation(tripAdvisorUrl)} />
             </div>
           </div>
           </div>

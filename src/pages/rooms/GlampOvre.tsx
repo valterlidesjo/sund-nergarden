@@ -27,6 +27,8 @@ const GlampOvre = () => {
       imageText="ÖVRE"
       startImage={imagesOvre[0].src}
         images={imagesOvre}
+        imageTextDesk="ÖVRE"
+        roomHeaderDesk="Övre - En Lyxig Naturupplevelse"
         text="Övre"
         description={descriptionOvre}
         kvm={descriptionOvre[0].kvm}
