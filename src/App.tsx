@@ -1,4 +1,6 @@
 import { ParallaxProvider } from "react-scroll-parallax";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavMobile from "./components/NavMobile";
 import HomePage from "./pages/Homepage";
 import MatDryck from "./pages/MatDryck";
@@ -9,13 +11,13 @@ import RoomBlombacka from "./pages/rooms/RoomBlockbacka";
 import RoomHasthagen from "./pages/rooms/RoomHasthagen";
 import RoomSjolunda from "./pages/rooms/RoomSjolunda";
 import Rummen from "./pages/Rummen";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ThreeCourseMenu from "./pages/ThreeCourseMenu";
 import FiveCourseMenu from "./pages/FiveCourseMenu";
 import Footer from "./components/Footer";
-import { SnurrV2 } from "./components/ui/SurrV2/SnurrV2";
-import { useEffect, useState } from "react";
+import SnurrV2 from "./components/ui/SurrV2/SnurrV2";
 import NavDesktop from "./components/DesktopOnly/NavDesktop";
+import ContactMessage from "./pages/ContactMessage";
+import OpeningHours from "./pages/OpeningHours";
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
@@ -35,6 +37,7 @@ function App() {
       <ParallaxProvider>
         <BrowserRouter>
           {isDesktop ? <NavDesktop /> : <NavMobile />}
+
           <SnurrV2></SnurrV2>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -48,6 +51,8 @@ function App() {
             <Route path="/rummen/berget" element={<GlampBerget />} />
             <Route path="/mat-dryck/tre" element={<ThreeCourseMenu />} />
             <Route path="/mat-dryck/fem" element={<FiveCourseMenu />} />
+            <Route path="/kontakt" element={<ContactMessage/>} />
+            <Route path="/oppetider" element={<OpeningHours/>} />
           </Routes>
           <Footer />
         </BrowserRouter>

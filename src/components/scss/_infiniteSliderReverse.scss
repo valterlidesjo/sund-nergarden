@@ -4,10 +4,18 @@
 
 @keyframes scroll-horizontal-rev {
     0%{
-        right: 100%;
+        right: 0%;
     }
     100%{
         right: -100%;
+    }
+}
+@keyframes scroll-horizontal-rev-sec {
+    0%{
+        right: 100%;
+    }
+    100%{
+        right: 0%;
     }
 }
 
@@ -42,8 +50,7 @@
         animation: scroll-horizontal-rev 40s linear infinite;
     }
     .carousel-secondary-rev{
-        animation: scroll-horizontal-rev 40s linear infinite;
-        animation-delay: 20s;
+        animation: scroll-horizontal-rev-sec 40s linear infinite;
     }
 }
 

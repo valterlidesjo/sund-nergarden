@@ -10,6 +10,8 @@ import { MatDryckImages } from "./extra/MatDryckImages";
 import sundVinImageW from "../assets/sund-vin.jpeg";
 import sundDesert4ImageW from "../assets/sund-desert4.webp";
 import sundJohanImageW from "../assets/sund-johan.jpeg";
+import InfiniteSlider from "../components/InfiniteSlider";
+import ReverseInfiniteSlider from "../components/ReverseInfiniteSlider";
 
 const MedBtn = React.lazy(() => import("../components/ui/MedBtn/MedBtn"));
 const TextSection = React.lazy(() => import("../components/TextSection"));
@@ -267,6 +269,12 @@ const MatDryck = () => {
         )}
       </div>
       <Suspense fallback={<div>Loading...</div>}>
+      {isDesktop ? (
+        <>
+          <InfiniteSlider images={MatDryckImages} />
+          </>
+      ) : (
+        <>
         <HorizontalScroll
           images={MatDryckImages}
           imageWidth="17.5rem"
@@ -274,6 +282,8 @@ const MatDryck = () => {
           enableHoverEffect={false}
           backgroundCol="#D3E2D5"
         />
+        </>
+      )}
       </Suspense>
     </>
   );

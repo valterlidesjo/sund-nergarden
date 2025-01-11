@@ -36,7 +36,7 @@ const Rummen = () => {
       <div className="rummen-image-container">
         <picture>
         <source srcSet={sundRitadW} type="image/webp" />
-        <img src={sundRitad} alt="Sund Nergården ritad bild" />
+        <img src={sundRitad} alt="Sund Nergården ritad bild" loading="lazy" decoding="async"/>
         </picture>
 
         <div className="rummen-start-text-container">

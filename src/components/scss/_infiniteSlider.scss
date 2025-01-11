@@ -4,10 +4,18 @@
 
 @keyframes scroll-horizontal {
     0%{
-        left: 100%;
+        left: 0%;
     }
     100%{
         left: -100%;
+    }
+}
+@keyframes scroll-horizontal-sec {
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: 0%;
     }
 }
 
@@ -22,7 +30,14 @@
     &::-webkit-scrollbar {
         display: none; // Chrome, Safari och nya Edge
     }
-    .carousel-primary, 
+    .carousel-primary{
+        top: 5%;
+        left: 0%;
+        width: 100%;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+    }
     .carousel-secondary{
         top: 5%;
         left: 100%;
@@ -42,8 +57,7 @@
         animation: scroll-horizontal 40s linear infinite;
     }
     .carousel-secondary{
-        animation: scroll-horizontal 40s linear infinite;
-        animation-delay: 20s;
+        animation: scroll-horizontal-sec 40s linear infinite;
     }
 }
 

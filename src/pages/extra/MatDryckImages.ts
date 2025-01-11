@@ -21,12 +21,12 @@ import sundDesert5W from "../../assets/sund-desert5.webp";
 import sundMat1W from "../../assets/sund-mat.webp";
 import sundMat2W from "../../assets/sund-mat2.webp";
 import sundOlivesW from "../../assets/sund-olives.webp";
-import sundVegetablesW from "../../assets/sund-vegetables.jpg";
-import sundVinMatW from "../../assets/sund-vin-mat.jpeg";
-import sundVin2W from "../../assets/sund-vin2.jpg";
-import sundVin3W from "../../assets/sund-vin3.jpg";
-import sundVin4W from "../../assets/sund-vin4.jpg";
-import sundVin1W from "../../assets/sund-vin.jpeg";
+import sundVegetablesW from "../../assets/sund-vegetables.webp";
+import sundVinMatW from "../../assets/sund-vin-mat.webp";
+import sundVin2W from "../../assets/sund-vin2.webp";
+import sundVin3W from "../../assets/sund-vin3.webp";
+import sundVin4W from "../../assets/sund-vin4.webp";
+import sundVin1W from "../../assets/sund-vin.webp";
 
 
 

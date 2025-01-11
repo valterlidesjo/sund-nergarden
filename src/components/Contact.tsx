@@ -4,6 +4,8 @@ import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import MenuBtn from "./ui/MenuBtn/MenuBtn";
 import sundHus2 from "../assets/sund-hus2.jpeg";
 import sundHus2W from "../assets/sund-hus2.webp";
+import { useNavigate } from "react-router-dom";
+import useIsDesktop from "../services/useIsDesktop";
 
 
 interface ContactProps {
@@ -21,20 +23,18 @@ const Contact: React.FC<ContactProps> = ({
   instagram,
   youtube,
 }) => {
-  const handleClick = () => {
-    console.log("BananKontakt");
+  const navigate = useNavigate();
+
+  const handleClickContact = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/kontakt");
+  };
+  const handleClickOpen = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/oppetider");
   };
 
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const isDesktop = useIsDesktop();
 
   return (
     <>
@@ -57,7 +57,7 @@ const Contact: React.FC<ContactProps> = ({
             <div className="content-container">
               <div className="content-left-container">
                 {children}
-                <MenuBtn text="ÖPPETIDER" onClick={handleClick} />
+                <MenuBtn text="ÖPPETIDER" onClick={handleClickOpen} />
               </div>
               <div className="content-right-container">
                 <div className="social-media-container">
@@ -72,7 +72,7 @@ const Contact: React.FC<ContactProps> = ({
                     <FaYoutube /> {youtube}
                   </div>
                 </div>
-                <MenuBtn text="KONTAKTA OSS" onClick={handleClick} margin="5rem 0 0 0"/>
+                <MenuBtn text="KONTAKTA OSS" onClick={handleClickContact} margin="5rem 0 0 0"/>
               </div>
             </div>
           </>
@@ -92,8 +92,8 @@ const Contact: React.FC<ContactProps> = ({
                   <FaYoutube /> {youtube}
                 </div>
               </div>
-              <MenuBtn text="KONTAKTA OSS" onClick={handleClick} />
-              <MenuBtn text="ÖPPETIDER" onClick={handleClick} />
+              <MenuBtn text="KONTAKTA OSS" onClick={handleClickContact} />
+              <MenuBtn text="ÖPPETIDER" onClick={handleClickOpen} />
             </div>
           </>
         )}

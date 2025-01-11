@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import "./scss/_roomPageComponent.scss";
 import TextSection from "./TextSection";
+import ReverseInfiniteSlider from "./ReverseInfiniteSlider";
 const SearchBooking = React.lazy(() => import("../components/SearchBooking"));
 const InfiniteSlider = React.lazy(() => import("../components/InfiniteSlider"));
 const SlideShow = React.lazy(() => import("../components/SlideShow"));
@@ -116,6 +117,7 @@ const RoomPageComponent = ({
         <>
           <Suspense fallback={<div>Loading...</div>}>
             <InfiniteSlider images={images} />
+            {/* <ReverseInfiniteSlider images={images}/> */}
           </Suspense>
         </>
       ) : (
