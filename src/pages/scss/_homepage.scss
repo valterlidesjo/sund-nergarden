@@ -109,3 +109,12 @@
     
 }
 
+@media (max-width: 768px) {
+  .homepage-light-container {
+    padding: 4rem 1rem;
+
+    button {
+      width: 100%;
+    }
+  }
+}
