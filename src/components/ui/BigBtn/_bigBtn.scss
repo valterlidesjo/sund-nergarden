@@ -13,6 +13,7 @@
         background: v.$primary-col;
         border: none;
         @include m.flex(row);
+        cursor: pointer;
     }
     @include m.desk{
         width: auto;

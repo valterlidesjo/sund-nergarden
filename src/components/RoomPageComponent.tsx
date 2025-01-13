@@ -105,7 +105,7 @@ const RoomPageComponent = ({
               textAlign="center"
               fontSize="1rem"
               padding="0 2rem"
-              margin="0 0 2rem 0"
+              margin="0 0 4rem 0"
               color="black"
             />
           </>
@@ -124,6 +124,7 @@ const RoomPageComponent = ({
               <SlideShow images={images} interval={interval} text={text} />
             </div>
           </Suspense>
+          <div className="room-page-space-container"></div>
         </>
       )}
       <Suspense fallback={<div>Loading...</div>}>

@@ -19,7 +19,7 @@ const FiveCourseMenu = () => {
 
   const handleClick = () => {
     window.location.href =
-      "https://online.bookvisit.com/package?channelId=918cee3d-0141-4e51-b886-ac9fcf09653c";
+      "https://online.bookvisit.com/extras?channelid=918cee3d-0141-4e51-b886-ac9fcf09653c";
   };
   return (
     <>

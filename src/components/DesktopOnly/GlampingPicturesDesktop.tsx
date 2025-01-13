@@ -20,13 +20,13 @@ const GlampingPicturesDesktop = () => {
     <>
       <div className="glamping-pictures-container">
         <div className="glamp-1 glamping-picture">
-          <RoomPictureFade roomImage={sundGlamping1} roomImageW={sundGlamping1W} roomName="BERGET" roomText="Vårt största glamping tält på 20,5m2, sjö och natur utsikt och en king size säng från Carpe Diem." onClick={() => goToRoom("berget")} />
+          <RoomPictureFade roomImage={sundGlamping1} roomImageW={sundGlamping1W} roomName="BERGET" roomText="Vårt största glamping tält på 20,5m2, sjö och natur utsikt och en king size säng från Carpe Diem." onClick={() => goToRoom("berget")} cursor="pointer" />
         </div>
         <div className="glamp-2 glamping-picture">
-          <RoomPictureFade roomImage={sundGlamping2} roomImageW={sundGlamping2W} roomName="ÖVRE" roomText="Övre med utsikt över sjön, en queen size säng från Carpe Diem och 19,6m2 golvyta." onClick={() => goToRoom("ovre")} />
+          <RoomPictureFade roomImage={sundGlamping2} roomImageW={sundGlamping2W} roomName="ÖVRE" roomText="Övre med utsikt över sjön, en queen size säng från Carpe Diem och 19,6m2 golvyta." onClick={() => goToRoom("ovre")} cursor="pointer" />
         </div>
         <div className="glamp-3 glamping-picture">
-          <RoomPictureFade roomImage={sundGlamping3} roomImageW={sundGlamping3W} roomName="NEDRE" roomText="Uteplats med varm dusch, sjöutsikt, queen size säng från Carpe Diem och 19,6m2 golvyta." onClick={() => goToRoom("nedre")} />
+          <RoomPictureFade roomImage={sundGlamping3} roomImageW={sundGlamping3W} roomName="NEDRE" roomText="Uteplats med varm dusch, sjöutsikt, queen size säng från Carpe Diem och 19,6m2 golvyta." onClick={() => goToRoom("nedre")} cursor="pointer" />
         </div>
       </div>
     </>

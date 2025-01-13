@@ -39,7 +39,7 @@ function App() {
         <BrowserRouter>
           {isDesktop ? <NavDesktop /> : <NavMobile />}
 
-          <SnurrV2></SnurrV2>
+          <SnurrV2 />
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/rummen" element={<Rummen />} />
@@ -52,9 +52,9 @@ function App() {
             <Route path="/rummen/berget" element={<GlampBerget />} />
             <Route path="/mat-dryck/tre" element={<ThreeCourseMenu />} />
             <Route path="/mat-dryck/fem" element={<FiveCourseMenu />} />
-            <Route path="/kontakt" element={<ContactMessage/>} />
-            <Route path="/oppetider" element={<OpeningHours/>} />
-            <Route path="/villkor-regler" element={<VillkorRegler/>}/>
+            <Route path="/kontakt" element={<ContactMessage />} />
+            <Route path="/oppetider" element={<OpeningHours />} />
+            <Route path="/villkor-regler" element={<VillkorRegler />} />
           </Routes>
           <Footer />
         </BrowserRouter>

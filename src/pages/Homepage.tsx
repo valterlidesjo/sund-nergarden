@@ -151,7 +151,7 @@ const HomePage = () => {
                     <TextSection
                       text="Bo hos oss på Nergården"
                       color="#1C3620"
-                      textAlign="center"
+                      
                   fontSize="2.2rem"
                   margin="4rem 0 3rem 0"
                   fontWeight="bold"
@@ -164,7 +164,7 @@ const HomePage = () => {
 
                         För mer information om vad som ingår se lite längre ner på sidan."
                       color="#1C3620"
-                     textAlign="center"
+                     
                       margin="0px 0rem 4rem 0rem"
                     />
                   </Suspense>

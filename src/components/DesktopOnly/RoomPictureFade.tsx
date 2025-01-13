@@ -8,6 +8,7 @@ interface RoomPictureFadeProps {
   onClick?: () => void;
   fontSizeHeader?: string;
   fontSizeText?: string;
+  cursor?: string;
 }
 
 const RoomPictureFade: React.FC<RoomPictureFadeProps> = ({
@@ -18,6 +19,8 @@ const RoomPictureFade: React.FC<RoomPictureFadeProps> = ({
   onClick,
   fontSizeHeader = "2rem",
   fontSizeText = "1rem",
+  cursor = "auto",
+
 }) => {
   return (
     <>
@@ -30,6 +33,7 @@ const RoomPictureFade: React.FC<RoomPictureFadeProps> = ({
             loading="lazy"
             decoding="async"
             alt="fade-pictures"
+            style={{ cursor: cursor }}
           />
         </picture>
         <p className="room-image-header" style={{ fontSize: fontSizeHeader }}>
