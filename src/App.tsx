@@ -18,6 +18,7 @@ import SnurrV2 from "./components/ui/SurrV2/SnurrV2";
 import NavDesktop from "./components/DesktopOnly/NavDesktop";
 import ContactMessage from "./pages/ContactMessage";
 import OpeningHours from "./pages/OpeningHours";
+import VillkorRegler from "./pages/VillkorRegler";
 
 function App() {
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
@@ -53,6 +54,7 @@ function App() {
             <Route path="/mat-dryck/fem" element={<FiveCourseMenu />} />
             <Route path="/kontakt" element={<ContactMessage />} />
             <Route path="/oppetider" element={<OpeningHours />} />
+            <Route path="/villkor-regler" element={<VillkorRegler />} />
           </Routes>
           <Footer />
         </BrowserRouter>
