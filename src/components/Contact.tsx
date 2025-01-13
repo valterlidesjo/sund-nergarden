@@ -25,12 +25,12 @@ const Contact: React.FC<ContactProps> = ({
   const navigate = useNavigate();
 
   const handleClickContact = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
     navigate("/kontakt");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
   const handleClickOpen = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
     navigate("/oppetider");
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const isDesktop = useIsDesktop();

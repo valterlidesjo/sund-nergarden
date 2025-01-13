@@ -130,18 +130,18 @@ const Footer: React.FC<FooterProps> = ({
         ) : (
 <>
         <div className="footer-text-container" >
-          <div className="left-text">
-            <TextSection text="Hantera Bokning" margin="1px 0" color={dynamicColor}/>
-            <TextSection text="Mat & Dryck" margin="1px 0" color={dynamicColor}/>
-            <TextSection text="Kontakt" margin="1px 0" color={dynamicColor}/>
-            <TextSection text="Villkor & Regler" margin="1px 0" color={dynamicColor}/>
-            <TextSection text="Presentkort" margin="1px 0" color={dynamicColor}/>
+        <div className="left-text">
+            <TextSection text="Hantera Bokning" margin="1px 0" color={dynamicColor} onClick={() => handleNavigation(bookUrl)} />
+            <TextSection text="Mat & Dryck" margin="1px 0" color={dynamicColor} onClick={() => handleNavigation("/mat-dryck")}/>
+            <TextSection text="Kontakt" margin="1px 0" color={dynamicColor} onClick={() => handleNavigation("#contact-container")}/>
+            <TextSection text="Villkor & Regler" margin="1px 0" color={dynamicColor} onClick={() => handleNavigation("/villkor-regler")}/>
+            <TextSection text="Presentkort" margin="1px 0" color={dynamicColor} onClick={() => handleNavigation(giftCard)}/>
           </div>
 
           <div className="right-text">
-            <TextSection text="Facebook" color={dynamicColor} textAlign="right" />
-            <TextSection text="Instagram" color={dynamicColor} textAlign="right" />
-            <TextSection text="Youtube" color={dynamicColor} textAlign="right" />
+            <TextSection text="Facebook" color={dynamicColor} textAlign="right" onClick={() => handleNavigation(facebookUrl)}/>
+            <TextSection text="Instagram" color={dynamicColor} textAlign="right" onClick={() => handleNavigation(instaUrl)}/>
+            <TextSection text="Youtube" color={dynamicColor} textAlign="right" onClick={() => handleNavigation(youtubeUrl)}/>
           </div>
 
         </div>

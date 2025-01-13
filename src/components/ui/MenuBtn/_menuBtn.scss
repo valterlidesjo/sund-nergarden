@@ -14,5 +14,6 @@
         color: black;
         background: v.$white;
         @include m.border(4px, black);
+        cursor: pointer;
     }
 }

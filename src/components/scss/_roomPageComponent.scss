@@ -41,6 +41,9 @@
     background-color: v.$secondary-col;
     @include m.flex(column);
 }
+.slideshow{
+    margin-bottom: 3rem;
+}
 
 .container {
     background-color: v.$primary-col;

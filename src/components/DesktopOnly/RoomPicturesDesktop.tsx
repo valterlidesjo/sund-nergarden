@@ -24,46 +24,46 @@ const RoomPicturesDesktop = () => {
     <>
     <div className="room-pictures-container">
         <div className="room-1 room-picture">
-        <RoomPictureFade roomImage={sundRum1} roomImageW={sundRum1W} roomName="SJÖLUNDA" roomText="Vår största Juniorsvit på 39m2 med king size säng och utsikt över sjön Sillen." onClick={() => goToRoom("sjolunda")} />
+        <RoomPictureFade roomImage={sundRum1} roomImageW={sundRum1W} roomName="SJÖLUNDA" roomText="Vår största Juniorsvit på 39m2 med king size säng och utsikt över sjön Sillen." onClick={() => goToRoom("sjolunda")} cursor="pointer" />
         </div>
         <div className="room-2 room-picture">
-        <RoomPictureFade roomImage={sundRum2} roomImageW={sundRum2W} roomName="SUND" roomText="Utsikt över naturen i våra välskötta trädgård. 24m2 och en otrolig dubbelsäng från Carpe Diem." onClick={() => goToRoom("sund")} />
+        <RoomPictureFade roomImage={sundRum2} roomImageW={sundRum2W} roomName="SUND" roomText="Utsikt över naturen i våra välskötta trädgård. 24m2 och en otrolig dubbelsäng från Carpe Diem." onClick={() => goToRoom("sund")} cursor="pointer" />
         </div>
         <div className="room-3 room-picture">
 
-        <RoomPictureFade roomImage={sundPool} roomImageW={sundPoolW} roomName="VÄSTERLJUNG" roomText="En mysig Juniorsvit på 31m2 med king size säng och utsikt över sjön Sillen." onClick={() => goToRoom("vasterljung")} />
+        <RoomPictureFade roomImage={sundPool} roomImageW={sundPoolW} roomName="VÄSTERLJUNG" roomText="En mysig Juniorsvit på 31m2 med king size säng och utsikt över sjön Sillen." onClick={() => goToRoom("vasterljung")} cursor="pointer" />
         </div>
         <div className="room-4 room-picture">
 
-        <RoomPictureFade roomImage={sundGlamping2} roomImageW={sundGlamping2W} roomName="HÄSTHAGEN" roomText="Juniorsvit på 37m2 med king size säng och utsikt över sjön Sillen." onClick={() => goToRoom("hasthagen")} />
+        <RoomPictureFade roomImage={sundGlamping2} roomImageW={sundGlamping2W} roomName="HÄSTHAGEN" roomText="Juniorsvit på 37m2 med king size säng och utsikt över sjön Sillen." onClick={() => goToRoom("hasthagen")} cursor="pointer" />
         </div>
         <div className="room-5 room-picture">
 
-        <RoomPictureFade roomImage={sundRum1} roomImageW={sundRum1W} roomName="BLOMBACKA" roomText="Ett dubbelrum med utsikt över natur och sjö. 23m2, snedtak och en otrolig dubbelsäng från Carpe Diem." onClick={() => goToRoom("blombacka")} />
+        <RoomPictureFade roomImage={sundRum1} roomImageW={sundRum1W} roomName="BLOMBACKA" roomText="Ett dubbelrum med utsikt över natur och sjö. 23m2, snedtak och en otrolig dubbelsäng från Carpe Diem." onClick={() => goToRoom("blombacka")} cursor="pointer" />
         </div>
         <div className="room-6 room-picture">
 
-        <RoomPictureFade roomImage={sundPool} roomImageW={sundPoolW} roomName="WAPPERSTA" roomText="25m2 stort dubbelrum med utsikt över vår fina trädgård." onClick={() => goToRoom("wappersta")} />
+        <RoomPictureFade roomImage={sundPool} roomImageW={sundPoolW} roomName="WAPPERSTA" roomText="25m2 stort dubbelrum med utsikt över vår fina trädgård." onClick={() => goToRoom("wappersta")} cursor="pointer" />
         </div>
         <div className="room-7 room-picture">
-        <RoomPictureFade roomImage={sundRum1} roomImageW={sundRum1W} roomName="SILLEN" roomText="Ett av våra dubbelrum med utsikt över både sjö och natur, 23m2 golvyta." onClick={() => goToRoom("sillen")} />
+        <RoomPictureFade roomImage={sundRum1} roomImageW={sundRum1W} roomName="SILLEN" roomText="Ett av våra dubbelrum med utsikt över både sjö och natur, 23m2 golvyta." onClick={() => goToRoom("sillen")} cursor="pointer" />
 
         </div>
         <div className="room-8 room-picture">
 
-        <RoomPictureFade roomImage={sundRum2} roomImageW={sundRum2W} roomName="LÖVSTA" roomText="Vår största Juniorsvit på 39m2 med soffa och vedkamin för maximal lyxig mys. Utsikt över vår fina trädgård och hästhagen." onClick={() => goToRoom("lovsta")} />
+        <RoomPictureFade roomImage={sundRum2} roomImageW={sundRum2W} roomName="LÖVSTA" roomText="Vår största Juniorsvit på 39m2 med soffa och vedkamin för maximal lyxig mys. Utsikt över vår fina trädgård och hästhagen." onClick={() => goToRoom("lovsta")} cursor="pointer" />
         </div>
         <div className="room-9 room-picture">
 
-        <RoomPictureFade roomImage={sundGlamping2} roomImageW={sundGlamping2W} roomName="VAGNHÄRAD" roomText="Dubbelrum med utsikt av vår fina trädgård, 18m2 golvyta och en otrolig dubbelsäng från Carpe Diem." onClick={() => goToRoom("vagnharad")} />
+        <RoomPictureFade roomImage={sundGlamping2} roomImageW={sundGlamping2W} roomName="VAGNHÄRAD" roomText="Dubbelrum med utsikt av vår fina trädgård, 18m2 golvyta och en otrolig dubbelsäng från Carpe Diem." onClick={() => goToRoom("vagnharad")} cursor="pointer" />
         </div>
         <div className="room-10 room-picture">
 
-        <RoomPictureFade roomImage={sundRum2} roomImageW={sundRum2W} roomName="LUNDBY" roomText="25m2 stort dubbelrum med utsikt över vår fina trädgård." onClick={() => goToRoom("lundby")} />
+        <RoomPictureFade roomImage={sundRum2} roomImageW={sundRum2W} roomName="LUNDBY" roomText="25m2 stort dubbelrum med utsikt över vår fina trädgård." onClick={() => goToRoom("lundby")} cursor="pointer" />
         </div>
         <div className="room-11 room-picture">
 
-        <RoomPictureFade roomImage={sundPool} roomImageW={sundPoolW} roomName="TROSA" roomText="Ett av våra dubbelrum med utsikt över både sjö och natur, 24m2 golvyta." onClick={() => goToRoom("trosa")} />
+        <RoomPictureFade roomImage={sundPool} roomImageW={sundPoolW} roomName="TROSA" roomText="Ett av våra dubbelrum med utsikt över både sjö och natur, 24m2 golvyta." onClick={() => goToRoom("trosa")} cursor="pointer" />
         </div>
 
 
