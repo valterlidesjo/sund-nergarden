@@ -8,7 +8,6 @@ import sundJohanImage from "../assets/sund-johan.jpeg";
 import { MatDryckImages } from "./extra/MatDryckImages";
 import sundDesert4ImageW from "../assets/sund-desert4.webp";
 import sundJohanImageW from "../assets/sund-johan.jpeg";
-import InfiniteSlider from "../components/InfiniteSlider";
 import HorizontalScroll from "../components/HorizontalScroll";
 import LongInfiniteSlider from "../components/LongInfiniteSlider";
 

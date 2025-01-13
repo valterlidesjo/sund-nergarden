@@ -4,12 +4,9 @@
 
 .scroll-container {
   @include m.horScroll;
-  background-color: v.$primary-col;
-  // padding: 0 1rem 4rem 1rem;
 
   .image-container {
     position: relative;
-    background-color: v.$primary-col;
     &.hover-enabled {
 
       &:hover .horizontal-img {

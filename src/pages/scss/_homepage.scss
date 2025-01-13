@@ -61,6 +61,16 @@
   background: v.$secondary-col;
   width: 100%;
     @include m.flex(column);
+    .stay-at-container{
+      @include m.flex(column);
+    }
+    .stay-at-picture-container{
+      .stay-at-picture{
+        margin: 1rem 0 3rem 0;
+        width: 330px;
+        height: 440px;
+      }
+    }
     @include m.desk{
       .stay-at-container{
         @include m.flex(row, space-evenly);
@@ -85,6 +95,7 @@
   width: 100%;
   @include m.flex(column);
   @include m.desk{
+  border-bottom: 1px solid white;
 
   }
 }
