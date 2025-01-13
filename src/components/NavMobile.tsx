@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import NavHamburger from "./ui/NavHamburger/NavHamburger";
 import "./scss/_navMobile.scss";
 import { useLocation, useNavigate } from "react-router";
-import { NavLinks } from "../pages/extra/NavLinks";
-import userScreenHeight from "../services/userWindowHeight";
+import sundLogoWhite from "../assets/sund-logo-white.png";
+import sundLogoWhiteW from "../assets/sund-logo-white.webp";
+import NavigationLinks from "./extra/NavigationLinks";
+import { throttle } from "lodash";
 
 const NavMobile = () => {
   const [isNavActive, setIsNavActive] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-
-  const screenHeight = userScreenHeight();
 
   const toggleNav = () => {
     setIsNavActive(!isNavActive);
@@ -26,42 +26,33 @@ const NavMobile = () => {
   const handleNavigation = (link: string) => {
     if (link.startsWith("http")) {
       window.location.href = link;
-    }  else if (link.startsWith("#")) {
-      const targetId = link.substring(1); // Ta bort '#' från länken
+    } else if (link.startsWith("#")) {
+      const targetId = link.substring(1);
       if (location.pathname === "/") {
-        // Scrolla direkt om användaren redan är på startsidan
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-          const offset = -80; // Justera scrollpositionen
-          const elementPosition = targetElement.getBoundingClientRect().top;
-          const offsetPosition = elementPosition + window.scrollY + offset;
-  
-          window.scrollTo({
-            top: offsetPosition,
-            behavior: "smooth",
-          });
+          targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
         }
-        setIsNavActive(false); // Stäng navigationsmenyn
+        setIsNavActive(false);
       } else {
-        // Navigera till startsidan och överför målelementets id
         navigate("/", { state: { targetId } });
       }
     } else {
-      // Hantera andra typer av länkar
       navigate(link);
     }
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY; // Hämta antal pixlar användaren scrollat
-      const threshold = location.pathname === "/" ? screenHeight - 80 : 0;
+    const handleScroll = throttle(() => {
+      const scrollTop = window.scrollY;
+      const threshold = 0;
       setIsScrolled(scrollTop > threshold);
-    };
+    }, 200);
 
-    window.addEventListener("scroll", handleScroll); // Lägg till scroll-listener
+    window.addEventListener("scroll", handleScroll);
+
     return () => {
-      window.removeEventListener("scroll", handleScroll); // Ta bort listener vid unmount
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [location.pathname]);
 
@@ -73,20 +64,21 @@ const NavMobile = () => {
 
   return (
     <div className={`nav-container ${isNavActive ? "nav-active" : ""}`}>
-      <div className="nav-logo-container"></div>
       <div className={`toggle-nav-header ${isScrolled ? "scrolled" : ""}`}>
+      <div className="nav-logo-container">
+        <picture>
+          <source srcSet={sundLogoWhiteW} type="image/webp" />
+          <img src={sundLogoWhite} alt="Sund Nergården ritad bild" loading="lazy" decoding="async" />
+        </picture>
+      </div>
         <div className="toggle-nav-container" onClick={toggleNav}>
-          <NavHamburger isOpen={isNavActive} toggleMenu={toggleNav}/>
+          <NavHamburger isOpen={isNavActive} toggleMenu={toggleNav} />
         </div>
       </div>
 
       {isNavActive && (
         <div className={`nav-active-container ${isNavActive ? "visible" : ""}`}>
-          {NavLinks.map((item, index) => (
-            <p key={index} onClick={() => handleNavigation(item.link)}>
-              {item.text}
-            </p>
-          ))}
+          <NavigationLinks onClick={handleNavigation} />
         </div>
       )}
     </div>

@@ -1,0 +1,42 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+.nav-desktop-container {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  height: 5rem;
+  width: 100%;
+  z-index: 99;
+  @include m.flex(row, space-evenly, center);
+  &.scrolled{
+    background: v.$primary-col; 
+      backdrop-filter: blur(10px); 
+      -webkit-backdrop-filter: blur(10px); 
+      transition: background 0.3s ease, backdrop-filter 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  .nav-desktop-list {
+    @include m.flex(row, space-evenly, center);
+    list-style: none;
+    width: 100%;
+    .nav-desktop-item{
+        a{
+            font-size: 1.3rem;
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+            &.scrolled{
+                color: white;
+            }
+        }
+        .link-white{
+          color: white;
+        }
+        .link-black{
+          color: black;
+        }
+    }
+  }
+}

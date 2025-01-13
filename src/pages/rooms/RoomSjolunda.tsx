@@ -1,14 +1,24 @@
-import React from "react";
-import RoomPageComponent from "../../components/RoomPageComponent";
+import React, { Suspense, useEffect, useState } from "react";
+const RoomPageComponent = React.lazy(() => import("../../components/RoomPageComponent"));
 import sundSjolundaImage1 from "../../assets/sund-rum1.jpeg";
 import sundSjolundaImage2 from "../../assets/sund-rum2.jpeg";
-import sundSjolundaImage3 from "../../assets/sund-rum3.jpeg";
+import sundTest1 from "../../assets/sund-bastu.jpg";
+import sundTest2 from "../../assets/sund-desert1.jpeg";
+import sundTest3 from "../../assets/sund-drink.jpg";
+
+import sundSjolundaImage1W from "../../assets/sund-rum1.webp";
+import sundSjolundaImage2W from "../../assets/sund-rum2.webp";
+import sundTest1W from "../../assets/sund-bastu.webp";
+import sundTest2W from "../../assets/sund-desert1.webp";
+import sundTest3W from "../../assets/sund-drink.webp";
 
 const RoomSjolunda = () => {
   const imagesSjolunda = [
-    { id: 1, src: sundSjolundaImage1, alt: "Image 1" },
-    { id: 2, src: sundSjolundaImage2, alt: "Image 2" },
-    { id: 3, src: sundSjolundaImage3, alt: "Image 3" },
+    { id: 1, src: sundSjolundaImage1, webpSrc: sundSjolundaImage1W, alt: "Image 1" },
+    { id: 2, src: sundSjolundaImage2, webpSrc: sundSjolundaImage2W, alt: "Image 2" },
+    { id: 3, src: sundTest1, webpSrc: sundTest1W, alt: "Image 3" },
+    { id: 4, src: sundTest2, webpSrc: sundTest2W, alt: "Image 4" },
+    { id: 5, src: sundTest3, webpSrc: sundTest3W, alt: "Image 5" },
   ];
   const descriptionSjolunda = [
     {
@@ -17,6 +27,7 @@ const RoomSjolunda = () => {
       kvm: "39 m2",
     },
   ];
+
   return (
     <>
       <RoomPageComponent
@@ -26,7 +37,10 @@ const RoomSjolunda = () => {
         Här sover du gott i en exklusiv dubbelsäng från Carpe Diem, känd för sin överlägsna komfort, och låter dagens intryck sjunka in i den bekväma soffan. Oavsett om du söker svalka under varma sommardagar med luftkonditionering eller en golvfläkt, är detta en plats där komforten står i centrum. 
         Sviten är självklart helt rökfri, både inomhus och på de tillhörande uteplatserna, för att säkerställa en ren och frisk atmosfär. Här väntar en plats där lugnet från sjöutsikten smälter samman med omsorgsfull elegans - en tillflykt för den som söker något utöver det vanliga."
         startImage={imagesSjolunda[0].src}
+        startImageWebp={imagesSjolunda[0].webpSrc}
         imageText="SJÖ- LUNDA"
+        imageTextDesk="SJÖLUNDA"
+        roomHeaderDesk="Sjölunda - En Juniorsvit med Sjöutsikt"
         images={imagesSjolunda}
         text="Sjölunda"
         description={descriptionSjolunda}

@@ -1,0 +1,91 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+.contact-message-container{
+    width: 100%;
+    height: auto;
+    @include m.flex(column, space-evenly, center);
+    background: v.$secondary-col;
+    .contact-x-container{
+        width: 100%;
+        height: 60px;
+        @include m.flex(row, flex-end, center);
+        margin: 50px 2rem 0 0;
+        cursor: pointer;
+        .contact-x{
+            font-size: 4rem;
+        }
+    }
+    .contact-text-container{
+        width: 100%;
+        @include m.flex(column);
+        margin-bottom: 0.8rem;
+        .contact-header, .contact-text {
+            @include m.flex(row);
+            width: 80%;
+    
+        }
+    }
+    .contact-form{
+        @include m.flex(column);
+        width: 100%;
+        .contact-input{
+            width: 80%;
+            margin: 0 0 1.6rem 0;
+            padding: 0.8rem;
+            @include m.border(2px, black);
+            color: v.$black;
+            background-color: v.$secondary-col;
+            font-size: 1.2rem;
+        }
+        .contact-input::placeholder{
+            color: v.$black;
+            font-size: 1.2rem;
+        }
+        .contact-textarea{
+            width: 80%;
+            height: 20svh;
+            margin:0 0 0.8rem 0;
+            padding: 1rem;
+            @include m.border(2px, black);
+            color: v.$black;
+            background-color: v.$secondary-col;
+            font-size: 1.2rem;
+            resize: none;
+        }
+        .contact-textarea::placeholder{
+            color: v.$black;
+            font-size: 1.2rem;
+        }
+        .contact-button{
+            width: 80%;
+            margin: 0.8rem 0;
+            padding: 1rem;
+            @include m.border(2px, black);
+            color: v.$white;
+            background-color: v.$primary-col;
+            font-size: 1.2rem;
+            cursor: pointer;
+            &:hover{
+                scale: 1.03;
+            }
+        }
+
+    }
+}
+@include m.desk{
+    .contact-message-container{
+
+        height: 100svh;
+        .contact-bottom-container{
+            width: 100%;
+            @include m.flex(row, space-evenly, flex-start);
+            .contact-text-container{
+                .contact-header{
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}

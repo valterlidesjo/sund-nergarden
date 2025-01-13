@@ -5,20 +5,14 @@
 .menu-btn-container{
     @include m.flex(row, center, center);
     width: 100%;
-    height: 7svh;
-    margin-bottom: 2rem;
+    height: 8svh;
     .menu-btn{
-        width: 65%;
-        height: 7svh;
+        width: 16rem;
+        height: 4.4rem;
         border-radius: 5px;
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: v.$primary-col;
-        background: v.$secondary-col;
-        // @include m.border(5px, v.$primary-col);
-        // &:hover{
-        //     background: v.$white;
-        //     color: v.$primary-col;
-        // }
+        font-size: 1.3rem;
+        color: black;
+        background: v.$white;
+        @include m.border(4px, black);
     }
 }

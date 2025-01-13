@@ -2,47 +2,39 @@
 @use "../../styles/variables" as v;
 @use "../../styles/global" as g;
 
-
 .slideshow-container {
+  height: 20rem;
+  position: relative;
+  .image-wrapper {
+    .slideshow-image {
+      width: 100%;
+      height: 20rem;
+      object-fit: cover;
+    }
+  }
 
-    .image-wrapper {
-        
-        .slideshow-image {
-          border-bottom: 2px solid v.$white;
-            width: 100%;
-            height: 20rem;
-        }
+  .dots {
+    text-align: center;
+    position: absolute;
+    bottom: 2rem; // Flyttar prickarna längst ner
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
 
+    .dot {
+      display: inline-block;
+      width: 0.75rem;
+      height: 0.75rem;
+      margin: 0 5px;
+      background-color: lightgray;
+      border-radius: 50%;
+      cursor: pointer;
     }
 
-    .dots {
-        text-align: center;
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 100;
-      
-        .page-text {
-          margin-bottom: 1.75rem; /* Skapa avstånd mellan texten och punkterna */
-          font-size: 2.5rem;
-          color: white;
-        }
-      
-        .dot {
-          display: inline-block;
-          width: 0.75rem;
-          height: 0.75rem;
-          margin: 0 5px;
-          background-color: lightgray;
-          border-radius: 50%;
-          cursor: pointer;
-        }
-      
-        .dot.active {
-          background-color: white;
-          width: 0.8rem;
-          height: 0.8rem;
-        }
-      }
+    .dot.active {
+      background-color: white;
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+  }
 }

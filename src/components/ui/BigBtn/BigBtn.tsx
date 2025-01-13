@@ -8,14 +8,17 @@ interface BigBtnProps {
   width?: string;
   fontSize?: string;
   margin?: string;
+  padding?: string;
 }
 
-const BigBtn: React.FC<BigBtnProps> = ({ text, onClick, height = "6.2rem", width = "16.2rem", fontSize = "2.3rem", margin = "1rem", }) => {
+
+const BigBtn: React.FC<BigBtnProps> = ({ text, onClick, height = "6.2rem", width = "16.2rem", fontSize = "2.3rem", margin = "1rem", padding = "0" }) => {
   const buttonStyle: React.CSSProperties = {
     height, 
     width, 
     margin,
     fontSize,
+    padding,
   };
   return (
     <div className="big-btn-container">

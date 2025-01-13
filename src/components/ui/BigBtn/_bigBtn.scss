@@ -14,4 +14,7 @@
         border: none;
         @include m.flex(row);
     }
+    @include m.desk{
+        width: auto;
+    }
 }

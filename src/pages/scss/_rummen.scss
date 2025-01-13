@@ -8,6 +8,10 @@
     overflow: hidden;
     @include m.flex(row, center, center);
     z-index: 1;
+    picture{
+      height: 100%;
+      width: 100%;
+    }
     img {
       height: 100%;
       width: 100%;
@@ -20,9 +24,16 @@
         transform: translateX(-50%);
         text-align: center;
         p{
-            font-size: 4rem;
-            font-family: "Satisfy", serif;
-  
+          font-size: 4rem;
+          font-family: "Satisfy", serif;
+          
+        }
+        @include m.desk{
+          top: 40%;
+          width: 100%;
+          p{
+            font-size: v.$start-desk;
+          }
         }
     }
   }

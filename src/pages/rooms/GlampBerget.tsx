@@ -27,6 +27,8 @@ const GlampBerget = () => {
       imageText="BERGET"
       startImage={imagesBerget[0].src}
         images={imagesBerget}
+        roomHeaderDesk="Berget - En Lyxig Naturupplevelse"
+        imageTextDesk="BERGET"
         text="Berget"
         description={descriptionBerget}
         kvm={descriptionBerget[0].kvm}

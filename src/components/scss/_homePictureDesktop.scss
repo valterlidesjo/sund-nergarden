@@ -1,0 +1,15 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+.home-pictures-container {
+    background-color: v.$white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 15rem);
+  gap: 1rem; // Avstånd mellan rutorna
+  width: 100%;
+  height: auto;
+  padding: 2rem 4rem;
+
+}

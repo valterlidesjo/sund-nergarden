@@ -3,32 +3,23 @@ import "./scss/_slideShow.scss";
 
 type SlideshowProps = {
   images: { id: number; src: string; alt: string }[];
-  interval?: number; // Tid i millisekunder mellan bilder
+  interval?: number;
   text: string;
 };
 
-const SlideShow = ({ images, interval = 3000, text }: SlideshowProps) => {
+const SlideShow = ({ images, interval = 3000 }: SlideshowProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, interval);
-    return () => clearInterval(timer); // Rensa intervallet vid avmontering
+    return () => clearInterval(timer);
   }, [images.length, interval]);
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
 
   return (
     <div className="slideshow-container">
+      
       {/* Bild */}
       <div className="image-wrapper">
         <img
@@ -40,7 +31,6 @@ const SlideShow = ({ images, interval = 3000, text }: SlideshowProps) => {
 
       {/* Indikatorer */}
       <div className="dots">
-        <p className="page-text">{text}</p>
         {images.map((_, index) => (
           <span
             key={index}
@@ -49,6 +39,7 @@ const SlideShow = ({ images, interval = 3000, text }: SlideshowProps) => {
           />
         ))}
       </div>
+
     </div>
   );
 };

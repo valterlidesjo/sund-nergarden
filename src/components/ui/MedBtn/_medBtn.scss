@@ -4,7 +4,7 @@
 
 .med-btn-container{
     @include m.flex(row, center, center);
-    width: 100svw;
+    width: 100%;
     height: auto;
     button{
         border-radius: 15px;

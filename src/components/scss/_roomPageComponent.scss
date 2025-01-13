@@ -9,6 +9,7 @@
     @include m.flex(row, center, center);
     z-index: 1;
     background-color: v.$secondary-col;
+   
     .room-start-image {
       height: 85%;
       width: 85%;
@@ -24,6 +25,15 @@
             font-size: 4rem;
             color: v.$white;
   
+        }
+    }
+    @include m.desk{
+        .room-start-image {
+            margin-top: 3rem;
+            height: 80%;
+        }
+        .room-start-text-container {
+            top: 50%;
         }
     }
   }

@@ -6,53 +6,96 @@
   width: 100%;
   height: 100svh;
   overflow: hidden;
-  @include m.flex(row, center, center);
+  @include m.flex(row);
   z-index: 1;
+  picture {
+    width: 100%;
+    height: 100%;
+  }
   img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: 50% 30%;
   }
   .homepage-text-container {
     position: absolute;
-      top: 17%;
+      top: 25%;
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
-      p{
-          font-size: 4rem;
-          font-family: "Italianno", cursive;
-
+      width: 100%;
+      @include m.flex(column);
+      .homepage-header-text{
+          font-size: 2rem;
+          color: v.$white;
+      }
+      .line-homepage{
+        width: 250px;
+        height: 1px;
+        background: v.$white;
+      }
+      .homepage-text{
+        color: v.$white;
+      }
+      @include m.desk{
+        .homepage-header-text{
+          font-size: 3.5rem;
+        }
+        .line-homepage{
+          width: 460px;
+        }
+        .homepage-text{
+          font-size: 1.5rem;
+        }
       }
   }
 }
 .homepage-container{
     background: v.$primary-col;
-    @include m.flex(column, center, center);
+    @include m.flex(column);
     
-    .homepage-wine-container{
-        width: 100%;
-        height: 25svh;
-        overflow: hidden;
-        border-top: 2px solid v.$white;
-        border-bottom: 2px solid v.$white;
-        img {
-            height: 25svh;
-            width: 100%;
-            object-fit: cover;
+    
+}
+.homepage-light-container{
+  background: v.$secondary-col;
+  width: 100%;
+    @include m.flex(column);
+    @include m.desk{
+      .stay-at-container{
+        @include m.flex(row, space-evenly);
+        .stay-at-text-container{
+          @include m.flex(column);
+          margin-left: 4rem;
+          width: 40%;
+        }
+        .stay-at-picture-container{
+          .stay-at-picture{
+            width: 420px;
+            height: 560px;
+            border-radius: 5px;
           }
         }
-    
-    
+      }
+    }
+}
+
+.homepage-white-container{
+  background: v.$white;
+  width: 100%;
+  @include m.flex(column);
+  @include m.desk{
+
+  }
 }
 
 .homepage-book-container{
     text-align: left;
     width: 100%;
     margin-top: 3svh;
-    @include m.flex(column, center, center);
+    @include m.flex(column);
     .homepage-book-text-container{
-        @include m.flex(row, center, center);
+        @include m.flex(row);
         
     }
     p{

@@ -27,6 +27,8 @@ const GlampNedre = () => {
       imageText="NEDRE"
       startImage={imagesNedre[0].src}
         images={imagesNedre}
+        roomHeaderDesk="NEDRE - En Lyxig Naturupplevelse"
+        imageTextDesk="NEDRE"
         text="Nedre"
         description={descriptionNedre}
         kvm={descriptionNedre[0].kvm}

@@ -8,22 +8,38 @@
   background: v.$primary-col;
   padding: 3rem 0 0 0;
   .footer-text-container {
-    @include m.flex(row, space-evenly, center);
+    @include m.flex(row, space-evenly, space-between);
+    .sund-logo-container{
+      @include m.flex(row);
+      img{
+        width: calc(100% - 2rem);
+        max-height: 10rem;
+      }
+    }
     .left-text {
-      @include m.flex(column, center, flex-start);
+      @include m.flex(column, space-between, flex-start);
+      cursor: pointer;
+    
+      p{
+        width: 100%;
+      }
+    }
+    .contact-footer-container{
+      @include m.flex(column, space-between, center);
       text-align: left;
     }
     .right-text {
-      @include m.flex(column, center, flex-end);
-      text-align: right;
+      @include m.flex(column, space-between, center);
+      cursor: pointer;
+      p{
+        width: 100%;
+      }
     }
-    .contact-container {
-        display: none;
-    }
-    .picture-container {
-        display: none;
-      .recommend-pictures {
-        
+    .picture-container{
+      .recommend-pictures{
+        img{
+          margin-right: 10px;
+        }
       }
     }
   }
