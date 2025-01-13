@@ -45,5 +45,6 @@ export const MatDryckImages = [
     { id: 13, src: sundVin2, webpSrc: sundVin2W, alt: "Image 13", text: "", roomText: ""},
     { id: 12, src: sundDesert5, webpSrc: sundDesert5W, alt: "Image 12", text: "", roomText: ""},
     { id: 14, src: sundVin4, webpSrc: sundVin4W, alt: "Image 14", text: "", roomText: ""},
+    { id: 15, src: sundVegetables, webpSrc: sundVegetablesW, alt: "Image 15", text: "", roomText: ""},
 
 ];

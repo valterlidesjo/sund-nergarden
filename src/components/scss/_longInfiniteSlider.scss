@@ -1,0 +1,82 @@
+@use "../../styles/mixins" as m;
+@use "../../styles/variables" as v;
+@use "../../styles/global" as g;
+
+@keyframes long-scroll-horizontal {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-258.1875rem);
+    }
+}
+@keyframes long-scroll-horizontal-sec {
+    0%{
+        transform: translateX(258.1875rem);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+.long-scroll-container-slider{
+    height: 40svh;
+    position: relative;
+    overflow: hidden;
+    background: v.$secondary-col;
+    scrollbar-width: none; // Firefox
+    -ms-overflow-style: none; // IE och Edge
+
+    &::-webkit-scrollbar {
+        display: none; // Chrome, Safari och nya Edge
+    }
+    .long-carousel-primary{
+        top: 5%;
+        // left: 0%;
+        width: 258.1875rem;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+    }
+    .long-carousel-secondary{
+        top: 5%;
+        // left: 300%;
+        width: 258.1875rem;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+    }
+    .long-carousel-primary img{
+        height: 38svh;
+        width: 17rem;
+        margin-left: 0.3125rem;
+        object-fit: cover;
+    }
+    .long-carousel-primary{
+        @include m.flex(row, space-around, center);
+        animation: long-scroll-horizontal 120s linear infinite;
+    }
+    .long-carousel-secondary{
+        animation: long-scroll-horizontal-sec 120s linear infinite;
+    }
+}
+
+.long-carousel-primary:hover,
+.long-carousel-primary:hover~.long-carousel-secondary{
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+.long-carousel-secondary:hover{
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+.long-scroll-container-slider:hover>.long-carousel-primary:not(:hover){
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}

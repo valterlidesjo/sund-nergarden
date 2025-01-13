@@ -5,10 +5,9 @@ import { glampingImages } from "./extra/GlampingImages";
 import { useNavigate } from "react-router-dom";
 import sundRitad from "../assets/sund-ritad.jpeg";
 import sundRitadW from "../assets/sund-ritad.webp";
+import HorizontalScroll from "../components/HorizontalScroll";
+
 const TextSection = React.lazy(() => import("../components/TextSection"));
-const HorizontalScroll = React.lazy(
-  () => import("../components/HorizontalScroll")
-);
 const SearchBooking = React.lazy(() => import("../components/SearchBooking"));
 const RoomPicturesDesktop = React.lazy(() => import("../components/DesktopOnly/RoomPicturesDesktop"));
 const GlampingPicturesDesktop = React.lazy(() => import("../components/DesktopOnly/GlampingPicturesDesktop"));
@@ -96,7 +95,6 @@ const Rummen = () => {
         </>
       ) : (
         <>
-        <Suspense fallback={<div>Loading...</div>}>
           <div className="rummen-container">
             <TextSection
               text="Våra elva rum"
@@ -152,7 +150,6 @@ const Rummen = () => {
               textAlign="center"
             />
           </div>
-          </Suspense>
         </>
       )}
       <Suspense fallback={<div>Loading...</div>}>
