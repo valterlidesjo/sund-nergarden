@@ -7,37 +7,45 @@
   width: 100%;
   background: v.$primary-col;
   padding: 3rem 0 0 0;
+
   .footer-text-container {
     @include m.flex(row, space-evenly, space-between);
-    .sund-logo-container{
+
+    .sund-logo-container {
       @include m.flex(row);
-      img{
+
+      img {
         width: calc(100% - 2rem);
         max-height: 10rem;
       }
     }
+
     .left-text {
       @include m.flex(column, space-between, flex-start);
       cursor: pointer;
-    
-      p{
+
+      p {
         width: 100%;
       }
     }
-    .contact-footer-container{
+
+    .contact-footer-container {
       @include m.flex(column, space-between, center);
       text-align: left;
     }
+
     .right-text {
-      @include m.flex(column, space-between, center);
+      @include m.flex(column, space-between, flex-end);
       cursor: pointer;
-      p{
+
+      p {
         width: 100%;
       }
     }
-    .picture-container{
-      .recommend-pictures{
-        img{
+
+    .picture-container {
+      .recommend-pictures {
+        img {
           margin-right: 10px;
         }
       }
@@ -46,9 +54,37 @@
 }
 
 @media (max-width: 768px) {
-  .left-text {
-    p {
-      margin-bottom: 1rem
+
+  .footer-container {
+
+    .footer-text-container {
+      @include m.flex(row, center, center);
+
+      .left-text {
+        @include m.flex(column, space-between, center);
+        height: 10rem;
+      }
+
+      .right-text {
+        height: 10rem;
+
+        .icon-container {
+          @include m.flex(row, space-between, center);
+          padding-right: 1rem;
+          width: 80%;
+        }
+
+        span {
+          @include m.flex(column, center, center);
+          font-size: 24px;
+          background-color: white;
+          width: 2rem;
+          height: 2rem;
+          padding: 0.5rem;
+          border-radius: 50%;
+          color: v.$primary-col;
+        }
+      }
     }
   }
 }

@@ -6,6 +6,12 @@ import sundTripAdvisor from "../assets/sund-trip-advisor.png";
 import sundLogoWhite from "../assets/sund-logo-white.png";
 import sundLogoBlack from "../assets/sund-logo1.png";
 import { matchPath, useLocation, useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faInstagram,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
 
 interface FooterProps {
   backgroundColor?: string;
@@ -238,42 +244,40 @@ const Footer: React.FC<FooterProps> = ({
                   margin="1px 0"
                   color={dynamicColor}
                 />
+              </div>
+
+              <div className="right-text">
                 <TextSection
                   text="Villkor & Regler"
                   margin="1px 0"
                   color={dynamicColor}
+                  textAlign="right"
                 />
                 <TextSection
                   text="Presentkort"
                   margin="1px 0"
                   color={dynamicColor}
-                />
-              </div>
-
-              <div className="right-text">
-                <TextSection
-                  text="Facebook"
-                  color={dynamicColor}
                   textAlign="right"
                 />
-                <TextSection
-                  text="Instagram"
-                  color={dynamicColor}
-                  textAlign="right"
-                />
-                <TextSection
-                  text="Youtube"
-                  color={dynamicColor}
-                  textAlign="right"
-                />
+                <div className="icon-container">
+                  <span>
+                    <FontAwesomeIcon icon={faFacebook} />
+                  </span>
+                  <span>
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </span>
+                  <span>
+                    <FontAwesomeIcon icon={faYoutube} />
+                  </span>
+                </div>
               </div>
             </div>
             <TextSection
               text="Copyright © 2024 Sund Nergården"
               textAlign="center"
               fontSize="1rem"
-              margin="1rem 0 0 0"
-              padding="0 0 10rem 0"
+              margin="0 0 0 0"
+              padding="2rem 0 10rem 0"
               color={dynamicColor}
             />
           </>
