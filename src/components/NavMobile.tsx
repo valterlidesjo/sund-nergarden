@@ -70,12 +70,17 @@ const NavMobile = () => {
   return (
     <div className={`nav-container ${isNavActive ? "nav-active" : ""}`}>
       <div className={`toggle-nav-header ${isScrolled ? "scrolled" : ""}`}>
-      <div className="nav-logo-container" onClick={handleClickLogo}>
-        <picture>
-          <source srcSet={sundLogoWhiteW} type="image/webp" />
-          <img src={sundLogoWhite} alt="Sund Nergården ritad bild" loading="lazy" decoding="async" />
-        </picture>
-      </div>
+        <div className="nav-logo-container" onClick={handleClickLogo}>
+          <picture>
+            <source srcSet={sundLogoWhiteW} type="image/webp" />
+            <img
+              src={sundLogoWhite}
+              alt="Sund Nergården ritad bild"
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
+        </div>
         <div className="toggle-nav-container" onClick={toggleNav}>
           <NavHamburger isOpen={isNavActive} toggleMenu={toggleNav} />
         </div>
