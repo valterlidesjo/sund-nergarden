@@ -15,6 +15,12 @@ type HorizontalScrollProps = {
     alt: string;
     text: string;
   }) => void;
+  onTextClick?: (image: {
+    id: number;
+    src: string;
+    alt: string;
+    text: string;
+  }) => void;
   imageHeight?: string;
   imageWidth?: string;
   backgroundCol?: string;
@@ -25,6 +31,7 @@ type HorizontalScrollProps = {
 const HorizontalScroll = ({
   images,
   onImageClick,
+  onTextClick,
   imageHeight = "25rem",
   imageWidth = "12.5rem",
   backgroundCol = "#1C3620",
@@ -56,10 +63,14 @@ const HorizontalScroll = ({
               decoding="async"
             />
           </picture>
-          <p className="overlay-text" onClick={() => onImageClick?.(image)}>
+          <p
+            className="overlay-text"
+            onClick={() => {
+              onTextClick?.(image);
+            }}
+          >
             {image.text}
           </p>
-          <p className="room-text">{image.roomText}</p>
         </div>
       ))}
     </div>
