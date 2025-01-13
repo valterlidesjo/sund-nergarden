@@ -1,6 +1,5 @@
 import "./scss/_openingHours.scss";
 import sundSunset from "../assets/sund-sunset.jpeg";
-import TextSection from "../components/TextSection";
 
 const OpeningHours = () => {
   return (
@@ -16,7 +15,6 @@ const OpeningHours = () => {
             <p className="open-header">Våra Öppetider!</p>
           </div>
         </div>
-        <TextSection text="" />
       </div>
     </>
   );

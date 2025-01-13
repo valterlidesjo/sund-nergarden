@@ -56,7 +56,7 @@ const NavDesktop = () => {
   const getLinkColorClass = () => {
     if (location.pathname === "/mat-dryck") return "link-white";
     if (location.pathname === "/") return "link-white";
-    if (location.pathname === "/rummen") return "link-black";
+    if (location.pathname === "/oppetider") return "link-white";
     return "link-default";
   };
 
