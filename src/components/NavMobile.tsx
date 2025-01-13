@@ -62,6 +62,18 @@ const NavMobile = () => {
     }
   }, [isNavActive]);
 
+  useEffect(() => {
+    if (isNavActive) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isNavActive]);
+
   const handleClickLogo = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
     navigate("/");

@@ -233,16 +233,19 @@ const Footer: React.FC<FooterProps> = ({
                   text="Hantera Bokning"
                   margin="1px 0"
                   color={dynamicColor}
+                  onClick={() => handleNavigation(bookUrl)}
                 />
                 <TextSection
                   text="Mat & Dryck"
                   margin="1px 0"
                   color={dynamicColor}
+                  onClick={() => handleNavigation("/mat-dryck")}
                 />
                 <TextSection
                   text="Kontakt"
                   margin="1px 0"
                   color={dynamicColor}
+                  onClick={() => handleNavigation(bookUrl)}
                 />
               </div>
 
@@ -251,23 +254,25 @@ const Footer: React.FC<FooterProps> = ({
                   text="Villkor & Regler"
                   margin="1px 0"
                   color={dynamicColor}
+                  onClick={() => handleNavigation(bookUrl)}
                   textAlign="right"
                 />
                 <TextSection
                   text="Presentkort"
                   margin="1px 0"
                   color={dynamicColor}
+                  onClick={() => handleNavigation(bookUrl)}
                   textAlign="right"
                 />
                 <div className="icon-container">
                   <span>
-                    <FontAwesomeIcon icon={faFacebook} />
+                    <FontAwesomeIcon icon={faFacebook} onClick={() => handleNavigation(facebookUrl)} />
                   </span>
                   <span>
-                    <FontAwesomeIcon icon={faInstagram} />
+                    <FontAwesomeIcon icon={faInstagram} onClick={() => handleNavigation(instaUrl)} />
                   </span>
                   <span>
-                    <FontAwesomeIcon icon={faYoutube} />
+                    <FontAwesomeIcon icon={faYoutube} onClick={() => handleNavigation(youtubeUrl)} />
                   </span>
                 </div>
               </div>
