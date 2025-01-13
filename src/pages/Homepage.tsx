@@ -85,17 +85,19 @@ const HomePage = () => {
               <TextSection
                 text="Sund Nergården - Hideaway för vuxna"
                 textAlign="center"
-                margin="5rem 1rem 2rem 1rem"
+                margin="4rem 1rem 3rem 1rem"
                 fontSize="2rem"
               />
               <TextSection
                 text="Högt beläget vid sjön Sillen i vackra Sörmland hittar du Nergården.
             Våra elva rum fördelat på sju dubbelrum och fyra juniorsviter har
             varierande utsikt och planlösning men är inredda med samma
-            faciliteter och med en gemensam känsla. Under sommarmånaderna
-            erbjuder vi också tre populära Glamping."
+            faciliteter och med en gemensam känsla. 
+
+            Under sommarmånaderna erbjuder vi också tre populära Glamping."
                 textAlign="center"
-                margin="2rem 1rem"
+                margin="0 1rem 4rem 1rem"
+                padding="0 2rem"
               />
             </Suspense>
           </>
@@ -118,7 +120,7 @@ const HomePage = () => {
                     <TextSection
                       text="När du bokar en övernattning hos oss är det mesta inkluderat. Vi kallar det för Rum, Mat & Mera. 
 
-                        På vårt hotell får du alltid en härlig vistelse med en trerättersmeny och andra trevliga upplevelser inkluderade. Här kan du njuta av bastu och uppfriskande bad – perfekt anpassat efter säsongen. För dig som reser med elbil finns möjlighet att ladda bilen, och vi välkomnar även gäster som reser med hund. Hör av dig till oss så hjälper vi dig gärna med din bokning.
+                        På vårt hotell får du alltid en härlig vistelse med en trerättersmeny och andra trevliga upplevelser inkluderade. Här kan du njuta av bastu och uppfriskande bad - perfekt anpassat efter säsongen. För dig som reser med elbil finns möjlighet att ladda bilen, och vi välkomnar även gäster som reser med hund. Hör av dig till oss så hjälper vi dig gärna med din bokning.
                         Vänligen notera att hotellet och restaurangen är barnfria, vilket även gäller spädbarn, och att vi har en åldersgräns på 18 år. Varmt välkommen att njuta av en avkopplande och vuxen atmosfär hos oss!
 
                         För mer information om vad som ingår se lite längre ner på sidan."
@@ -130,17 +132,56 @@ const HomePage = () => {
                 <div className="stay-at-picture-container">
                   <picture>
                     <source srcSet={sundHus2W} type="image/webp" />
-                    <img src={sundHus2} alt="Sund Nergården Växthus"
-                    className="stay-at-picture"
-                    loading="lazy"
-                    decoding="async" />
+                    <img
+                      src={sundHus2}
+                      alt="Sund Nergården Växthus"
+                      className="stay-at-picture"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </picture>
                 </div>
               </div>
             </>
           ) : (
             <>
-              <p>UNDER DEVELOPMENT</p>
+              <div className="stay-at-container">
+                <div className="stay-at-text-container">
+                  <Suspense fallback={<div>Loading...</div>}>
+                    <TextSection
+                      text="Bo hos oss på Nergården"
+                      color="#1C3620"
+                      textAlign="center"
+                  fontSize="2.2rem"
+                  margin="4rem 0 3rem 0"
+                  fontWeight="bold"
+                    />
+                    <TextSection
+                      text="När du bokar en övernattning hos oss är det mesta inkluderat. Vi kallar det för Rum, Mat & Mera. 
+
+                        På vårt hotell får du alltid en härlig vistelse med en trerättersmeny och andra trevliga upplevelser inkluderade. Här kan du njuta av bastu och uppfriskande bad – perfekt anpassat efter säsongen. För dig som reser med elbil finns möjlighet att ladda bilen, och vi välkomnar även gäster som reser med hund. Hör av dig till oss så hjälper vi dig gärna med din bokning.
+                        Vänligen notera att hotellet och restaurangen är barnfria, vilket även gäller spädbarn, och att vi har en åldersgräns på 18 år. Varmt välkommen att njuta av en avkopplande och vuxen atmosfär hos oss!
+
+                        För mer information om vad som ingår se lite längre ner på sidan."
+                      color="#1C3620"
+                     textAlign="center"
+                      margin="0px 0rem 4rem 0rem"
+                    />
+                  </Suspense>
+                </div>
+                <div className="stay-at-picture-container">
+                  <picture>
+                    <source srcSet={sundHus2W} type="image/webp" />
+                    <img
+                      src={sundHus2}
+                      alt="Sund Nergården Växthus"
+                      className="stay-at-picture"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </picture>
+                </div>
+              </div>
             </>
           )}
         </div>
@@ -150,13 +191,13 @@ const HomePage = () => {
               text="Rum, Mat & Mera"
               fontSize="2rem"
               textAlign="center"
-              margin="2rem 0 0 0"
+              margin="4rem 0 0 0"
               color="#1C3620"
             />
             <TextSection
               text="Allt detta ingår när du bokar rum eller glamping med oss!"
               textAlign="center"
-              margin="0 0 0.5rem 0"
+              margin="0 0 2rem 0"
               color="#1C3620"
             />
           </Suspense>
@@ -167,7 +208,14 @@ const HomePage = () => {
           <HomePicturesDesktop />
         </Suspense>
       ) : (
-          <HorizontalScroll images={images} backgroundCol="white" enableHoverEffect = {false} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <HorizontalScroll
+            images={images}
+            backgroundCol="white"
+            enableHoverEffect={false}
+            padding="0 1rem 4rem 1rem"
+          />
+        </Suspense>
       )}
       <Suspense fallback={<div>Loading...</div>}>
         <Contact

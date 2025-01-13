@@ -65,3 +65,12 @@
     }
 }
 
+@media (max-width: 768px) {
+  .rummen-light-container {
+    padding: 4rem 1rem;
+
+    button {
+      width: 100%;
+    }
+  }
+}

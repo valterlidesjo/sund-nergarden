@@ -7,7 +7,6 @@ import sundHus2W from "../assets/sund-hus2.webp";
 import { useNavigate } from "react-router-dom";
 import useIsDesktop from "../services/useIsDesktop";
 
-
 interface ContactProps {
   header: string;
   children: React.ReactNode;
@@ -40,14 +39,14 @@ const Contact: React.FC<ContactProps> = ({
     <>
       <div className="contact-container" id="contact-container">
         <picture>
-        <source srcSet={sundHus2W} type="image/webp" />
-        <img
-          className="contact-image"
-          src={sundHus2}
-          alt="Sund Nergården Växthus"
-          loading="lazy"
-          decoding="async"
-        />
+          <source srcSet={sundHus2W} type="image/webp" />
+          <img
+            className="contact-image"
+            src={sundHus2}
+            alt="Sund Nergården Växthus"
+            loading="lazy"
+            decoding="async"
+          />
         </picture>
         <div className="header-container">
           <p className="header">{header}</p>
@@ -72,7 +71,11 @@ const Contact: React.FC<ContactProps> = ({
                     <FaYoutube /> {youtube}
                   </div>
                 </div>
-                <MenuBtn text="KONTAKTA OSS" onClick={handleClickContact} margin="5rem 0 0 0"/>
+                <MenuBtn
+                  text="KONTAKTA OSS"
+                  onClick={handleClickContact}
+                  margin="5rem 0 0 0"
+                />
               </div>
             </div>
           </>

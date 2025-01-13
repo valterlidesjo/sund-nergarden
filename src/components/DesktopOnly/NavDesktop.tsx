@@ -57,6 +57,7 @@ const NavDesktop = () => {
     if (location.pathname === "/mat-dryck") return "link-white";
     if (location.pathname === "/") return "link-white";
     if (location.pathname === "/oppetider") return "link-white";
+    if (location.pathname === "/villkor-regler") return "link-white";
     return "link-default";
   };
 
