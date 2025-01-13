@@ -9,12 +9,11 @@ import { MatDryckImages } from "./extra/MatDryckImages";
 import sundDesert4ImageW from "../assets/sund-desert4.webp";
 import sundJohanImageW from "../assets/sund-johan.jpeg";
 import InfiniteSlider from "../components/InfiniteSlider";
+import HorizontalScroll from "../components/HorizontalScroll";
+import LongInfiniteSlider from "../components/LongInfiniteSlider";
 
 const MedBtn = React.lazy(() => import("../components/ui/MedBtn/MedBtn"));
 const TextSection = React.lazy(() => import("../components/TextSection"));
-const HorizontalScroll = React.lazy(
-  () => import("../components/HorizontalScroll")
-);
 const BigBtn = React.lazy(() => import("../components/ui/BigBtn/BigBtn"));
 
 const wineLink =
@@ -268,7 +267,7 @@ const MatDryck = () => {
       <Suspense fallback={<div>Loading...</div>}>
       {isDesktop ? (
         <>
-          <InfiniteSlider images={MatDryckImages} />
+          <LongInfiniteSlider images={MatDryckImages} />
           </>
       ) : (
         <>

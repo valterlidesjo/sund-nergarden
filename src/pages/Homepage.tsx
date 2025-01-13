@@ -1,7 +1,4 @@
 import React, { Suspense, useEffect, useState } from "react";
-const HorizontalScroll = React.lazy(
-  () => import("../components/HorizontalScroll")
-);
 import sundStartImage from "../assets/sund-hus1.jpeg";
 import sundStartImageW from "../assets/sund-hus1.webp";
 import sundHus2 from "../assets/sund-hus2.jpeg";
@@ -11,6 +8,7 @@ import { images } from "./extra/HomepageImages";
 const TextSection = React.lazy(() => import("../components/TextSection"));
 const Contact = React.lazy(() => import("../components/Contact"));
 import { useLocation } from "react-router-dom";
+import HorizontalScroll from "../components/HorizontalScroll";
 const SearchBooking = React.lazy(() => import("../components/SearchBooking"));
 const HomePicturesDesktop = React.lazy(
   () => import("../components/DesktopOnly/HomePicturesDesktop,")
@@ -169,9 +167,7 @@ const HomePage = () => {
           <HomePicturesDesktop />
         </Suspense>
       ) : (
-        <Suspense fallback={<div>Loading...</div>}>
           <HorizontalScroll images={images} backgroundCol="white" enableHoverEffect = {false} />
-        </Suspense>
       )}
       <Suspense fallback={<div>Loading...</div>}>
         <Contact

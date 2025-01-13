@@ -62,10 +62,15 @@ const NavMobile = () => {
     }
   }, [isNavActive]);
 
+  const handleClickLogo = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/");
+  };
+
   return (
     <div className={`nav-container ${isNavActive ? "nav-active" : ""}`}>
       <div className={`toggle-nav-header ${isScrolled ? "scrolled" : ""}`}>
-      <div className="nav-logo-container">
+      <div className="nav-logo-container" onClick={handleClickLogo}>
         <picture>
           <source srcSet={sundLogoWhiteW} type="image/webp" />
           <img src={sundLogoWhite} alt="Sund Nergården ritad bild" loading="lazy" decoding="async" />
