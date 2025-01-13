@@ -150,6 +150,7 @@ const Rummen = () => {
             <HorizontalScroll
               images={glampingImages}
               onImageClick={(image) => goToRoom(image.alt)}
+              onTextClick={(image) => goToRoom(image.alt)}
               enableHoverEffect={false}
             />
             <div className="rummen-container">
