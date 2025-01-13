@@ -6,12 +6,9 @@ import sundVinImage from "../assets/sund-vin.jpeg";
 import sundDesert4Image from "../assets/sund-desert4.jpg";
 import sundJohanImage from "../assets/sund-johan.jpeg";
 import { MatDryckImages } from "./extra/MatDryckImages";
-
-import sundVinImageW from "../assets/sund-vin.jpeg";
 import sundDesert4ImageW from "../assets/sund-desert4.webp";
 import sundJohanImageW from "../assets/sund-johan.jpeg";
 import InfiniteSlider from "../components/InfiniteSlider";
-import ReverseInfiniteSlider from "../components/ReverseInfiniteSlider";
 
 const MedBtn = React.lazy(() => import("../components/ui/MedBtn/MedBtn"));
 const TextSection = React.lazy(() => import("../components/TextSection"));

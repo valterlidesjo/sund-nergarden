@@ -1,4 +1,3 @@
-import React from "react";
 import TextSection from "../components/TextSection";
 import "./scss/_contactMessage.scss";
 import useIsDesktop from "../services/useIsDesktop";

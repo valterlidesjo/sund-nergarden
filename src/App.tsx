@@ -1,5 +1,5 @@
 import { ParallaxProvider } from "react-scroll-parallax";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavMobile from "./components/NavMobile";
 import HomePage from "./pages/Homepage";

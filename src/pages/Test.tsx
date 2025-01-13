@@ -1,4 +1,3 @@
-import React from "react";
 import FoodMenu from "../components/FoodMenu";
 
 const Test = () => {

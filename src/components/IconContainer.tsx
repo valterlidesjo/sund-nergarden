@@ -1,4 +1,3 @@
-import React from "react";
 import IconBox from "./ui/IconBox/IconBox";
 
 type IconItem = {

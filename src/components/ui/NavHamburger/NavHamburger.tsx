@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./_NavHamburger.scss";
 
 interface NavHamburgerProps {

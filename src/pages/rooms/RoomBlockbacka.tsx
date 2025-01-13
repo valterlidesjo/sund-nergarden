@@ -1,14 +1,23 @@
-import React from "react";
 import RoomPageComponent from "../../components/RoomPageComponent";
 import sundBlombackaImage1 from "../../assets/sund-rum1.jpeg";
 import sundBlombackaImage2 from "../../assets/sund-rum2.jpeg";
-import sundBlombackaImage3 from "../../assets/sund-rum3.jpeg";
+import sundTest1 from "../../assets/sund-bastu.jpg";
+import sundTest2 from "../../assets/sund-desert1.jpeg";
+import sundTest3 from "../../assets/sund-drink.jpg";
+
+import sundBlombackaImage1W from "../../assets/sund-rum1.jpeg";
+import sundBlombackaImage2W from "../../assets/sund-rum2.jpeg";
+import sundTest1W from "../../assets/sund-bastu.jpg";
+import sundTest2W from "../../assets/sund-desert1.jpeg";
+import sundTest3W from "../../assets/sund-drink.jpg";
 
 const RoomBlombacka = () => {
   const imagesBlombacka = [
-    { id: 1, src: sundBlombackaImage1, alt: "Image 1" },
-    { id: 2, src: sundBlombackaImage2, alt: "Image 2" },
-    { id: 3, src: sundBlombackaImage3, alt: "Image 3" },
+    { id: 1, src: sundBlombackaImage1, webpSrc: sundBlombackaImage1W, alt: "Image 1" },
+    { id: 2, src: sundBlombackaImage2, webpSrc: sundBlombackaImage2W, alt: "Image 2" },
+    { id: 3, src: sundTest1, webpSrc: sundTest1W, alt: "Image 3" },
+    { id: 4, src: sundTest2, webpSrc: sundTest2W, alt: "Image 4" },
+    { id: 5, src: sundTest3, webpSrc: sundTest3W, alt: "Image 5" },
   ];
   const descriptionBlombacka = [
     {
@@ -20,6 +29,7 @@ const RoomBlombacka = () => {
   return (
     <>
       <RoomPageComponent
+      startImageWebp={imagesBlombacka[0].webpSrc}
         roomHeader="Blombacka - En Oas av Elegans och 
       Stillhet"
         roomText="Blombacka är mer än bara ett rum - det är en tillflyktsort där varje detalj är omsorgsfullt utvald för att skapa en harmonisk balans mellan komfort och elegans. Med en golvyta på cirka 23 m² och ett charmigt snedtak, bjuder detta dubbelrum in till en känsla av tidlös lyx. 

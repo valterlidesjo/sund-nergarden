@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React  from "react";
 import "./scss/_contact.scss";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
 import MenuBtn from "./ui/MenuBtn/MenuBtn";
