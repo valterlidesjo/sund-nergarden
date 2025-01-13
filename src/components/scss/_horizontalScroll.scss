@@ -5,6 +5,7 @@
 .scroll-container {
   @include m.horScroll;
   background-color: v.$primary-col;
+  // padding: 0 1rem 4rem 1rem;
 
   .image-container {
     position: relative;
@@ -28,7 +29,7 @@
       object-fit: cover;
       height: 25rem;
       width: 12.5rem;
-      border-radius: 2rem;
+      border-radius: 1rem;
       margin-right: 7px;
     }
     .overlay-text,

@@ -5,9 +5,13 @@ import DatePicker from "react-datepicker";
 
 interface SearchBookingProps {
   buttonText: string;
+  padding?: string;
 }
 
-const SearchBooking: React.FC<SearchBookingProps> = ({ buttonText }) => {
+const SearchBooking: React.FC<SearchBookingProps> = ({
+  buttonText,
+  padding = "0px",
+}) => {
   const [checkInDate, setCheckInDate] = useState<Date | null>(null);
   const [checkOutDate, setCheckOutDate] = useState<Date | null>(null);
   const [rooms, setRooms] = useState(0);
@@ -42,101 +46,101 @@ const SearchBooking: React.FC<SearchBookingProps> = ({ buttonText }) => {
     window.location.href = url;
   };
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
-      useEffect(() => {
-          const handleResize = () => {
-            setIsDesktop(window.innerWidth > 768);
-          };
-      
-          window.addEventListener("resize", handleResize);
-          return () => window.removeEventListener("resize", handleResize);
-        }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth > 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
-      <div className="booking-container">
+      <div className="booking-container" style={{ padding }}>
         {isDesktop ? (
           <>
-          <div className="booking-grid-container">
-          <div
-            className="start-date-container"
-            onClick={() => setIsCheckInOpen(true)}
-            style={{ cursor: "pointer" }}
-          >
-            <div className="check-in-text">
-            <p>
-              {checkInDate
-                ? checkInDate.toLocaleDateString("sv-SE", {
-                    day: "2-digit",
-                    month: "long",
-                  })
-                : "Incheck"}
-              </p>
-            <BiCalendar
-              className="calendar-icon"
-              onClick={() => setIsCheckInOpen(true)}
-            />
-            </div>
+            <div className="booking-grid-container">
+              <div
+                className="start-date-container"
+                onClick={() => setIsCheckInOpen(true)}
+                style={{ cursor: "pointer" }}
+              >
+                <div className="check-in-text">
+                  <p>
+                    {checkInDate
+                      ? checkInDate.toLocaleDateString("sv-SE", {
+                          day: "2-digit",
+                          month: "long",
+                        })
+                      : "Incheck"}
+                  </p>
+                  <BiCalendar
+                    className="calendar-icon"
+                    onClick={() => setIsCheckInOpen(true)}
+                  />
+                </div>
 
-            {isCheckInOpen && (
-              <DatePicker
-                selected={checkInDate}
-                onSelect={(date) => {
-                  setCheckInDate(date);
-                  setIsCheckInOpen(false);
-                }}
-                onClickOutside={() => setIsCheckInOpen(false)}
-                inline
-                minDate={new Date()}
-                isClearable
-                className="calendar"
-              />
-            )}
-            <span className="check-line"></span>
-          </div>
-          <div
-            className="end-date-container"
-            onClick={() => setIsCheckOutOpen(true)}
-            style={{ cursor: "pointer" }}
-          >
-            <div className="check-out-text">
-            <p>
-              {checkOutDate
-                ? checkOutDate.toLocaleDateString("sv-SE", {
-                    day: "2-digit",
-                    month: "long",
-                  })
-                : "Utcheck"}
-              </p>
-            <BiCalendar
-              className="calendar-icon"
-              onClick={() => setIsCheckOutOpen(true)}
-            />
-            </div>
-            {isCheckOutOpen && (
-              <DatePicker
-                selected={checkOutDate}
-                onSelect={(date) => {
-                  setCheckOutDate(date);
-                  setIsCheckOutOpen(false);
-                }}
-                onClickOutside={() => setIsCheckOutOpen(false)}
-                inline
-                minDate={checkInDate || new Date()}
-                className="calendar"
-              />
-            )}
-            <span className="check-line"></span>
-          </div>
-          <div
-            className="persons-container"
-            onClick={() => setIsAdultsOpen(!isAdultsOpen)}
-            style={{ cursor: "pointer" }}
-          >
-              <input
-                type="number"
-                min="1"
-                value={adults === 0 ? "" : adults}
-                onChange={(e) => {
+                {isCheckInOpen && (
+                  <DatePicker
+                    selected={checkInDate}
+                    onSelect={(date) => {
+                      setCheckInDate(date);
+                      setIsCheckInOpen(false);
+                    }}
+                    onClickOutside={() => setIsCheckInOpen(false)}
+                    inline
+                    minDate={new Date()}
+                    isClearable
+                    className="calendar"
+                  />
+                )}
+                <span className="check-line"></span>
+              </div>
+              <div
+                className="end-date-container"
+                onClick={() => setIsCheckOutOpen(true)}
+                style={{ cursor: "pointer" }}
+              >
+                <div className="check-out-text">
+                  <p>
+                    {checkOutDate
+                      ? checkOutDate.toLocaleDateString("sv-SE", {
+                          day: "2-digit",
+                          month: "long",
+                        })
+                      : "Utcheck"}
+                  </p>
+                  <BiCalendar
+                    className="calendar-icon"
+                    onClick={() => setIsCheckOutOpen(true)}
+                  />
+                </div>
+                {isCheckOutOpen && (
+                  <DatePicker
+                    selected={checkOutDate}
+                    onSelect={(date) => {
+                      setCheckOutDate(date);
+                      setIsCheckOutOpen(false);
+                    }}
+                    onClickOutside={() => setIsCheckOutOpen(false)}
+                    inline
+                    minDate={checkInDate || new Date()}
+                    className="calendar"
+                  />
+                )}
+                <span className="check-line"></span>
+              </div>
+              <div
+                className="persons-container"
+                onClick={() => setIsAdultsOpen(!isAdultsOpen)}
+                style={{ cursor: "pointer" }}
+              >
+                <input
+                  type="number"
+                  min="1"
+                  value={adults === 0 ? "" : adults}
+                  onChange={(e) => {
                     const value = parseInt(e.target.value, 10);
                     if (isNaN(value) || value < 1) {
                       setAdults(1);
@@ -144,114 +148,117 @@ const SearchBooking: React.FC<SearchBookingProps> = ({ buttonText }) => {
                       setAdults(value);
                     }
                   }}
-                placeholder="Vuxna      +"
-              />
-            <span className="check-line"></span>
-          </div>
-          <div
-            className="rooms-container"
-            onClick={() => setIsRoomsOpen(!isRoomsOpen)}
-            style={{ cursor: "pointer" }}
-          >
-              <input
-                type="number"
-                min="1"
-                value={rooms === 0 ? "" : rooms}
-                onChange={(e) => setRooms(parseInt(e.target.value) || 1)}
-                placeholder="Rum         +"
-              />
-            <span className="check-line"></span>
-          </div>
-          <div className="search-booking-button-container">
-            <button className="search-booking-button" onClick={handleBooking}>
-              {buttonText}
-            </button>
-          </div>
-        </div>
+                  placeholder="Vuxna      +"
+                />
+                <span className="check-line"></span>
+              </div>
+              <div
+                className="rooms-container"
+                onClick={() => setIsRoomsOpen(!isRoomsOpen)}
+                style={{ cursor: "pointer" }}
+              >
+                <input
+                  type="number"
+                  min="1"
+                  value={rooms === 0 ? "" : rooms}
+                  onChange={(e) => setRooms(parseInt(e.target.value) || 1)}
+                  placeholder="Rum         +"
+                />
+                <span className="check-line"></span>
+              </div>
+              <div className="search-booking-button-container">
+                <button
+                  className="search-booking-button"
+                  onClick={handleBooking}
+                >
+                  {buttonText}
+                </button>
+              </div>
+            </div>
           </>
         ) : (
           <>
-        <div className="booking-grid-container">
-          <div
-            className="start-date-container"
-            onClick={() => setIsCheckInOpen(true)}
-            style={{ cursor: "pointer" }}
-          >
-            <div className="check-in-text">
-            <p>
-              {checkInDate
-                ? checkInDate.toLocaleDateString("sv-SE", {
-                    day: "2-digit",
-                    month: "long",
-                  })
-                : "Incheck"}
-              </p>
-            <BiCalendar
-              className="calendar-icon"
-              onClick={() => setIsCheckInOpen(true)}
-            />
-            </div>
+            <div className="booking-grid-container">
+              <div
+                className="start-date-container"
+                onClick={() => setIsCheckInOpen(true)}
+                style={{ cursor: "pointer" }}
+              >
+                <div className="check-in-text">
+                  <p>
+                    {checkInDate
+                      ? checkInDate.toLocaleDateString("sv-SE", {
+                          day: "2-digit",
+                          month: "long",
+                        })
+                      : "Incheck"}
+                  </p>
+                  <BiCalendar
+                    className="calendar-icon"
+                    onClick={() => setIsCheckInOpen(true)}
+                  />
+                </div>
 
-            {isCheckInOpen && (
-              <DatePicker
-                selected={checkInDate}
-                onSelect={(date) => {
-                  setCheckInDate(date);
-                  setIsCheckInOpen(false);
-                }}
-                onClickOutside={() => setIsCheckInOpen(false)}
-                inline
-                minDate={new Date()}
-                isClearable
-                className="calendar"
-              />
-            )}
-            <span className="check-line"></span>
-          </div>
-          <div
-            className="end-date-container"
-            onClick={() => setIsCheckOutOpen(true)}
-            style={{ cursor: "pointer" }}
-          >
-            <div className="check-out-text">
-            <p>
-              {checkOutDate
-                ? checkOutDate.toLocaleDateString("sv-SE", {
-                    day: "2-digit",
-                    month: "long",
-                  })
-                : "Utcheck"}
-              </p>
-            <BiCalendar
-              className="calendar-icon"
-              onClick={() => setIsCheckOutOpen(true)}
-            />
-            </div>
-            {isCheckOutOpen && (
-              <DatePicker
-                selected={checkOutDate}
-                onSelect={(date) => {
-                  setCheckOutDate(date);
-                  setIsCheckOutOpen(false);
-                }}
-                onClickOutside={() => setIsCheckOutOpen(false)}
-                inline
-                minDate={checkInDate || new Date()}
-                className="calendar"
-              />
-            )}
-            <span className="check-line"></span>
-          </div>
-          <div
-            className="persons-container"
-            onClick={() => setIsAdultsOpen(!isAdultsOpen)}
-            style={{ cursor: "pointer" }}
-          >
-              <input
-                type="number"
-                min="1"
-                value={adults === 0 ? "" : adults}
-                onChange={(e) => {
+                {isCheckInOpen && (
+                  <DatePicker
+                    selected={checkInDate}
+                    onSelect={(date) => {
+                      setCheckInDate(date);
+                      setIsCheckInOpen(false);
+                    }}
+                    onClickOutside={() => setIsCheckInOpen(false)}
+                    inline
+                    minDate={new Date()}
+                    isClearable
+                    className="calendar"
+                  />
+                )}
+                <span className="check-line"></span>
+              </div>
+              <div
+                className="end-date-container"
+                onClick={() => setIsCheckOutOpen(true)}
+                style={{ cursor: "pointer" }}
+              >
+                <div className="check-out-text">
+                  <p>
+                    {checkOutDate
+                      ? checkOutDate.toLocaleDateString("sv-SE", {
+                          day: "2-digit",
+                          month: "long",
+                        })
+                      : "Utcheck"}
+                  </p>
+                  <BiCalendar
+                    className="calendar-icon"
+                    onClick={() => setIsCheckOutOpen(true)}
+                  />
+                </div>
+                {isCheckOutOpen && (
+                  <DatePicker
+                    selected={checkOutDate}
+                    onSelect={(date) => {
+                      setCheckOutDate(date);
+                      setIsCheckOutOpen(false);
+                    }}
+                    onClickOutside={() => setIsCheckOutOpen(false)}
+                    inline
+                    minDate={checkInDate || new Date()}
+                    className="calendar"
+                  />
+                )}
+                <span className="check-line"></span>
+              </div>
+              <div
+                className="persons-container"
+                onClick={() => setIsAdultsOpen(!isAdultsOpen)}
+                style={{ cursor: "pointer" }}
+              >
+                <input
+                  type="number"
+                  min="1"
+                  value={adults === 0 ? "" : adults}
+                  onChange={(e) => {
                     const value = parseInt(e.target.value, 10);
                     if (isNaN(value) || value < 1) {
                       setAdults(1);
@@ -259,31 +266,30 @@ const SearchBooking: React.FC<SearchBookingProps> = ({ buttonText }) => {
                       setAdults(value);
                     }
                   }}
-                placeholder="Vuxna      +"
-              />
-            <span className="check-line"></span>
-          </div>
-          <div
-            className="rooms-container"
-            onClick={() => setIsRoomsOpen(!isRoomsOpen)}
-            style={{ cursor: "pointer" }}
-          >
-              <input
-                type="number"
-                min="1"
-                value={rooms === 0 ? "" : rooms}
-                onChange={(e) => setRooms(parseInt(e.target.value) || 1)}
-                placeholder="Rum         +"
-              />
-            <span className="check-line"></span>
-          </div>
-
-        </div>
-          <div className="search-booking-button-container">
-            <button className="search-booking-button" onClick={handleBooking}>
-              {buttonText}
-            </button>
-          </div>
+                  placeholder="Vuxna      +"
+                />
+                <span className="check-line"></span>
+              </div>
+              <div
+                className="rooms-container"
+                onClick={() => setIsRoomsOpen(!isRoomsOpen)}
+                style={{ cursor: "pointer" }}
+              >
+                <input
+                  type="number"
+                  min="1"
+                  value={rooms === 0 ? "" : rooms}
+                  onChange={(e) => setRooms(parseInt(e.target.value) || 1)}
+                  placeholder="Rum         +"
+                />
+                <span className="check-line"></span>
+              </div>
+            </div>
+            <div className="search-booking-button-container">
+              <button className="search-booking-button" onClick={handleBooking}>
+                {buttonText}
+              </button>
+            </div>
           </>
         )}
       </div>

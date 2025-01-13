@@ -85,7 +85,7 @@ const HomePage = () => {
               <TextSection
                 text="Sund Nergården - Hideaway för vuxna"
                 textAlign="center"
-                margin="5rem 1rem 2rem 1rem"
+                margin="4rem 1rem 3rem 1rem"
                 fontSize="2rem"
               />
               <TextSection
@@ -95,7 +95,7 @@ const HomePage = () => {
             faciliteter och med en gemensam känsla. Under sommarmånaderna
             erbjuder vi också tre populära Glamping."
                 textAlign="center"
-                margin="2rem 1rem"
+                margin="0 1rem 4rem 1rem"
               />
             </Suspense>
           </>
@@ -130,10 +130,13 @@ const HomePage = () => {
                 <div className="stay-at-picture-container">
                   <picture>
                     <source srcSet={sundHus2W} type="image/webp" />
-                    <img src={sundHus2} alt="Sund Nergården Växthus"
-                    className="stay-at-picture"
-                    loading="lazy"
-                    decoding="async" />
+                    <img
+                      src={sundHus2}
+                      alt="Sund Nergården Växthus"
+                      className="stay-at-picture"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </picture>
                 </div>
               </div>
@@ -150,13 +153,13 @@ const HomePage = () => {
               text="Rum, Mat & Mera"
               fontSize="2rem"
               textAlign="center"
-              margin="2rem 0 0 0"
+              margin="4rem 0 0 0"
               color="#1C3620"
             />
             <TextSection
               text="Allt detta ingår när du bokar rum eller glamping med oss!"
               textAlign="center"
-              margin="0 0 0.5rem 0"
+              margin="0 0 2rem 0"
               color="#1C3620"
             />
           </Suspense>
@@ -167,7 +170,14 @@ const HomePage = () => {
           <HomePicturesDesktop />
         </Suspense>
       ) : (
-          <HorizontalScroll images={images} backgroundCol="white" enableHoverEffect = {false} />
+        <Suspense fallback={<div>Loading...</div>}>
+          <HorizontalScroll
+            images={images}
+            backgroundCol="white"
+            enableHoverEffect={false}
+            padding="0 1rem 4rem 1rem"
+          />
+        </Suspense>
       )}
       <Suspense fallback={<div>Loading...</div>}>
         <Contact
