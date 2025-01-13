@@ -1,4 +1,3 @@
-import LinkArrow from "../LinkArrow/LinkArrow";
 import "./_medBtn.scss";
 
 interface MedBtnProps {

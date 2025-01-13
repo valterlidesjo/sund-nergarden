@@ -1,14 +1,23 @@
-import React from "react";
 import RoomPageComponent from "../../components/RoomPageComponent";
 import sundNedreImage1 from "../../assets/sund-glamping.jpeg";
 import sundNedreImage2 from "../../assets/sund-rum2.jpeg";
-import sundNedreImage3 from "../../assets/sund-hus2.jpeg";
+import sundTest1 from "../../assets/sund-bastu.jpg";
+import sundTest2 from "../../assets/sund-desert1.jpeg";
+import sundTest3 from "../../assets/sund-drink.jpg";
+
+import sundNedreImage1W from "../../assets/sund-glamping.jpeg";
+import sundNedreImage2W from "../../assets/sund-rum2.jpeg";
+import sundTest1W from "../../assets/sund-bastu.jpg";
+import sundTest2W from "../../assets/sund-desert1.jpeg";
+import sundTest3W from "../../assets/sund-drink.jpg";
 
 const GlampNedre = () => {
   const imagesNedre = [
-    { id: 1, src: sundNedreImage1, alt: "Image 1" },
-    { id: 2, src: sundNedreImage2, alt: "Image 2" },
-    { id: 3, src: sundNedreImage3, alt: "Image 3" },
+    { id: 1, src: sundNedreImage1, webpSrc: sundNedreImage1W, alt: "Image 1" },
+    { id: 2, src: sundNedreImage2, webpSrc: sundNedreImage2W, alt: "Image 2" },
+    { id: 3, src: sundTest1, webpSrc: sundTest1W, alt: "Image 3" },
+    { id: 4, src: sundTest2, webpSrc: sundTest2W, alt: "Image 4" },
+    { id: 5, src: sundTest3, webpSrc: sundTest3W, alt: "Image 5" },
   ];
   const descriptionNedre = [
     {
@@ -20,6 +29,7 @@ const GlampNedre = () => {
   return (
     <>
       <RoomPageComponent
+      startImageWebp={imagesNedre[0].webpSrc}
       roomHeader="Nedre - En Lyxig Naturupplevelse"
       roomText="Nedre är inte bara ett tält - det är en upplevelse där naturens lugn möter exklusiv komfort. Med en golvyta på 19,6 m² och en noggrant utvald Queen size-säng, bjuder detta glampingtält in till en vistelse fylld av avkoppling och ro. 
       Vakna upp till en spektakulär utsikt över trädgården och den glittrande sjön och låt dagen börja med en varm dusch på den privata uteplatsen under bar himmel. Här finns utrymme att andas, tänka och bara vara. Toaletter finns endast ett stenkast bort, cirka 50 meter från tältet, och varje detalj är noggrant planerad för att säkerställa både funktion och komfort. 

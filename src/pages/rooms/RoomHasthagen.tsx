@@ -1,14 +1,25 @@
-import React from "react";
 import RoomPageComponent from "../../components/RoomPageComponent";
 import sundHasthagenImage1 from "../../assets/sund-rum1.jpeg";
 import sundHasthagenImage2 from "../../assets/sund-rum2.jpeg";
-import sundHasthagenImage3 from "../../assets/sund-rum3.jpeg";
+import sundTest1 from "../../assets/sund-bastu.jpg";
+import sundTest2 from "../../assets/sund-desert1.jpeg";
+import sundTest3 from "../../assets/sund-drink.jpg";
+
+import sundHasthagenImage1W from "../../assets/sund-rum1.webp";
+import sundHasthagenImage2W from "../../assets/sund-rum2.webp";
+import sundTest1W from "../../assets/sund-bastu.webp";
+import sundTest2W from "../../assets/sund-desert1.webp";
+import sundTest3W from "../../assets/sund-drink.webp";
+
+
 
 const RoomHasthagen = () => {
   const imagesHasthagen = [
-    { id: 1, src: sundHasthagenImage1, alt: "Image 1" },
-    { id: 2, src: sundHasthagenImage2, alt: "Image 2" },
-    { id: 3, src: sundHasthagenImage3, alt: "Image 3" },
+    { id: 1, src: sundHasthagenImage1, webpSrc: sundHasthagenImage1W, alt: "Image 1" },
+    { id: 2, src: sundHasthagenImage2, webpSrc: sundHasthagenImage2W, alt: "Image 2" },
+    { id: 3, src: sundTest1, webpSrc: sundTest1W, alt: "Image 3" },
+    { id: 4, src: sundTest2, webpSrc: sundTest2W, alt: "Image 4" },
+    { id: 5, src: sundTest3, webpSrc: sundTest3W, alt: "Image 5" },
   ];
   const descriptionHasthagen = [
     {
@@ -20,6 +31,7 @@ const RoomHasthagen = () => {
   return (
     <>
       <RoomPageComponent
+      startImageWebp={imagesHasthagen[0].webpSrc}
       roomHeader="Hästhagen - En Juniorsvit med 
         Sjöutsikt"
         roomText="Upplev en omsorgsfullt designad juniorsvit där varje detalj är vald för att skapa en känsla av harmoni och avkoppling. Med sina generösa 37 kvadratmeter erbjuder sviten en rymlig atmosfär under ett charmigt snedtak, belägen en våning upp i en tidlös miljö utan hiss. 

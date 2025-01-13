@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import FoodMenu from "../components/FoodMenu";
 import TextSection from "../components/TextSection";
 import TextSectionSeparated from "../components/TextSectionSeparated";

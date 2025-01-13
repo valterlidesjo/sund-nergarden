@@ -1,4 +1,3 @@
-import React from "react";
 import "./scss/_openingHours.scss";
 import sundSunset from "../assets/sund-sunset.jpeg";
 import TextSection from "../components/TextSection";

@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React from "react";
 const RoomPageComponent = React.lazy(() => import("../../components/RoomPageComponent"));
 import sundSjolundaImage1 from "../../assets/sund-rum1.jpeg";
 import sundSjolundaImage2 from "../../assets/sund-rum2.jpeg";

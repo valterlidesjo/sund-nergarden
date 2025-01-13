@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import NavHamburger from "./ui/NavHamburger/NavHamburger";
 import "./scss/_navMobile.scss";
 import { useLocation, useNavigate } from "react-router";
