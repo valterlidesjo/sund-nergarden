@@ -10,6 +10,7 @@ import sundDesert4ImageW from "../assets/sund-desert4.webp";
 import sundJohanImageW from "../assets/sund-johan.jpeg";
 import HorizontalScroll from "../components/HorizontalScroll";
 import LongInfiniteSlider from "../components/LongInfiniteSlider";
+import useIsDesktop from "../services/useIsDesktop";
 
 const MedBtn = React.lazy(() => import("../components/ui/MedBtn/MedBtn"));
 const TextSection = React.lazy(() => import("../components/TextSection"));
@@ -36,16 +37,7 @@ const MatDryck = () => {
     window.location.href = bookTableLink;
   };
 
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const isDesktop = useIsDesktop();
 
   return (
     <>

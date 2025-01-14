@@ -12,6 +12,7 @@ import {
   faInstagram,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import useIsDesktop from "../services/useIsDesktop";
 
 interface FooterProps {
   backgroundColor?: string;
@@ -72,15 +73,8 @@ const Footer: React.FC<FooterProps> = ({
     color: dynamicColor,
     logo,
   } = getFooterStyles();
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768);
-    };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const isDesktop = useIsDesktop();
 
   const handleNavigation = (link: string) => {
     if (link.startsWith("http")) {

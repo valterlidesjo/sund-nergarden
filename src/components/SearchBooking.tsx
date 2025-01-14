@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./scss/_searchBooking.scss";
 import { BiCalendar } from "react-icons/bi";
 import DatePicker from "react-datepicker";
+import useIsDesktop from "../services/useIsDesktop";
 
 interface SearchBookingProps {
   buttonText: string;
@@ -45,15 +46,8 @@ const SearchBooking: React.FC<SearchBookingProps> = ({
 
     window.location.href = url;
   };
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  
+  const isDesktop = useIsDesktop();
 
   return (
     <>

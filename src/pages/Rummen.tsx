@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import sundRitad from "../assets/sund-ritad.jpeg";
 import sundRitadW from "../assets/sund-ritad.webp";
 import HorizontalScroll from "../components/HorizontalScroll";
+import useIsDesktop from "../services/useIsDesktop";
 
 const TextSection = React.lazy(() => import("../components/TextSection"));
 const SearchBooking = React.lazy(() => import("../components/SearchBooking"));
@@ -23,16 +24,7 @@ const Rummen = () => {
     navigate(`/rummen/${alt}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-  const [isDesktop, setIsDesktop] = useState(window.innerWidth > 600);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth > 768);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  const isDesktop = useIsDesktop();
 
   return (
     <>
