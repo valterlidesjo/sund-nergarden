@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./scss/_searchBooking.scss";
 import { BiCalendar } from "react-icons/bi";
 import DatePicker from "react-datepicker";

@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import { useNavigate } from "react-router-dom";
 import { ParallaxBanner } from "react-scroll-parallax";
 import "./scss/_matDryck.scss";

@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import "./scss/_rummen.scss";
 import { roomImages } from "./extra/RummenImages";
 import { glampingImages } from "./extra/GlampingImages";

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./scss/_footer.scss";
 import TextSection from "./TextSection";
 import sundWineStarList from "../assets/sund-star-wine-list.jpg";
